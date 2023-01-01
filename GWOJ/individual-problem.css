@@ -1,0 +1,50 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    font-weight: 500;
+    height: 101vh;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/*css*/
+#problem-statement{
+    padding-left: 2rem;
+}
+
+#problem-title{
+    font-size: 2rem;
+}
+
+.sample{
+    width: 33.3vw;
+    padding: 1%;
+    border-radius: 0.5rem;
+    background-color: lightgray;
+    margin-bottom: 3.5%;
+}
+
+#flex-inline-wrapper{
+    display: flex;
+}
+
+#submit{
+    height: 100%;
+    width: 50%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#submit-title{
+    font-size: 2rem;
+}
+
+#submit-form{
+    height: 50vh;
+    width: 100%;
+}
