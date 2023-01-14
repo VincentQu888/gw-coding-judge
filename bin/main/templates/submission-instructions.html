@@ -8,10 +8,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Problems</title>
+    <title>Submission Instructions</title>
 
     <style>
-        body{
+
+body{
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
@@ -23,9 +24,8 @@ a{
     text-decoration: none;
 }
 
-
-        /* navbar */
-        #nav-section{
+/* navbar */
+#nav-section{
     height: 8.5vh;
 }
 
@@ -78,42 +78,10 @@ a{
     box-shadow: 0px 3px 5px 0px rgba(25, 25, 25, 0.5);
 }
 
-
-/*css*/
-.difficulty{
-    font-size: 1rem;
-    background-color: lightgray;
-    border-radius: 1rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+#flex-grid-wrapper{
+    padding: 1.5%;
+    height: 92vh;
 }
-
-.easy{
-    color: rgb(0, 200, 0);
-    width: 8.5%;
-}
-
-.medium{
-    color: orange;
-    width: 14.7%;
-}
-
-.hard{
-    color: red;
-    width: 8.6%;
-}
-
-#contest-title{
-    font-size: 2rem;
-}
-
-#contest-section{
-    margin-left: 2.5%;
-    font-size: 1rem;
-    width: 25%;
-    height: 101vh;
-}
-
     </style>
 </head>
 <body>
@@ -125,20 +93,21 @@ a{
             <a id="problems" href="/problems">Problems</a>
         </nav>
     </section>
-    
-    <section id="contest-section">
-        <p id="contest-title">All Problems </p>
-        <a href="/2022gwcc1j1">2022 G.W. Coding Contest 1 Junior 1</a> <div class="difficulty easy">Easy</div>
-        <br/>
-        <a href="/2022gwcc1j2">2022 G.W. Coding Contest 1 Junior 2</a> <div class="difficulty easy">Easy</div>
-        <br/>
-        <a href="/2022gwcc1j3">2022 G.W. Coding Contest 1 Junior 3</a> <div class="difficulty medium">Medium</div>
-        <br/>
-        <a href="/2022gwcc1s1">2022 G.W. Coding Contest 1 Senior 1</a> <div class="difficulty easy">Easy</div>
-        <br/>
-        <a href="/2022gwcc1s2">2022 G.W. Coding Contest 1 Senior 2</a> <div class="difficulty easy">Easy</div>
-        <br/>
-        <a href="/2022gwcc1s3">2022 G.W. Coding Contest 1 Senior 3</a> <div class="difficulty easy">Easy</div>
-    </section>
+    <div id="flex-grid-wrapper">
+        <div id="first-item">
+        <section id="description">
+            <p id="desc-title">Submitting a solution to the grader</p>
+            <ol>
+                <li>Go to Problems on the navbar</li>
+                <li>Select the problem you'd like to work on</li>
+                <li>You'll see the problem description, with sample input and output on the left of the page</li>
+                <li>Copy and paste your code in the submission box</li>
+                <li>Click "Submit"</li>
+                <li>The grader should mark your program</li>
+            </ol>
+        <p>If you have any problems submitting code or have found a bug, please us an <a href="mailto:340895069@gapps.yrdsb.ca;341089043@gapps.yrdsb.ca">email</a> or contact us through Discord
+    <p>Good luck! Happy programming!</p>
+        </section>
+  
 </body>
 </html>
