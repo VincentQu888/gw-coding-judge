@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2022gwcc1j2</title>
+
+    <style>
+#nav-section{
+    height: 8.5vh;
+}
+
+#title{
+    display: inline-flex;
+    color: white;
+    font-size: 2rem;
+    padding: 1%;
+}
+
+#problems{
+    display: inline-flex;
+    float: right;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 1.5%;
+}
+
+#problems:hover,
+#submission-instructions:hover,
+#tips:hover,
+#title:hover{
+    color: gray;
+}
+
+#submission-instructions{
+    display: inline-flex;
+    float: right;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 1.5%;
+}
+
+#tips{
+    display: inline-flex;
+    float: right;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 1.5%;
+}
+
+#navbar{
+    background-color: black;
+    color: white;
+    width: 100%;
+    position: fixed;
+    box-shadow: 0px 3px 5px 0px rgba(25, 25, 25, 0.5);
+}
+
+         body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    font-weight: 500;
+    height: 101vh;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/*css*/
+#problem-statement{
+    padding-left: 2rem;
+}
+
+#problem-title{
+    font-size: 2rem;
+}
+
+.sample{
+    width: 33.3vw;
+    padding: 1%;
+    border-radius: 0.5rem;
+    background-color: lightgray;
+    margin-bottom: 3.5%;
+    overflow-y: scroll;
+    height: 30vh;
+
+}
+
+#flex-inline-wrapper{
+    display: flex;
+}
+
+#submit{
+    height: 100%;
+    width: 50%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#submit-title{
+    font-size: 2rem;
+}
+
+#textarea{
+    height: 50vh;
+    width: 95%;
+}   
+
+    </style>
+
+    <script>
+        function updateContent() {
+            var selectedOption = document.getElementById("lang").value;
+
+            if (selectedOption == "Java") {
+                document.getElementById("input-form").action = "/2022gwcc1j2JAVA";
+            } else if (selectedOption == "C++") {
+                document.getElementById("input-form").action = "/2022gwcc1j2CPP";
+            } else if (selectedOption == "Python") {
+                document.getElementById("input-form").action = "/2022gwcc1j2PYTHON";
+            }
+        }
+    </script>
+</head>
+<body>
+    <section id="nav-section">
+        <nav id="navbar">
+            <a id="title" href="/">G.W Williams Coding Judge</a>
+            <a id="submission-instructions" href="/submission-instructions">Submission Instructions</a>
+            <a id="tips" href="/tips">Tips</a>
+            <a id="problems" href="/problems">Problems</a>
+        </nav>
+    </section>
+
+    <div id="flex-inline-wrapper">
+        <section id="problem-statement">
+            <p id="problem-title">2022 G.W. Coding Contest 1 J2: Who's the winner</p>
+            <p>You are playing a card game with your 2 friends. There are 4 types of cards you can place: a clover, a heart, a diamond, or a club. </p>
+            <p>If you place a clover or club, you get 5 points.</p>
+            <p>If you place a heart, you get 3 points.</p>
+            <p>If you place a diamond, you get 10 points.</p>
+            <p>If you place an Ace, you automatically win the game. There can only be one ace played in a game.</p>
+            <p>You win the game if you acquire the most points. Determine who will win the game.</p>
+            <br/>
+            <p>Input Specification:</p>
+            <ul>
+                <li>3 names</li>
+                <li>Number of turns being played</li>
+                <li>A name followed by that person's turns</li>
+                <ul>
+                    <li>c: clover or club played</li>
+                    <li>h: heart placed</li>
+                    <li>d: diamond placed</li>
+                    <li>ace: ace placed</li>
+                </ul>
+            </ul>
+            <br/>
+            <div id="sample-io">
+                <p>Sample Input:</p>
+                <div class="sample">
+                    <p>Pumpkin Apple Banana</p>
+                    <p>5</p>
+                    <p>Pumpkin</p>
+                    <p>c</p>
+                    <p>c</p>
+                    <p>c</p>
+                    <p>c</p>
+                    <p>c</p>
+                    <p>Apple</p>
+                    <p>h</p>
+                    <p>h</p>
+                    <p>c</p>
+                    <p>d</p>
+                    <p>ace</p>
+                    <p>Banana</p>
+                    <p>c</p>
+                    <p>d</p>
+                    <p>d</p>
+                    <p>d</p>
+                    <p>d</p>
+                </div>
+                <br/>
+                <p>Sample Output:</p>
+                <div class="sample">
+                    Apple
+                </div>
+            </div>
+        </section>
+        <section id="submit">
+            <p id="submit-title">Submit Solution</p>
+            <form id="input-form" th:action="@{/2022gwcc1j2}" method="post">
+                <textarea name="input-textarea" rows="30" cols="100"></textarea>
+                <select name="lang" id="lang">
+                    <option value="Java">Java</option>
+                    <option value="C++">C++</option>
+                    <option value="Python">Python</option>
+                  </select>
+                <button onclick="updateContent()" type="submit">Submit</button>
+                <span style="float: right;">Problem author: Pranav</span>
+            </form>
+      </section>
+    </div>
+</body>
+</html>

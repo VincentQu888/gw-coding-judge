@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Problems</title>
+    <title>Verdict</title>
 
     <style>
         body{
@@ -23,9 +23,13 @@ a{
     text-decoration: none;
 }
 
+#verdict{
+    padding: 1.5%
+}
 
-        /* navbar */
-        #nav-section{
+
+/* navbar */
+#nav-section{
     height: 8.5vh;
 }
 
@@ -77,42 +81,6 @@ a{
     position: fixed;
     box-shadow: 0px 3px 5px 0px rgba(25, 25, 25, 0.5);
 }
-
-
-/*css*/
-.difficulty{
-    font-size: 1rem;
-    background-color: lightgray;
-    border-radius: 1rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-}
-
-.easy{
-    color: rgb(0, 200, 0);
-    width: 8.5%;
-}
-
-.medium{
-    color: orange;
-    width: 14.7%;
-}
-
-.hard{
-    color: red;
-    width: 8.6%;
-}
-
-#contest-title{
-    font-size: 2rem;
-}
-
-#contest-section{
-    margin-left: 2.5%;
-    font-size: 1rem;
-    width: 25%;
-}
-
     </style>
 </head>
 <body>
@@ -124,20 +92,9 @@ a{
             <a id="problems" href="/problems">Problems</a>
         </nav>
     </section>
-    
-    <section id="contest-section">
-        <p id="contest-title">All Problems </p>
-        <a href="/2022gwcc1j1">2022 G.W. Coding Contest 1 Junior 1</a> <div class="difficulty easy">Easy</div>
-        <br/>
-        <a href="/2022gwcc1j2">2022 G.W. Coding Contest 1 Junior 2</a> <div class="difficulty easy">Easy</div>
-        <br/>
-        <a href="/2022gwcc1j3">2022 G.W. Coding Contest 1 Junior 3</a> <div class="difficulty medium">Medium</div>
-        <br/>
-        <a href="/2022gwcc1s1">2022 G.W. Coding Contest 1 Senior 1</a> <div class="difficulty easy">Easy</div>
-        <br/>
-        <a href="/2022gwcc1s2">2022 G.W. Coding Contest 1 Senior 2</a> <div class="difficulty easy">Easy</div>
-        <br/>
-        <a href="/2022gwcc1s3">2022 G.W. Coding Contest 1 Senior 3</a> <div class="difficulty easy">Easy</div>
+
+    <section id="verdict">
+        <p th:each="line : ${formDataList}" th:text="${line}"></p>
     </section>
 </body>
 </html>
