@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-site-verification" content="EPOdvx1xOH8i54J6PcYJUSeooNA_NhYRWJwrQGIuYdM" />
+    
+    <link rel="icon" type="image/x-icon" href="https://pbs.twimg.com/profile_images/1283581976637845506/tkqLru4e_400x400.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GWCJ</title>
+
+    <style>
+        body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    font-weight: 500;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/*css*/
+#description{
+    height: 40vh;
+    font-weight: 400;
+}
+
+#desc-title{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+#made-by{
+    font-weight: 500;
+}
+
+#contest-section{
+    padding-bottom: 2.5%;
+    padding-top: 2.5%;
+}
+
+#past-contests{
+    padding-bottom: 5%;
+}
+
+#contest-title{
+    font-size: 1.5rem;
+}
+
+.contest{
+    border-radius: 1rem;
+    height: 10rem;
+    width: 20rem;
+    margin-right: 1.5%;
+}
+
+#flex-grid-wrapper{
+    margin-left: 8%;
+    display: flex;
+}
+
+#first-item{
+    display: inline;
+    width: 60%;
+    margin-right: 3.5%;
+}
+
+#problems-display{
+    display: inline;
+    margin-top: 3.25%;
+    padding: 1.5%;
+    box-shadow: 0px 3px 5px 0px rgba(25, 25, 25, 0.25);
+    border-radius: 1rem;
+    width: 25%;
+    height: 50%;
+}
+
+#recent{
+    color: black;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+#problems-section-title{
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.difficulty{
+    font-size: 1rem;
+    background-color: lightgray;
+    border-radius: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.easy{
+    color: rgb(0, 200, 0);
+    width: 2.2rem;
+}
+
+.medium{
+    color: orange;
+    width: 4rem;
+}
+
+.hard{
+    color: red;
+    width: 2.2rem;
+}
+
+
+/* navbar */
+#nav-section{           
+    height: 8.5vh;
+}
+
+#title{
+    display: inline-flex;
+    color: white;
+    font-size: 2rem;
+    padding: 1%;
+}
+
+#problems{
+    display: inline-flex;
+    float: right;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 1.5%;
+}
+
+#problems:hover,
+#submission-instructions:hover,
+#tips:hover,
+#title:hover{
+    color: gray;
+}
+
+#submission-instructions{
+    display: inline-flex;
+    float: right;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 1.5%;
+}
+
+#tips{
+    display: inline-flex;
+    float: right;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 1.5%;
+}
+
+#problems-side,
+#submission-instructions-side,
+#tips-side{
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+#navbar{
+    background-color: black;
+    color: white;
+    width: 100%;
+    position: fixed;
+    box-shadow: 0px 3px 5px 0px rgba(25, 25, 25, 0.5);
+}
+
+#hamburger{
+    display: none;
+}
+
+#side-navbar{
+    width: 25%;
+    display: none;
+}
+
+@media only screen and (max-width: 1100px) {
+   #submission-instructions,
+   #problems,
+   #title,
+   #tips{ display: none !important; }
+
+   #hamburger{
+        display: flex !important;
+        margin-top: 2vh;
+        margin-left: 1.8vh;
+       height: 5vh;
+       width: 5vh;
+   }
+
+   #mobile-section.active div{
+        height: 100vh;
+        background-color: black;
+        width: 40%;
+    }
+
+   #mobile-section.active #side-navbar{
+        padding: 1rem;
+        padding-top: 2.5rem;
+        display: block !important;
+   }
+}
+
+@media only screen and (max-width: 455px) {
+
+   #problems{
+        background-color: black;
+        transform: translate(-8rem, 6.5rem);
+   }
+
+}
+
+@media only screen and (max-width: 600px) {
+   #problems-display{ scale: 0; }
+}
+    </style>
+
+    <script>
+        window.onload = function() {
+    var mobileSection = document.getElementById("mobile-section");
+    mobileSection.addEventListener("click", function() {
+        mobileSection.classList.toggle("active");
+    });
+}
+    </script>
+</head>
+<body>
+    <section id="nav-section">
+        <nav id="navbar">
+            <div id="mobile-section">
+                <img id="hamburger" src="https://cdn.discordapp.com/attachments/792921343845859368/1064662621028093952/1024px-Hamburger_icon_white.png" alt="">
+                <div id="side-navbar">
+                    <a id="submission-instructions-side" href="/submission-instructions">Submission Instructions</a>
+                    <a id="tips-side" href="/tips">Tips</a>
+                    <a id="problems-side" href="/problems">Problems</a>
+                </div>
+            </div>        
+            <a id="title" href="/">G.W Williams Coding Judge</a>
+            <a id="submission-instructions" href="/submission-instructions">Submission Instructions</a>
+            <a id="tips" href="/tips">Tips</a>
+            <a id="problems" href="/problems">Problems</a>
+        </nav>
+    </section>
+
+    <div id="flex-grid-wrapper">
+        <div id="first-item">
+            <section id="contest-section">
+                <p id="contest-title">Upcoming Contests:</p>
+                <a>
+                    <img class="contest" src="https://cdn.discordapp.com/attachments/792921343845859368/1064315090725240922/image.png"/>
+                </a>
+            <section id="past-contests">
+                <p id="contest-title">Past Contests:</p>
+                <a>
+                    <img class="contest" src="https://cdn.discordapp.com/attachments/792921343845859368/1064315912318091364/image.png"/>
+                </a>
+                <a>
+                    <img class="contest" src="https://cdn.discordapp.com/attachments/792921343845859368/1064339486961565808/image.png"/>
+                </a>
+                <a>
+                    <img class="contest" src="https://cdn.discordapp.com/attachments/792921343845859368/1064339486961565808/image.png"/>
+                </a>
+            </section>
+        
+            <section id="description">
+                <p id="desc-title">Online judge for G.W. Williams' coding club</p>
+                <span> The G.W. Williams Coding Judge is an online code judge for programming competitions and competitive programming practice at Dr. G.W. 
+                    Williams Coding Club.</span>
+                <br/>
+                <br/>
+                <a href="/submission-instructions">How to Submit Code </a>
+                <br/>
+                <a href="/problems">Practice Problems </a>
+                <br/>
+                <br/>
+                <span>Website: HTML + CSS + Heroku</span>
+                <br/>
+                <span>Backend/Judge: Java + Js + Spring Boot + Thymeleaf</span>
+                <br/>
+                <br/>
+                <p>Note: This website was not made responsive for mobile.</p>
+                <p id="made-by">Made by Vincent and Pranav</p>
+            </section>
+        </div>
+        <div id="problems-display">
+            <div id="recent">
+                <span id="problems-section-title">Recent Problems</span>
+                <br/>
+                <a href="/basicskillstest1">Basic Skills Training 1</a> <div class="difficulty medium">Medium</div>
+                <br/>
+                <a href="/basicskillstest2">Basic Skills Training 2</a> <div class="difficulty medium">Medium</div>
+                <br/>
+                <a href="/basicskillstest3">Basic Skills Training 3</a> <div class="difficulty hard">Hard</div>
+                <br/>
+                <a href="/basicskillstest4">Basic Skills Training 4</a> <div class="difficulty medium">Medium</div>
+                <br/>
+                <a href="/2022gwcc1j1">2022 G.W. Coding Contest 1 Junior 1</a> <div class="difficulty easy">Easy</div>
+                <br/>
+                <a href="/2022gwcc1j2">2022 G.W. Coding Contest 1 Junior 2</a> <div class="difficulty easy">Easy</div>
+                <br/>
+                <a href="/2022gwcc1j3">2022 G.W. Coding Contest 1 Junior 3</a> <div class="difficulty medium">Medium</div>
+                <br/>
+                <a href="/2022gwcc1s1">2022 G.W. Coding Contest 1 Senior 1</a> <div class="difficulty easy">Easy</div>
+                <br/>
+                <a href="/2022gwcc1s2">2022 G.W. Coding Contest 1 Senior 2</a> <div class="difficulty easy">Easy</div>
+                <br/>
+                <a href="/2022gwcc1s3">2022 G.W. Coding Contest 1 Senior 3</a> <div class="difficulty easy">Easy</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

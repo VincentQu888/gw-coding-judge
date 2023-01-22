@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Skills Training 4</title>
+
+    <link rel="icon" type="image/x-icon" href="https://pbs.twimg.com/profile_images/1283581976637845506/tkqLru4e_400x400.png">
+    <style>
+
+
+
+/*css*/
+#problem-statement{
+    padding-left: 2rem;
+}
+
+#problem-title{
+    font-size: 2rem;
+}
+
+.sample{
+    width: 33.3vw;
+    padding: 1%;
+    border-radius: 0.5rem;
+    background-color: lightgray;
+    margin-bottom: 3.5%;
+    overflow-y: scroll;
+    height: 30vh;
+
+}
+
+#flex-inline-wrapper{
+    display: flex;
+}
+
+#submit{
+    height: 100%;
+    width: 50%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#submit-title{
+    font-size: 2rem;
+}
+
+#textarea{
+    height: 50vh;
+    width: 95%;
+}   
+
+#nav-section{
+    height: 8.5vh;
+}
+
+#title{
+    display: inline-flex;
+    color: white;
+    font-size: 2rem;
+    padding: 1%;
+}
+
+#problems{
+    display: inline-flex;
+    float: right;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 1.5%;
+}
+
+#problems:hover,
+#submission-instructions:hover,
+#tips:hover,
+#title:hover{
+    color: gray;
+}
+
+#submission-instructions{
+    display: inline-flex;
+    float: right;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 1.5%;
+}
+
+#tips{
+    display: inline-flex;
+    float: right;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 1.5%;
+}
+
+#problems-side,
+#submission-instructions-side,
+#tips-side{
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+#navbar{
+    background-color: black;
+    color: white;
+    width: 100%;
+    position: fixed;
+    box-shadow: 0px 3px 5px 0px rgba(25, 25, 25, 0.5);
+}
+
+#hamburger{
+    display: none;
+}
+
+#side-navbar{
+    width: 25%;
+    display: none;
+}
+
+@media only screen and (max-width: 1100px) {
+   #submission-instructions,
+   #problems,
+   #title,
+   #tips{ display: none !important; }
+
+   #hamburger{
+        display: flex !important;
+        margin-top: 2vh;
+        margin-left: 1.8vh;
+       height: 5vh;
+       width: 5vh;
+   }
+
+   #mobile-section.active div{
+        height: 100vh;
+        background-color: black;
+        width: 40%;
+    }
+
+   #mobile-section.active #side-navbar{
+        padding: 1rem;
+        padding-top: 2.5rem;
+        display: block !important;
+   }
+
+   #submit{
+        display: none;
+   }
+}
+
+@media only screen and (max-width: 455px) {
+
+   #problems{
+        background-color: black;
+        transform: translate(-8rem, 6.5rem);
+   }
+
+}
+
+@media only screen and (max-width: 600px) {
+   #problems-display{ scale: 0; }
+}
+
+/*css*/
+#problem-statement{
+    padding-left: 2rem;
+}
+
+#problem-title{
+    font-size: 2rem;
+}
+
+.sample{
+    width: 33.3vw;
+    padding: 1%;
+    border-radius: 0.5rem;
+    background-color: lightgray;
+    margin-bottom: 3.5%;
+    overflow-y: scroll;
+    height: 30vh;
+
+}
+
+#flex-inline-wrapper{
+    display: flex;
+}
+
+#submit{
+    height: 100%;
+    width: 50%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#submit-title{
+    font-size: 2rem;
+}
+
+#textarea{
+    height: 50vh;
+    width: 95%;
+}   
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    font-weight: 500;
+    height: 101vh;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+#vincentqu{
+    height: 45vh;
+    width: 40vw;
+}
+    </style>
+
+<script>
+    window.onload = function() {
+var mobileSection = document.getElementById("mobile-section");
+mobileSection.addEventListener("click", function() {
+    mobileSection.classList.toggle("active");
+});
+}
+</script>
+
+<script>
+    function updateContent() {
+        var selectedOption = document.getElementById("lang").value;
+
+        if (selectedOption == "Java") {
+            document.getElementById("input-form").action = "/basicskillstest4JAVA";
+        } else if (selectedOption == "C++") {
+            document.getElementById("input-form").action = "/basicskillstest4CPP";
+        } else if (selectedOption == "Python") {
+            document.getElementById("input-form").action = "/basicskillstest4PYTHON";
+        }
+    }
+</script>
+</head>
+<body>
+    <section id="nav-section">
+        <nav id="navbar">
+            <div id="mobile-section">
+                <img id="hamburger" src="https://cdn.discordapp.com/attachments/792921343845859368/1064662621028093952/1024px-Hamburger_icon_white.png" alt="">
+                <div id="side-navbar">
+                    <a id="submission-instructions-side" href="/submission-instructions">Submission Instructions</a>
+                    <a id="tips-side" href="/tips">Tips</a>
+                    <a id="problems-side" href="/problems">Problems</a>
+                </div>
+            </div>        
+            <a id="title" href="/">G.W Williams Coding Judge</a>
+            <a id="submission-instructions" href="/submission-instructions">Submission Instructions</a>
+            <a id="tips" href="/tips">Tips</a>
+            <a id="problems" href="/problems">Problems</a>
+        </nav>
+    </section>
+
+<div id="flex-inline-wrapper">
+    <section id="problem-statement">
+        <p id="problem-title">Basic Skills Training 4</p>
+        <p>The G.W. Williams coding club execs have a 2d Christmas tree for sale, with N Christmas lights all around its surface. Each of these N lights are the same space apart and connected by multiple bidirectional wires. </p>
+        <p>The execs know that one of the N lights lies on the bottom of the tree, and one of the N lights lies on the top. However, they do not know the height of the tree. They also know the distance between each light is constant, and the light on the bottom of the tree and the light on the top of the tree have the most wire in between them compared to any other pair of lights in the whole tree. </p>
+        <p>So, the execs decide to approximate the height of the tree using this information. The method they use is to find the number of wire connections between the bottom light and the top light.</p>
+        <p>Given N number of lights on the first line, and M connections of the lights, can you help X approximate the height of the tree?</p>
+        <br/>
+        <div id="sample-io">
+            <p>Sample Input:</p>
+            <div class="sample">
+                <p>5 4</p>
+                <p>1 2</p>
+                <p>2 4</p>
+                <p>5 4</p>
+                <p>2 3</p>
+            </div>
+            <p>Sample Output:</p>
+            <div class="sample">
+                3
+            </div>
+        </div>
+    </section>
+    <section id="submit">
+        <p id="submit-title">Submit Solution</p>
+        <form id="input-form" th:action="@{/basicskillstest4}" method="post">
+            <textarea name="input-textarea" id="vincentqu"></textarea>
+            <select name="lang" id="lang">
+                <option value="Java">Java</option>
+                <option value="C++">C++</option>
+                <option value="Python">Python</option>
+              </select>
+            <button onclick="updateContent()" type="submit">Submit</button>
+            <span style="float: right;">Problem author: Vincent</span>
+          </form>
+  </section>
+</div>
+</body>
+</html>
