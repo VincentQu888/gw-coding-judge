@@ -59,7 +59,8 @@
 
 #problems-side,
 #submission-instructions-side,
-#tips-side{
+#tips-side,
+#title-side{
     display: block;
     text-decoration: none;
     color: white;
@@ -85,18 +86,18 @@
 }
 
 @media only screen and (max-width: 1100px) {
-   #submission-instructions,
-   #problems,
-   #title,
-   #tips{ display: none !important; }
+    #submission-instructions,
+            #problems,
+            #title,
+            #tips{ display: none !important; }
 
-   #hamburger{
-        display: flex !important;
-        margin-top: 2vh;
-        margin-left: 1.8vh;
-       height: 5vh;
-       width: 5vh;
-   }
+            #hamburger{
+                    display: flex !important;
+                    margin: 1vh;
+                    margin-left: 1.25vh;
+                height: 5vh;
+                width: 5vh;
+            }
 
    #mobile-section.active div{
         height: 100vh;
@@ -191,6 +192,7 @@ mobileSection.addEventListener("click", function() {
             <div id="mobile-section">
                 <img id="hamburger" src="https://cdn.discordapp.com/attachments/792921343845859368/1064662621028093952/1024px-Hamburger_icon_white.png" alt="">
                 <div id="side-navbar">
+                    <a id="title-side" href="/">Home</a>
                     <a id="submission-instructions-side" href="/submission-instructions">Submission Instructions</a>
                     <a id="tips-side" href="/tips">Tips</a>
                     <a id="problems-side" href="/problems">Problems</a>
@@ -205,13 +207,13 @@ mobileSection.addEventListener("click", function() {
     
     <section id="contest-section">
         <p id="contest-title">All Problems </p>
-        <a href="/basicskillstest1">Basic Skills Training 1</a> <div class="difficulty medium">Medium</div>
+        <a href="/basicskillstest1">Skills Training 1</a> <div class="difficulty medium">Medium</div>
         <br/>
-        <a href="/basicskillstest2">Basic Skills Training 2</a> <div class="difficulty medium">Medium</div>
+        <a href="/basicskillstest2">Skills Training 2</a> <div class="difficulty medium">Medium</div>
         <br/>
-        <a href="/basicskillstest3">Basic Skills Training 3</a> <div class="difficulty hard">Hard</div>
+        <a href="/basicskillstest3">Skills Training 3</a> <div class="difficulty hard">Hard</div>
         <br/>
-        <a href="/basicskillstest4">Basic Skills Training 4</a> <div class="difficulty medium">Medium</div>
+        <a href="/basicskillstest4">Skills Training 4</a> <div class="difficulty medium">Medium</div>
         <br/>
         <a href="/2022gwcc1j1">2022 G.W. Coding Contest 1 Junior 1</a> <div class="difficulty easy">Easy</div>
         <br/>

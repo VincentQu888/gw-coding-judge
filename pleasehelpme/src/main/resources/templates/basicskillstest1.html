@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Skills Training 1</title>
+    <title>Skills Training 1</title>
 
     <link rel="icon" type="image/x-icon" href="https://pbs.twimg.com/profile_images/1283581976637845506/tkqLru4e_400x400.png">
     <style>
@@ -102,7 +102,8 @@
 
 #problems-side,
 #submission-instructions-side,
-#tips-side{
+#tips-side,
+#title-side{
     display: block;
     text-decoration: none;
     color: white;
@@ -128,18 +129,18 @@
 }
 
 @media only screen and (max-width: 1100px) {
-   #submission-instructions,
-   #problems,
-   #title,
-   #tips{ display: none !important; }
+    #submission-instructions,
+            #problems,
+            #title,
+            #tips{ display: none !important; }
 
-   #hamburger{
-        display: flex !important;
-        margin-top: 2vh;
-        margin-left: 1.8vh;
-       height: 5vh;
-       width: 5vh;
-   }
+            #hamburger{
+                    display: flex !important;
+                    margin: 1vh;
+                    margin-left: 1.25vh;
+                height: 5vh;
+                width: 5vh;
+            }
 
    #mobile-section.active div{
         height: 100vh;
@@ -260,6 +261,7 @@ mobileSection.addEventListener("click", function() {
             <div id="mobile-section">
                 <img id="hamburger" src="https://cdn.discordapp.com/attachments/792921343845859368/1064662621028093952/1024px-Hamburger_icon_white.png" alt="">
                 <div id="side-navbar">
+                    <a id="title-side" href="/">Home</a>
                     <a id="submission-instructions-side" href="/submission-instructions">Submission Instructions</a>
                     <a id="tips-side" href="/tips">Tips</a>
                     <a id="problems-side" href="/problems">Problems</a>
@@ -274,7 +276,7 @@ mobileSection.addEventListener("click", function() {
 
 <div id="flex-inline-wrapper">
     <section id="problem-statement">
-        <p id="problem-title">Basic Skills Training 1</p>
+        <p id="problem-title">Skills Training 1</p>
         <p>Daniel loves squares!</p>
         <p>Everything in Daniel’s life is a square, even the many houses he owns, and range of his wifi connection!</p>
         <p>Given N houses, each with a location X<sub>i</sub>, Y<sub>i</sub> on a zero-indexed X by Y grid, with a wifi square range with a length of L (X<sub>i</sub>, Y<sub>i</sub> in the center, and always odd), and with a strength of S, find the house with Daniel can sit in with the greatest overlapping wifi connection. There will always only be one answer.</p>

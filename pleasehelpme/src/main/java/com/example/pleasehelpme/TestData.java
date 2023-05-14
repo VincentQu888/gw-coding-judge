@@ -123,12 +123,12 @@ public class TestData {
 		casesOut.get(0).add("1 3");
 		casesOut.get(0).add("3 4");
 		casesOut.add(new ArrayList<>());
-		casesOut.get(0).add("-1");
+		casesOut.get(1).add("-1");
 		casesOut.add(new ArrayList<>());
-		casesOut.get(0).add("3 4");
-		casesOut.get(0).add("5 4");
-		casesOut.get(0).add("4 2");
-		casesOut.get(0).add("1 2");
+		casesOut.get(2).add("3 4");
+		casesOut.get(2).add("5 4");
+		casesOut.get(2).add("4 2");
+		casesOut.get(2).add("1 2");
 
         return casesOut;
 	}
@@ -162,8 +162,7 @@ public class TestData {
 		casesOut.add(new ArrayList<>());
 		casesOut.get(0).add("3");
 		casesOut.add(new ArrayList<>());
-		casesOut.get(0).add("5");
-
+		casesOut.get(1).add("4");
 
         return casesOut;
 	}
@@ -387,7 +386,7 @@ public class TestData {
 			str.append(Integer.toString(j) + "\n");
 		}
 		for(int j = 0; j < 96; j++){
-			str.append(Integer.toString(500069) + "\n"); //69 lol
+			str.append(Integer.toString(500069+j) + "\n"); //69 lol
 		}
 		str.append(Integer.toString(1) + "\n");
 		str.append(Integer.toString(999999) + "\n");

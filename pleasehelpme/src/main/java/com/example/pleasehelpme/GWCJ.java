@@ -20,7 +20,7 @@ public class GWCJ {
         
         String line = formDataList.get(0);
         for(int i = 1; i < formDataList.size(); i++) {
-            if(line.toLowerCase().contains("class") && !line.substring(0, 19).equals("public class Main { ".substring(0, 19)) && !past){
+            if(line.toLowerCase().contains("class") && (!line.substring(0, 19).equals("public class Main { ".substring(0, 19)) && !line.substring(0, 18).equals("public class Main{ ".substring(0, 18))) && !past){
                 formDataOutput.add("No \"public class Main {\"");
                 return formDataOutput;
             }
@@ -62,7 +62,7 @@ public class GWCJ {
                 public void run() {
                     process.destroyForcibly();
                 }
-            }, runTime); 
+            }, (runTime*2+1000)); //arbitrary value but 1000 runs most fine and *2 to be safe
 
     
             OutputStream stdin = process.getOutputStream();
@@ -202,7 +202,7 @@ public class GWCJ {
                 public void run() {
                     process.destroyForcibly();
                 }
-            }, runTime); 
+            }, (runTime*2+1000)); 
 
 
             OutputStream stdin = process.getOutputStream();
@@ -326,7 +326,7 @@ public class GWCJ {
                 public void run() {
                     process.destroyForcibly();
                 }
-            }, runTime); 
+            }, (runTime*2+1000)); 
             int counter = 0;
     
             OutputStream stdin = process.getOutputStream();

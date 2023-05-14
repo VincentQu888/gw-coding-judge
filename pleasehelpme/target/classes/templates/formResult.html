@@ -79,7 +79,8 @@ a{
 
 #problems-side,
 #submission-instructions-side,
-#tips-side{
+#tips-side,
+#title-side{
     display: block;
     text-decoration: none;
     color: white;
@@ -105,18 +106,18 @@ a{
 }
 
 @media only screen and (max-width: 1100px) {
-   #submission-instructions,
-   #problems,
-   #title,
-   #tips{ display: none !important; }
+    #submission-instructions,
+            #problems,
+            #title,
+            #tips{ display: none !important; }
 
-   #hamburger{
-        display: flex !important;
-        margin-top: 2vh;
-        margin-left: 1.8vh;
-       height: 5vh;
-       width: 5vh;
-   }
+            #hamburger{
+                    display: flex !important;
+                    margin: 1vh;
+                    margin-left: 1.25vh;
+                height: 5vh;
+                width: 5vh;
+            }
 
    #mobile-section.active div{
         height: 100vh;
@@ -160,6 +161,7 @@ a{
             <div id="mobile-section">
                 <img id="hamburger" src="https://cdn.discordapp.com/attachments/792921343845859368/1064662621028093952/1024px-Hamburger_icon_white.png" alt="">
                 <div id="side-navbar">
+                    <a id="title-side" href="/">Home</a>
                     <a id="submission-instructions-side" href="/submission-instructions">Submission Instructions</a>
                     <a id="tips-side" href="/tips">Tips</a>
                     <a id="problems-side" href="/problems">Problems</a>

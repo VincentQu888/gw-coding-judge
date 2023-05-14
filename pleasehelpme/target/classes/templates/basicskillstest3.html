@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Skills Training 3</title>
+    <title>Skills Training 3</title>
 
     <link rel="icon" type="image/x-icon" href="https://pbs.twimg.com/profile_images/1283581976637845506/tkqLru4e_400x400.png">
     <style>
@@ -102,7 +102,8 @@
 
 #problems-side,
 #submission-instructions-side,
-#tips-side{
+#tips-side,
+#title-side{
     display: block;
     text-decoration: none;
     color: white;
@@ -128,18 +129,18 @@
 }
 
 @media only screen and (max-width: 1100px) {
-   #submission-instructions,
-   #problems,
-   #title,
-   #tips{ display: none !important; }
+    #submission-instructions,
+            #problems,
+            #title,
+            #tips{ display: none !important; }
 
-   #hamburger{
-        display: flex !important;
-        margin-top: 2vh;
-        margin-left: 1.8vh;
-       height: 5vh;
-       width: 5vh;
-   }
+            #hamburger{
+                    display: flex !important;
+                    margin: 1vh;
+                    margin-left: 1.25vh;
+                height: 5vh;
+                width: 5vh;
+            }
 
    #mobile-section.active div{
         height: 100vh;
@@ -260,6 +261,7 @@ mobileSection.addEventListener("click", function() {
             <div id="mobile-section">
                 <img id="hamburger" src="https://cdn.discordapp.com/attachments/792921343845859368/1064662621028093952/1024px-Hamburger_icon_white.png" alt="">
                 <div id="side-navbar">
+                    <a id="title-side" href="/">Home</a>
                     <a id="submission-instructions-side" href="/submission-instructions">Submission Instructions</a>
                     <a id="tips-side" href="/tips">Tips</a>
                     <a id="problems-side" href="/problems">Problems</a>
@@ -274,14 +276,14 @@ mobileSection.addEventListener("click", function() {
 
 <div id="flex-inline-wrapper">
     <section id="problem-statement">
-        <p id="problem-title">Basic Skills Training 3</p>
+        <p id="problem-title">Skills Training 3</p>
         <p>For Vincent's birthday his parents bought him a city.</p>
-        <p>The city has N houses numbered 1 to N, with M roads, each having a length of K. However, Vincent hates inefficiency, so he decides to remove all extra roads but still keeping the city entirely connected (he does not realize this makes the travel slower). </p>
+        <p>The city has N houses numbered 1 to N, with M roads, each having a length of K<sub>i</sub>. However Vincent hates inefficiency, so he decides to remove all extra roads while keeping the city entirely connected (he does not realize this makes the travel slower). </p>
         <p>Determine the configuration of roads given N, M, and each of the M roads. </p>
         <br/>
         <p>Input Specification:</p>
         <p>The first line will contain N and M</p>
-        <p>The next M lines will contain the starting building number of the road, the ending building number, and the length of the road.</p>
+        <p>The next M lines will contain the starting building number of the road, the ending building number, and K<sub>i</sub>.</p>
         <br/>
         <p>Output Specification:</p>
         <p>Output each of the roads in order from shortest to longest in the final city, and -1 if it is not possible, see sample output below.</p>
