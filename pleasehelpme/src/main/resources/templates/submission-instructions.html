@@ -107,6 +107,16 @@ a{
     display: none;
 }
 
+.wa{
+    color: red;
+}
+.ac{
+    color: green;
+}
+.tle{
+    color: gray;
+}
+
 @media only screen and (max-width: 1100px) {
     #submission-instructions,
             #problems,
@@ -179,6 +189,7 @@ a{
         <div id="first-item">
         <section id="description">
             <p>NOTE FOR JAVA PROGRAMMERS: Make sure your code's public class is named Main, e.g. "public class Main {" or  "public class Main{", spaces matter.</p>
+            <p>NOTE FOR C++ PROGRAMMERS: Make sure you select the C++ option from the dropdown while submitting.</p>
             <br/>
             <p id="desc-title">Submitting a solution to the grader</p>
             <ol>
@@ -191,6 +202,14 @@ a{
             </ol>
         <p>If you have any problems submitting code or have found a bug, please send us an <a href="mailto:340895069@gapps.yrdsb.ca;341089043@gapps.yrdsb.ca">email</a> or contact us through Discord
         <p>Good luck and happy programming!</p>
+        <br/>
+        <br/>
+        <strong>Verdicts:</strong>
+        <p><span class="ac">AC</span>: Accepted Answer (Great job!)</p>
+        <p><span class="wa">WA</span>: Wrong Answer</p>
+        <p><span class="tle">TLE</span>: Time Limit Exception (Code too slow)</p>
+        <p>As of right now, there is no support for Memory limit (MLE) or other common verdicts on online judges. However there are still memory limits for the judge.</p>
+        <br/>
         </section>
   
 </body>

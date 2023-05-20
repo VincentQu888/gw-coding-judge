@@ -874,6 +874,16 @@ blockquote {
 .links-to-tips-tip-anchors{
 	display: block;
 }
+
+.wa{
+    color: red;
+}
+.ac{
+    color: green;
+}
+.tle{
+    color: gray;
+}
     </style>
 
 
@@ -932,10 +942,19 @@ mobileSection.addEventListener("click", function() {
 		<a href="https://dmoj.ca/tips/#python-main" class="links-to-tips-tip-anchors">https://dmoj.ca/tips/#python-main</a>
 	</section>
 
-	<div id="a"></div>
+	<div id="a">
+	</div>
 
     <div id="flex-grid-wrapper">
         <div id="first-item">
+		<strong>Universal tips:</strong>
+		<ul>
+			<li>A <span class="tle">TLE</span> may not always mean that your program is too slow; if your program keeps waiting on input that does not exist, it will also <span class="tle">TLE</span>.</li>
+			<li>The judge will grade any mismatching whitespace or prompting as <span class="wa">WA</span>, because the output should match exactly.</li>
+		</ul>
+		<br/>
+		<br/>
+		<br/>
         <section id="description">
             <p id="desc-title">C++ Tips</p>
 	<h1 class="page-title">Tips for C++</h1></header><div class="page-body"><h1 id="e95e02c0-4cd9-40e0-85fd-734516c6e100" class="">Resources</h1><ul id="46fe03ee-158b-4914-8b1b-2f00f080527c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://cses.fi/book/index.php">https://cses.fi/book/index.php</a> → By Antti Laaksonen</li></ul><ul id="bc137c3b-5d7e-4a63-b0aa-1947b28c55d0" class="bulleted-list"><li style="list-style-type:disc"><a href="https://cdn.discordapp.com/attachments/773688766543560754/812510600164933649/Steven_Halim_-_Competitive_Programming_3__The_New_Lower_Bound_of_Programming_Contests_2013.pdf">https://cdn.discordapp.com/attachments/773688766543560754/812510600164933649/Steven_Halim_-_Competitive_Programming_3__The_New_Lower_Bound_of_Programming_Contests_2013.pdf</a> → Good book</li></ul><ul id="7c7f3233-0d59-46a5-a75a-3802d63d9a5b" class="bulleted-list"><li style="list-style-type:disc">C++ cheat sheet: </li></ul><figure id="eda629d6-2f44-4e7f-826b-8f79e92a8dc6"><div class="source">https://github.com/mortennobel/cpp-cheatsheet</div></figure><ul id="75db0f82-4ed5-4b88-87bb-4ba69bf4774f" class="bulleted-list" style="padding-bottom: 4rem;"><li style="list-style-type:disc"><a href="https://skerritt.blog/sets/">Set Theory for Programmers | Skerritt.blog</a> → Good summary of set theory</li></ul><h1 id="944b50e3-df96-410a-a2c6-5e62fe4b08a8" class="">Tips - C++</h1><ol type="1" id="79275810-5a4c-49da-86a9-77ef5938c159" class="numbered-list" start="1"><li>FASTER input and output </li></ol><pre id="c5fbab42-6144-4ea8-9a78-afbacb93acc9" class="code"><code>ios::sync_with_stdio(0);

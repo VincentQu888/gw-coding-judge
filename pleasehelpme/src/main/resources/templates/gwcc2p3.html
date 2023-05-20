@@ -280,12 +280,15 @@ mobileSection.addEventListener("click", function() {
         <p id="problem-title">G.W. Coding Contest 2 P3: Speeding Students</p>
         <p>Recently, there has been an increase in speeding near G.W Williams. The students and 
             staff both find this very annoying, so the police has decided to implement a new speeding 
-            policy. They will measure the speed of a car every second, for N seconds, and will look 
-            at Q queries. Each query contains second A and second B; if the average speed of the car 
-            is greater than a given M km/h, then their fine will be how much their average speed went 
-            over the speed limit * 10. If multiple queries go over the speed limit the answer will use 
-            the maximum query value. Note: average speed is calculated as all instantaneous speeds 
-            over the number of instantaneous speeds.</p>
+            policy.</p> 
+            
+            <p>For N seconds, the police will measure the speed of the car and will look 
+            at Q queries. Each query two numbers A and B; if the average speed of the car from second A to B is greater than a given number M, then they are considered speeding.
+            
+            <p>Their fine will be calculated as (average speed-M)*10. If multiple queries go over the speed limit the answer will use 
+            the highest fine.</p>
+            <p>Note: average speed is calculated as all instantaneous speeds 
+                over the number of instantaneous speeds.</p>
         <br/>
         <strong>Input Specification:</strong>
         <p>The first line of input will include N, Q, and M. A single car's speed is recorded for N seconds, where N is a positive integer {N > 1}. Q is a positive integer representing the number of queries. M is a positive integer representing the speed limit. </p>

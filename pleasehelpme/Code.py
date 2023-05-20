@@ -1,1 +1,1 @@
-print("Vincent is a fat stupid monkey autustuc bad at ow")
+#include<iostream>using namespace std;int main (){cout << "testing" << endl;return 0;}

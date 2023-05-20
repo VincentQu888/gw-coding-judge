@@ -233,7 +233,7 @@ a{
 }
 
 .diagram{
-    height: 45vh;
+    height: 30vh;
     width: auto;
 }
     </style>
@@ -293,13 +293,24 @@ mobileSection.addEventListener("click", function() {
                 a hall in any capacity will incur it's cost. Stairs in the corners of halls are connected to both halls, meaning you do not need to incur the cost of the other hall to use the stairs.</p>
         <br/>
         <strong>Input Specification:</strong>
-        <p>The first and line will contains two integers, A, the starting hall, and B, the destination hall. </p>
+        <p>The first line will contains two integers, A, the starting hall, and B, the destination hall. </p>
         <p>The next 12 lines will contain K, the average number of people in each hall, for each respective hall {1 &lt;= K &lt;= 10^9}. (i.e. line 2 is for hall 1, line 3 is for hall 2, etc.)</p>
         <br/>
         <strong>Output Specification:</strong>
         <p>Output the pathway Sam can take to minimize the traffic he must go through, each hallway should be seperated by a new line.</p>
         <br/>
         <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/><br/>
+        <p>Floor 1:</p>
+        <img src="images\floor1.png" class="diagram"/>
+
+        <br/>
+        <p>Floor 2:</p>
+        <img src="images\floor2.png" class="diagram"/>
+
+        <br/>
+        <p>Note: The connections to stairs work in a mannner such that if any part of the hall is touching the stair, then that hall is connected to that stair. For example, hall 1, 3 and 9 are all the connections to stair 1.</p>
+        <br/>
+        <br/>
         <div id="sample-io">
             <p>Sample Input 1:</p>
             <div class="sample">
@@ -334,17 +345,6 @@ mobileSection.addEventListener("click", function() {
             </div>
             <br/>
         </div>
-
-        <br/> <br/>
-        <p>Floor 1:</p>
-        <img src="images\floor1.png" class="diagram"/>
-
-        <br/>
-        <p>Floor 2:</p>
-        <img src="images\floor2.png" class="diagram"/>
-
-        <br/>
-        <p>Note: The connections to stairs work in a mannner such that if any part of the hall is touching the stair, then that hall is connected to that stair. For example, hall 1, 3 and 9 are all the connections to stair 1.</p>
     </section>
     <section id="submit">
         <p id="submit-title">Submit Solution</p>
