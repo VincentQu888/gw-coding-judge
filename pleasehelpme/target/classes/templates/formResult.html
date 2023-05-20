@@ -144,6 +144,16 @@ a{
 @media only screen and (max-width: 600px) {
    #problems-display{ scale: 0; }
 }
+
+.wa{
+    color: red;
+}
+.ac{
+    color: green;
+}
+.tle{
+    color: gray;
+}
     </style>
 
     <script>
@@ -175,7 +185,7 @@ a{
     </section>
 
     <section id="verdict">
-        <p th:each="line : ${formDataList}" th:text="${line}"></p>
+        <p th:each="line : ${formDataList}" th:text="${line}" th:classappend="${line.contains('AC') ? 'ac' : (line.contains('WA') ? 'wa' : (line.contains('TLE') ? 'tle' : ''))}"></p>
     </section>
 </body>
 </html>

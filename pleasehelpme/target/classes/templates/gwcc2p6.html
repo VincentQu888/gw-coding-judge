@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gwcc2p6</title>
+
+    <link rel="icon" type="image/x-icon" href="https://pbs.twimg.com/profile_images/1283581976637845506/tkqLru4e_400x400.png">
+    <style>
+
+
+
+/*css*/
+#problem-statement{
+    padding-left: 2rem;
+}
+
+#problem-title{
+    font-size: 2rem;
+}
+
+.sample{
+    width: 33.3vw;
+    padding: 1%;
+    border-radius: 0.5rem;
+    background-color: lightgray;
+    margin-bottom: 3.5%;
+    overflow-y: scroll;
+    height: 30vh;
+
+}
+
+#flex-inline-wrapper{
+    display: flex;
+}
+
+#submit{
+    height: 100%;
+    width: 50%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#submit-title{
+    font-size: 2rem;
+}
+
+#textarea{
+    height: 50vh;
+    width: 95%;
+}   
+
+#nav-section{
+    height: 8.5vh;
+}
+
+#title{
+    display: inline-flex;
+    color: white;
+    font-size: 2rem;
+    padding: 1%;
+}
+
+#problems{
+    display: inline-flex;
+    float: right;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 1.5%;
+}
+
+#problems:hover,
+#submission-instructions:hover,
+#tips:hover,
+#title:hover{
+    color: gray;
+}
+
+#submission-instructions{
+    display: inline-flex;
+    float: right;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 1.5%;
+}
+
+#tips{
+    display: inline-flex;
+    float: right;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 1.5%;
+}
+
+#problems-side,
+#submission-instructions-side,
+#tips-side,
+#title-side{
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+#navbar{
+    background-color: black;
+    color: white;
+    width: 100%;
+    position: fixed;
+    box-shadow: 0px 3px 5px 0px rgba(25, 25, 25, 0.5);
+}
+
+#hamburger{
+    display: none;
+}
+
+#side-navbar{
+    width: 25%;
+    display: none;
+}
+
+@media only screen and (max-width: 1100px) {
+    #submission-instructions,
+   #problems,
+   #title,
+   #tips{ display: none !important; }
+
+   #hamburger{
+        display: flex !important;
+        margin: 1vh;
+        margin-left: 1.25vh;
+       height: 5vh;
+       width: 5vh;
+   }
+
+
+   #mobile-section.active div{
+        height: 100vh;
+        background-color: black;
+        width: 40%;
+    }
+
+   #mobile-section.active #side-navbar{
+        padding: 1rem;
+        padding-top: 2.5rem;
+        display: block !important;
+   }
+
+   #submit{
+        display: none;
+   }
+}
+
+@media only screen and (max-width: 455px) {
+
+   #problems{
+        background-color: black;
+        transform: translate(-8rem, 6.5rem);
+   }
+
+}
+
+@media only screen and (max-width: 600px) {
+   #problems-display{ scale: 0; }
+}
+
+/*css*/
+#problem-statement{
+    padding-left: 2rem;
+}
+
+#problem-title{
+    font-size: 2rem;
+}
+
+.sample{
+    width: 33.3vw;
+    padding: 1%;
+    border-radius: 0.5rem;
+    background-color: lightgray;
+    margin-bottom: 3.5%;
+    overflow-y: scroll;
+    height: 30vh;
+
+}
+
+#flex-inline-wrapper{
+    display: flex;
+}
+
+#submit{
+    height: 100%;
+    width: 50%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#submit-title{
+    font-size: 2rem;
+}
+
+#textarea{
+    height: 50vh;
+    width: 95%;
+}   
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    font-weight: 500;
+    height: 101vh;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+#vincentqu{
+    height: 45vh;
+    width: 40vw;
+}
+
+.diagram{
+    height: 45vh;
+    width: auto;
+}
+    </style>
+
+<script>
+    window.onload = function() {
+var mobileSection = document.getElementById("mobile-section");
+mobileSection.addEventListener("click", function() {
+    mobileSection.classList.toggle("active");
+});
+}
+</script>
+
+<script>
+    function updateContent() {
+        var selectedOption = document.getElementById("lang").value;
+
+        if (selectedOption == "Java") {
+            document.getElementById("input-form").action = "/gwcc2p6JAVA";
+        } else if (selectedOption == "C++") {
+            document.getElementById("compiled-form").action = "/gwcc2p6CPP";
+        } else if (selectedOption == "Python") {
+            document.getElementById("input-form").action = "/gwcc2p6PYTHON";
+        }
+    }
+</script>
+</head>
+<body>
+    <section id="nav-section">
+        <nav id="navbar">
+            <div id="mobile-section">
+                <img id="hamburger" src="https://cdn.discordapp.com/attachments/792921343845859368/1064662621028093952/1024px-Hamburger_icon_white.png" alt="">
+                <div id="side-navbar">
+                    <a id="title-side" href="/">Home</a>
+                    <a id="submission-instructions-side" href="/submission-instructions">Submission Instructions</a>
+                    <a id="tips-side" href="/tips">Tips</a>
+                    <a id="problems-side" href="/problems">Problems</a>
+                </div>
+            </div>        
+            <a id="title" href="/">G.W Williams Coding Judge</a>
+            <a id="submission-instructions" href="/submission-instructions">Submission Instructions</a>
+            <a id="tips" href="/tips">Tips</a>
+            <a id="problems" href="/problems">Problems</a>
+        </nav>
+    </section>
+
+<div id="flex-inline-wrapper">
+    <section id="problem-statement">
+        <p id="problem-title">G.W. Coding Contest 2 P6: Hall Traffic</p>
+        <p>Samuel is getting tired of the hall traffic at Dr. G.W. Williams S.S when moving classes, so he 
+            decides to measure the average number of people in each hall after every period, on both floors. 
+            Each hall is labelled a number counting from 1, and some halls are connected to the other floors by 
+            stairs which go directly upwards (Stairs are considered as 0 average people). Starting from his class 
+            at hall A, what is the least crowded pathing Samuel can use get to his class in hall B? 
+            </p>
+            <p>The hall and stair placements are formatted in the same manner as the diagram shown below, to pass through
+                a hall in any capacity will incur it's cost. Stairs in the corners of halls are connected to both halls, meaning you do not need to incur the cost of the other hall to use the stairs.</p>
+        <br/>
+        <strong>Input Specification:</strong>
+        <p>The first and line will contains two integers, A, the starting hall, and B, the destination hall. </p>
+        <p>The next 12 lines will contain K, the average number of people in each hall, for each respective hall {1 &lt;= K &lt;= 10^9}. (i.e. line 2 is for hall 1, line 3 is for hall 2, etc.)</p>
+        <br/>
+        <strong>Output Specification:</strong>
+        <p>Output the pathway Sam can take to minimize the traffic he must go through, each hallway should be seperated by a new line.</p>
+        <br/>
+        <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/><br/>
+        <div id="sample-io">
+            <p>Sample Input 1:</p>
+            <div class="sample">
+                <span>2 12</span><br/>
+                <span>14</span><br/>
+                <span>2</span><br/>
+                <span>3</span><br/>
+                <span>15</span><br/>
+                <span>7</span><br/>
+                <span>8</span><br/>
+                <span>6</span><br/>
+                <span>11</span><br/>
+                <span>13</span><br/>
+                <span>3</span><br/>
+                <span>4</span><br/>
+                <span>9</span><br/>
+            </div>
+            <p>Sample Output 1:</p>
+            <div class="sample">
+                <span>2</span><br/>
+                <span>3</span><br/>
+                <span>10</span><br/>
+                <span>11</span><br/>
+                <span>12</span><br/>
+            </div>
+            <span>Explanation for Sample Input 1:</span><br/>
+            <div>
+                <span>We start at hall 2, meaning it must be included. The same applies to hall 12.</span><br/>
+                <span>Next, we must move to hall 3, as it is the only connected hall.</span><br/>
+                <span>Then, we can choose between either going to hall 1, hall 4, or taking the stairs. If we take hall 1 or 4 the cost incurred will outweigh if we go up the stairs and travel to our destination in every case.</span><br/>
+                <span>Finally, we are at hall 10, and can either take the path 10 -> 9 -> 12 or 10 -> 11 -> 12. Because the cost to take hall 11 is less than the cost to take hall 9, we then take hall 11.</span><br/>
+            </div>
+            <br/>
+        </div>
+
+        <br/> <br/>
+        <p>Floor 1:</p>
+        <img src="images\floor1.png" class="diagram"/>
+
+        <br/>
+        <p>Floor 2:</p>
+        <img src="images\floor2.png" class="diagram"/>
+
+        <br/>
+        <p>Note: The connections to stairs work in a mannner such that if any part of the hall is touching the stair, then that hall is connected to that stair. For example, hall 1, 3 and 9 are all the connections to stair 1.</p>
+    </section>
+    <section id="submit">
+        <p id="submit-title">Submit Solution</p>
+        <form id="input-form" th:action="@{/gwcc2p6}" method="post">
+            <textarea name="input-textarea" id="vincentqu"></textarea>
+            <select name="lang" id="lang">
+                <option value="Java">Java</option>
+                <option value="C++">C++</option>
+                <option value="Python">Python</option>
+              </select>
+            <button onclick="updateContent()" type="submit">Submit</button>
+            <span style="float: right;">Problem author: Vincent</span>
+        </form>
+
+        <br/>
+        <br/>
+        <p>For C++ users, submit the compiled file</p>
+        <form id="compiled-form" th:action="@{/gwcc2p6}" method="post" enctype="multipart/form-data">
+            <input type="file" id="myFile" name="filename">    
+            <button onclick="updateContent()" type="submit">Submit</button>
+        </form>
+  </section>
+</div>
+</body>
+</html>

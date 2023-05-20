@@ -247,7 +247,7 @@
             if (selectedOption == "Java") {
                 document.getElementById("input-form").action = "/2022gwcc1s3JAVA";
             } else if (selectedOption == "C++") {
-                document.getElementById("input-form").action = "/2022gwcc1s3CPP";
+                document.getElementById("compiled-form").action = "/2022gwcc1j1CPP";
             } else if (selectedOption == "Python") {
                 document.getElementById("input-form").action = "/2022gwcc1s3PYTHON";
             }
@@ -280,17 +280,18 @@
             <p>However, to ensure things are secret, you both decide to change the language every day.</p>
             <p>Given D days and N number of changes (number of changes does not change) each day on the same line, a list of the changes, and a message, translate each message to the secret language.            </p>
             <br/>
+            <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/><br/>
             <div id="sample-io">
                 <p>Sample Input:</p>
                 <div class="sample">
-                    <p>1 6</p>
-                    <p>a b</p>
-                    <p>b c</p>
-                    <p>o n</p>
-                    <p>, 4</p>
-                    <p>e f</p>
-                    <p>i $</p>
-                    <p>hi, you are cool!</p>
+                    <span>1 6</span><br/>
+                    <span>a b</span><br/>
+                    <span>b c</span><br/>
+                    <span>o n</span><br/>
+                    <span>, 4</span><br/>
+                    <span>e f</span><br/>
+                    <span>i $</span><br/>
+                    <span>hi, you are cool!</span><br/>
                 </div>
                 <br/>
                 <p>Sample Output:</p>
@@ -310,6 +311,14 @@
                   </select>
                 <button onclick="updateContent()" type="submit">Submit</button>
                 <span style="float: right;">Problem author: Vincent</span>
+            </form>
+
+            <br/>
+            <br/>
+            <p>For C++ users, submit the compiled file</p>
+            <form id="compiled-form" th:action="@{/2022gwcc1j1}" method="post" enctype="multipart/form-data">
+                <input type="file" id="myFile" name="filename">    
+                <button onclick="updateContent()" type="submit">Submit</button>
             </form>
       </section>
     </div>

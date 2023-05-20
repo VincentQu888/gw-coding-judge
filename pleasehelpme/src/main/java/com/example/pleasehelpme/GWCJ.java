@@ -2,6 +2,8 @@ package com.example.pleasehelpme;
 
 import java.util.*;
 
+import javax.servlet.http.Part;
+
 import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 
 import java.io.*;
@@ -155,48 +157,34 @@ public class GWCJ {
 
 
     // cpp judge 
-    public static ArrayList<String> cppJudge(String formData, String[] cases, ArrayList<ArrayList<String>> casesOut, ArrayList<ArrayList<String>> output, int runTime)throws IOException, InterruptedException{
+    public static ArrayList<String> cppJudge(Part formData, String[] cases, ArrayList<ArrayList<String>> casesOut, ArrayList<ArrayList<String>> output, int runTime)throws IOException, InterruptedException{
         ArrayList<String> formDataList = new ArrayList<>();
         ArrayList<String> formDataOutput = new ArrayList<>();
-        String[] lines = formData.split("\n");
-        formDataList.addAll(Arrays.asList(lines));
-    
-        
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Code.cpp"));
-
-        String line = formDataList.get(0);
-        for(int i = 1; i < formDataList.size(); i++) {
-            writer.write(line);
-            line = formDataList.get(i);
-        }
-        writer.write(line);
-        writer.close();
         
         boolean AC = true;
 
-        Process compile = Runtime.getRuntime().exec("g++ Code.cpp");
-        compile.waitFor();
-        int exitValue = compile.exitValue();
-        if (exitValue != 0) {
-            formDataOutput.add("Compilation Error");
-
-            InputStream stderr = compile.getErrorStream();
-            InputStreamReader stderrReader = new InputStreamReader(stderr);
-            BufferedReader stderrBuffered = new BufferedReader(stderrReader);
-            while ((line = stderrBuffered.readLine()) != null) {
-                formDataOutput.add(line);
-            }
-
-            return formDataOutput;
-        } 
-
+        String filePath = "a.out"; //compilation
+        InputStream inputStream = formData.getInputStream();
+        OutputStream outputStream = new FileOutputStream(filePath, false); // Use false for overwrite mode
+        byte[] buffer = new byte[8192];
+        int bytesRead;
+        while ((bytesRead = inputStream.read(buffer)) != -1) {
+            outputStream.write(buffer, 0, bytesRead);
+        }
+        inputStream.close();
+        outputStream.close();
+        
+        File file = new File("a.out");
+        if(file.exists()) System.out.println("YAW");
+        else System.out.println("MAW");
 
         for(int i = 0; i < cases.length; i++) {
             int caseNum = i+1;
             formDataOutput.add("CASE " + caseNum + ":");
             int counter = 0;
-    
-            Process process = Runtime.getRuntime().exec("./a.exe");
+
+
+            Process process = Runtime.getRuntime().exec("a.out");
             Timer timer = new Timer();
             timer.schedule(new TimerTask() {
                 public void run() {
@@ -221,6 +209,7 @@ public class GWCJ {
             InputStreamReader stdoutReader = new InputStreamReader(stdout);
             BufferedReader stdoutBuffered = new BufferedReader(stdoutReader);
             int lineNum = 0;
+            String line;
             while ((line = stdoutBuffered.readLine()) != null) {
                 output.get(i).add(line);
                 try {

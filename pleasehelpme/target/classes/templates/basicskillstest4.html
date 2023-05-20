@@ -248,7 +248,7 @@ mobileSection.addEventListener("click", function() {
         if (selectedOption == "Java") {
             document.getElementById("input-form").action = "/basicskillstest4JAVA";
         } else if (selectedOption == "C++") {
-            document.getElementById("input-form").action = "/basicskillstest4CPP";
+            document.getElementById("compiled-form").action = "/2022gwcc1j1CPP";
         } else if (selectedOption == "Python") {
             document.getElementById("input-form").action = "/basicskillstest4PYTHON";
         }
@@ -282,14 +282,15 @@ mobileSection.addEventListener("click", function() {
         <p>So, the execs decide to approximate the height of the tree using this information. The method they use is to find the number of wire connections between the bottom light and the top light.</p>
         <p>Given N number of lights on the first line, and M connections of the lights, can you help the execs approximate the height of the tree?</p>
         <br/>
+        <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/><br/>
         <div id="sample-io">
             <p>Sample Input:</p>
             <div class="sample">
-                <p>5 4</p>
-                <p>1 2</p>
-                <p>2 4</p>
-                <p>5 4</p>
-                <p>2 3</p>
+                <span>5 4</span><br/>
+                <span>1 2</span><br/>
+                <span>2 4</span><br/>
+                <span>5 4</span><br/>
+                <span>2 3</span><br/>                                
             </div>
             <p>Sample Output:</p>
             <div class="sample">
@@ -308,6 +309,14 @@ mobileSection.addEventListener("click", function() {
               </select>
             <button onclick="updateContent()" type="submit">Submit</button>
             <span style="float: right;">Problem author: Vincent</span>
+          </form>
+
+          <br/>
+          <br/>
+          <p>For C++ users, submit the compiled file</p>
+          <form id="compiled-form" th:action="@{/2022gwcc1j1}" method="post" enctype="multipart/form-data">
+              <input type="file" id="myFile" name="filename">    
+              <button onclick="updateContent()" type="submit">Submit</button>
           </form>
   </section>
 </div>

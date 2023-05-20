@@ -249,7 +249,7 @@
             if (selectedOption == "Java") {
                 document.getElementById("input-form").action = "/2022gwcc1j2JAVA";
             } else if (selectedOption == "C++") {
-                document.getElementById("input-form").action = "/2022gwcc1j2CPP";
+                document.getElementById("compiled-form").action = "/2022gwcc1j1CPP";
             } else if (selectedOption == "Python") {
                 document.getElementById("input-form").action = "/2022gwcc1j2PYTHON";
             }
@@ -285,7 +285,7 @@
             <p>If you place an Ace, you automatically win the game. There can only be one ace played in a game.</p>
             <p>You win the game if you acquire the most points. Determine who will win the game.</p>
             <br/>
-            <p>Input Specification:</p>
+            <strong>Input Specification:</strong>
             <ul>
                 <li>3 names</li>
                 <li>Number of turns being played</li>
@@ -298,29 +298,30 @@
                 </ul>
             </ul>
             <br/>
+            <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/><br/>
             <div id="sample-io">
                 <p>Sample Input:</p>
                 <div class="sample">
-                    <p>Pumpkin Apple Banana</p>
-                    <p>5</p>
-                    <p>Pumpkin</p>
-                    <p>c</p>
-                    <p>c</p>
-                    <p>c</p>
-                    <p>c</p>
-                    <p>c</p>
-                    <p>Apple</p>
-                    <p>h</p>
-                    <p>h</p>
-                    <p>c</p>
-                    <p>d</p>
-                    <p>ace</p>
-                    <p>Banana</p>
-                    <p>c</p>
-                    <p>d</p>
-                    <p>d</p>
-                    <p>d</p>
-                    <p>d</p>
+                    <span>Pumpkin Apple Banana</span><br/>
+                    <span>5</span><br/>
+                    <span>Pumpkin</span><br/>
+                    <span>c</span><br/>
+                    <span>c</span><br/>
+                    <span>c</span><br/>
+                    <span>c</span><br/>
+                    <span>c</span><br/>
+                    <span>Apple</span><br/>
+                    <span>h</span><br/>
+                    <span>h</span><br/>
+                    <span>c</span><br/>
+                    <span>d</span><br/>
+                    <span>ace</span><br/>
+                    <span>Banana</span><br/>
+                    <span>c</span><br/>
+                    <span>d</span><br/>
+                    <span>d</span><br/>
+                    <span>d</span><br/>
+                    <span>d</span><br/>
                 </div>
                 <br/>
                 <p>Sample Output:</p>
@@ -340,6 +341,14 @@
                   </select>
                 <button onclick="updateContent()" type="submit">Submit</button>
                 <span style="float: right;">Problem author: Pranav</span>
+            </form>
+            
+            <br/>
+            <br/>
+            <p>For C++ users, submit the compiled file</p>
+            <form id="compiled-form" th:action="@{/2022gwcc1j1}" method="post" enctype="multipart/form-data">
+                <input type="file" id="myFile" name="filename">    
+                <button onclick="updateContent()" type="submit">Submit</button>
             </form>
       </section>
     </div>

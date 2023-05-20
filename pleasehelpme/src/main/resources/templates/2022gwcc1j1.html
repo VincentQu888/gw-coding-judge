@@ -249,7 +249,7 @@ mobileSection.addEventListener("click", function() {
         if (selectedOption == "Java") {
             document.getElementById("input-form").action = "/2022gwcc1j1JAVA";
         } else if (selectedOption == "C++") {
-            document.getElementById("input-form").action = "/2022gwcc1j1CPP";
+            document.getElementById("compiled-form").action = "/2022gwcc1j1CPP";
         } else if (selectedOption == "Python") {
             document.getElementById("input-form").action = "/2022gwcc1j1PYTHON";
         }
@@ -286,7 +286,8 @@ mobileSection.addEventListener("click", function() {
             <li>1 letter words remain the same</li>
         </ul>
         <br/>
-
+        <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/>
+        <br/>
         <div id="sample-io">
             <p>Sample Input:</p>
             <div class="sample">
@@ -309,7 +310,15 @@ mobileSection.addEventListener("click", function() {
               </select>
             <button onclick="updateContent()" type="submit">Submit</button>
             <span style="float: right;">Problem author: Pranav</span>
-          </form>
+        </form>
+
+        <br/>
+        <br/>
+        <p>For C++ users, submit the compiled file</p>
+        <form id="compiled-form" th:action="@{/2022gwcc1j1}" method="post" enctype="multipart/form-data">
+            <input type="file" id="myFile" name="filename">    
+            <button onclick="updateContent()" type="submit">Submit</button>
+        </form>
   </section>
 </div>
 </body>

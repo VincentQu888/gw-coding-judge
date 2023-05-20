@@ -248,7 +248,7 @@ mobileSection.addEventListener("click", function() {
         if (selectedOption == "Java") {
             document.getElementById("input-form").action = "/basicskillstest3JAVA";
         } else if (selectedOption == "C++") {
-            document.getElementById("input-form").action = "/basicskillstest3CPP";
+            document.getElementById("compiled-form").action = "/2022gwcc1j1CPP";
         } else if (selectedOption == "Python") {
             document.getElementById("input-form").action = "/basicskillstest3PYTHON";
         }
@@ -281,27 +281,28 @@ mobileSection.addEventListener("click", function() {
         <p>The city has N houses numbered 1 to N, with M roads, each having a length of K<sub>i</sub>. However Vincent hates inefficiency, so he decides to remove all extra roads while keeping the city entirely connected (he does not realize this makes the travel slower). </p>
         <p>Determine the configuration of roads given N, M, and each of the M roads. </p>
         <br/>
-        <p>Input Specification:</p>
+        <strong>Input Specification:</strong>
         <p>The first line will contain N and M</p>
         <p>The next M lines will contain the starting building number of the road, the ending building number, and K<sub>i</sub>.</p>
         <br/>
-        <p>Output Specification:</p>
+        <strong>Output Specification:</strong>
         <p>Output each of the roads in order from shortest to longest in the final city, and -1 if it is not possible, see sample output below.</p>
         <br/>
+        <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/><br/>
         <div id="sample-io">
             <p>Sample Input:</p>
             <div class="sample">
-                <p>4 4</p>
-                <p>1 2 5</p>
-                <p>1 3 6</p>
-                <p>2 3 7</p>
-                <p>3 4 8</p>
+                <span>4 4</span><br/>
+                <span>1 2 5</span><br/>
+                <span>1 3 6</span><br/>
+                <span>2 3 7</span><br/>
+                <span>3 4 8</span><br/>
             </div>
             <p>Sample Output:</p>
             <div class="sample">
-                <p>1 2</p>
-                <p>1 3</p>
-                <p>3 4</p>
+                <span>1 2</span><br/>
+                <span>1 3</span><br/>
+                <span>3 4</span><br/>
             </div>
         </div>
     </section>
@@ -316,6 +317,14 @@ mobileSection.addEventListener("click", function() {
               </select>
             <button onclick="updateContent()" type="submit">Submit</button>
             <span style="float: right;">Problem author: Vincent</span>
+          </form>
+
+          <br/>
+          <br/>
+          <p>For C++ users, submit the compiled file</p>
+          <form id="compiled-form" th:action="@{/2022gwcc1j1}" method="post" enctype="multipart/form-data">
+              <input type="file" id="myFile" name="filename">    
+              <button onclick="updateContent()" type="submit">Submit</button>
           </form>
   </section>
 </div>

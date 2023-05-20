@@ -248,7 +248,7 @@ mobileSection.addEventListener("click", function() {
         if (selectedOption == "Java") {
             document.getElementById("input-form").action = "/basicskillstest1JAVA";
         } else if (selectedOption == "C++") {
-            document.getElementById("input-form").action = "/basicskillstest1CPP";
+            document.getElementById("compiled-form").action = "/2022gwcc1j1CPP";
         } else if (selectedOption == "Python") {
             document.getElementById("input-form").action = "/basicskillstest1PYTHON";
         }
@@ -281,20 +281,19 @@ mobileSection.addEventListener("click", function() {
         <p>Everything in Daniel’s life is a square, even the many houses he owns, and range of his wifi connection!</p>
         <p>Given N houses, each with a location X<sub>i</sub>, Y<sub>i</sub> on a zero-indexed X by Y grid, with a wifi square range with a length of L (X<sub>i</sub>, Y<sub>i</sub> in the center, and always odd), and with a strength of S, find the house with Daniel can sit in with the greatest overlapping wifi connection. There will always only be one answer.</p>
         <br/>
-        <p>Input Specification:</p>
+        <strong>Input Specification:</strong>
         <p>The first line will contain N, X and Y</p>
         <p>The next N lines will contain X<sub>i</sub>, Y<sub>i</sub>, L and S</p>
         <br/>
-        <p>TIME CONSTRAINT: 0.5s</p>
+        <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/>
         <br/>
         <div id="sample-io">
             <p>Sample Input:</p>
             <div class="sample">
-                <p>3 5 5</p>
-                <p>1 1 3 1</p>
-                <p>4 3 5 2</p>
-                <p>2 1 1 1</p>
-                <p></p>
+                <span>3 5 5</span><br/>
+                <span>1 1 3 1</span><br/>
+                <span>4 3 5 2</span><br/>
+                <span>2 1 1 1</span><br/>
             </div>
             <p>Sample Output:</p>
             <div class="sample">
@@ -314,6 +313,14 @@ mobileSection.addEventListener("click", function() {
               </select>
             <button onclick="updateContent()" type="submit">Submit</button>
             <span style="float: right;">Problem author: Vincent</span>
+          </form>
+
+          <br/>
+          <br/>
+          <p>For C++ users, submit the compiled file</p>
+          <form id="compiled-form" th:action="@{/2022gwcc1j1}" method="post" enctype="multipart/form-data">
+              <input type="file" id="myFile" name="filename">    
+              <button onclick="updateContent()" type="submit">Submit</button>
           </form>
   </section>
 </div>

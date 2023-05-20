@@ -19,7 +19,6 @@ public class AnchorController {
         return "index";
     }
 
-
     @GetMapping("/problems")
     String problemsPage(Model model){
         return "problems";
@@ -82,12 +81,56 @@ public class AnchorController {
         return "2022gwcc1s3";
     }
 
+    @GetMapping("/gwcc2p1")
+    String gwcc2p1(Model model){
+        return "gwcc2p1";
+    }
+
+    @GetMapping("/gwcc2p2")
+    String gwcc2p2(Model model){
+        return "gwcc2p2";
+    }
+
+    @GetMapping("/gwcc2p3")
+    String gwcc2p3(Model model){
+        return "gwcc2p3";
+    }
+
+    @GetMapping("/gwcc2p4")
+    String gwcc2p4(Model model){
+        return "gwcc2p4";
+    }
+
+    @GetMapping("/gwcc2p5")
+    String gwcc2p5(Model model){
+        return "gwcc2p5";
+    }
+
+    @GetMapping("/gwcc2p6")
+    String gwcc2p6(Model model){
+        return "gwcc2p6";
+    }
+
+    @GetMapping("/2022gwcc1contestpage")
+    String gwcc1contestpage(Model model){
+        return "2022gwcc1contestpage";
+    }
+
+    @GetMapping("/gwcc2contestpage")
+    String gwcc2contestpage(Model model){
+        return "gwcc2contestpage";
+    }
+
     @GetMapping("/tips")
     String tipsPage(Model model){
         return "tips";
     }
 
-    
+    @GetMapping("/error")
+    String error(Model model){
+        return "error";
+    }
+
 
 }
 

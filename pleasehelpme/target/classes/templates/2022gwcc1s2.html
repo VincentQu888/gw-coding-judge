@@ -247,7 +247,7 @@
             if (selectedOption == "Java") {
                 document.getElementById("input-form").action = "/2022gwcc1s2JAVA";
             } else if (selectedOption == "C++") {
-                document.getElementById("input-form").action = "/2022gwcc1s2CPP";
+                document.getElementById("compiled-form").action = "/2022gwcc1j1CPP";
             } else if (selectedOption == "Python") {
                 document.getElementById("input-form").action = "/2022gwcc1s2PYTHON";
             }
@@ -280,29 +280,29 @@
             <p>A while after you've formed your list, <strong>M</strong> other "friends" ask you to visit their house as well. Suspicious, you decide to write a program to determine if Bartholomew is your friend or not.</p>
             <p>Output "yes" if Bartholomew is your friend, and "no" if he is not.</p>
             <br/>
-            <p>Input Specification:</p>
+            <strong>Input Specification:</strong>
             <li>The first line will be N and M seperated by a space</li>
             <li>The next N lines will be the time to get to your friends’ houses</li>
             <li>The last line will be the time to get to the other houses</li>
             <br/>
-            <p>TIME CONSTRAINT: 0.03s</p>
+            <strong>TIME CONSTRAINT:</strong> <span>0.03s</span><br/>
             <br/>
             <div id="sample-io">
                 <p>Sample Input:</p>
                 <div class="sample">
-                    <p>4 2</p>
-                    <p>2</p>
-                    <p>3</p>
-                    <p>4</p>
-                    <p>6</p>
-                    <p>7</p>
-                    <p>6</p>
+                    <span>4 2</span><br/>
+                    <span>2</span><br/>
+                    <span>3</span><br/>
+                    <span>4</span><br/>
+                    <span>6</span><br/>
+                    <span>7</span><br/>
+                    <span>6</span><br/>
                 </div>
                 <br/>
                 <p>Sample Output:</p>
                 <div class="sample">
-                    <p>no</p>
-                    <p>yes</p>
+                    <span>no</span><br/>
+                    <span>yes</span><br/>
                 </div>
             </div>
         </section>
@@ -317,6 +317,14 @@
                   </select>
                 <button onclick="updateContent()" type="submit">Submit</button>
                 <span style="float: right;">Problem author: Vincent</span>
+            </form>
+
+            <br/>
+            <br/>
+            <p>For C++ users, submit the compiled file</p>
+            <form id="compiled-form" th:action="@{/2022gwcc1j1}" method="post" enctype="multipart/form-data">
+                <input type="file" id="myFile" name="filename">    
+                <button onclick="updateContent()" type="submit">Submit</button>
             </form>
       </section>
     </div>

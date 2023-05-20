@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gwcc2p5</title>
+
+    <link rel="icon" type="image/x-icon" href="https://pbs.twimg.com/profile_images/1283581976637845506/tkqLru4e_400x400.png">
+    <style>
+
+
+
+/*css*/
+#problem-statement{
+    padding-left: 2rem;
+}
+
+#problem-title{
+    font-size: 2rem;
+}
+
+.sample{
+    width: 33.3vw;
+    padding: 1%;
+    border-radius: 0.5rem;
+    background-color: lightgray;
+    margin-bottom: 3.5%;
+    overflow-y: scroll;
+    height: 30vh;
+
+}
+
+#flex-inline-wrapper{
+    display: flex;
+}
+
+#submit{
+    height: 100%;
+    width: 50%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#submit-title{
+    font-size: 2rem;
+}
+
+#textarea{
+    height: 50vh;
+    width: 95%;
+}   
+
+#nav-section{
+    height: 8.5vh;
+}
+
+#title{
+    display: inline-flex;
+    color: white;
+    font-size: 2rem;
+    padding: 1%;
+}
+
+#problems{
+    display: inline-flex;
+    float: right;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 1.5%;
+}
+
+#problems:hover,
+#submission-instructions:hover,
+#tips:hover,
+#title:hover{
+    color: gray;
+}
+
+#submission-instructions{
+    display: inline-flex;
+    float: right;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 1.5%;
+}
+
+#tips{
+    display: inline-flex;
+    float: right;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 1.5%;
+}
+
+#problems-side,
+#submission-instructions-side,
+#tips-side,
+#title-side{
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+#navbar{
+    background-color: black;
+    color: white;
+    width: 100%;
+    position: fixed;
+    box-shadow: 0px 3px 5px 0px rgba(25, 25, 25, 0.5);
+}
+
+#hamburger{
+    display: none;
+}
+
+#side-navbar{
+    width: 25%;
+    display: none;
+}
+
+@media only screen and (max-width: 1100px) {
+    #submission-instructions,
+   #problems,
+   #title,
+   #tips{ display: none !important; }
+
+   #hamburger{
+        display: flex !important;
+        margin: 1vh;
+        margin-left: 1.25vh;
+       height: 5vh;
+       width: 5vh;
+   }
+
+
+   #mobile-section.active div{
+        height: 100vh;
+        background-color: black;
+        width: 40%;
+    }
+
+   #mobile-section.active #side-navbar{
+        padding: 1rem;
+        padding-top: 2.5rem;
+        display: block !important;
+   }
+
+   #submit{
+        display: none;
+   }
+}
+
+@media only screen and (max-width: 455px) {
+
+   #problems{
+        background-color: black;
+        transform: translate(-8rem, 6.5rem);
+   }
+
+}
+
+@media only screen and (max-width: 600px) {
+   #problems-display{ scale: 0; }
+}
+
+/*css*/
+#problem-statement{
+    padding-left: 2rem;
+}
+
+#problem-title{
+    font-size: 2rem;
+}
+
+.sample{
+    width: 33.3vw;
+    padding: 1%;
+    border-radius: 0.5rem;
+    background-color: lightgray;
+    margin-bottom: 3.5%;
+    overflow-y: scroll;
+    height: 30vh;
+
+}
+
+#flex-inline-wrapper{
+    display: flex;
+}
+
+#submit{
+    height: 100%;
+    width: 50%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#submit-title{
+    font-size: 2rem;
+}
+
+#textarea{
+    height: 50vh;
+    width: 95%;
+}   
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    font-weight: 500;
+    height: 101vh;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+#vincentqu{
+    height: 45vh;
+    width: 40vw;
+}
+    </style>
+
+<script>
+    window.onload = function() {
+var mobileSection = document.getElementById("mobile-section");
+mobileSection.addEventListener("click", function() {
+    mobileSection.classList.toggle("active");
+});
+}
+</script>
+
+<script>
+    function updateContent() {
+        var selectedOption = document.getElementById("lang").value;
+
+        if (selectedOption == "Java") {
+            document.getElementById("input-form").action = "/gwcc2p5JAVA";
+        } else if (selectedOption == "C++") {
+            document.getElementById("compiled-form").action = "/gwcc2p5CPP";
+        } else if (selectedOption == "Python") {
+            document.getElementById("input-form").action = "/gwcc2p5PYTHON";
+        }
+    }
+</script>
+</head>
+<body>
+    <section id="nav-section">
+        <nav id="navbar">
+            <div id="mobile-section">
+                <img id="hamburger" src="https://cdn.discordapp.com/attachments/792921343845859368/1064662621028093952/1024px-Hamburger_icon_white.png" alt="">
+                <div id="side-navbar">
+                    <a id="title-side" href="/">Home</a>
+                    <a id="submission-instructions-side" href="/submission-instructions">Submission Instructions</a>
+                    <a id="tips-side" href="/tips">Tips</a>
+                    <a id="problems-side" href="/problems">Problems</a>
+                </div>
+            </div>        
+            <a id="title" href="/">G.W Williams Coding Judge</a>
+            <a id="submission-instructions" href="/submission-instructions">Submission Instructions</a>
+            <a id="tips" href="/tips">Tips</a>
+            <a id="problems" href="/problems">Problems</a>
+        </nav>
+    </section>
+
+<div id="flex-inline-wrapper">
+    <section id="problem-statement">
+        <p id="problem-title">G.W. Coding Contest 2 P5: Andy's Lunch Dilemma</p>
+        <p>It's lunch time at Dr. G.W. Williams, but there's a small issue for Andy. Andy wants to sit around 
+            his N friends, but it seems like all the other tables in the cafeteria are taken except for one 
+            line of M tables numbered from 1 to M. Andy sees his friends sitting at different tables and wants to sit in a spot to 
+            minimize the distance he has to walk to each friend (each table takes 1 second to walk past). 
+            Also, Andy has a rating for each of his N friends, the higher rated a friend is, Andy will walk that 
+            many more times faster to the friend. Can you help him find the optimal position? Note: all 
+            test cases are created such that there will only be one optimal answer.
+            </p>
+        <br/>
+        <strong>Input Specification:</strong>
+        <p>The first line of input will contain two integers, N and M {1 &lt;= N, M &lt;= 2*10^6}, with N representing the number of friends Andy has, and M representing the number of tables Andy's friends can sit at.</p>
+        <p>The next N lines will contain two integers, X and R, with X representing the table on the line of tables friend i sits at, and R representing the rating of that friend {1 &lt;= R &lt;= 5*10^6}.</p>
+        <p>There will atleast be 1 friend with rating 1.</p>
+        <br/>
+        <strong>Output Specification:</strong>
+        <p>Output one integer, Andy's optimal position on the table.</p>
+        <br/>
+        <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/><br/>
+        <div id="sample-io">
+            <p>Sample Input 1:</p>
+            <div class="sample">
+                <span>4 10</span><br/>
+                <span>1 1</span><br/>
+                <span>2 1</span><br/>
+                <span>4 1</span><br/>
+                <span>10 5</span><br/>
+            </div>
+            <p>Sample Output 1:</p>
+            <div class="sample">
+                2
+            </div>
+            <span>Explanation for Sample Input 1:</span><br/>
+            <div>
+                Sitting at table 2 means it takes 1 second to get to friend 1, 0 seconds to get to friend 2, 2 seconds to get to friend 3, and 2 seconds to get to friend 4. Any other position will increase the overall time.
+            </div>
+            <br/>
+        </div>
+    </section>
+    <section id="submit">
+        <p id="submit-title">Submit Solution</p>
+        <form id="input-form" th:action="@{/gwcc2p5}" method="post">
+            <textarea name="input-textarea" id="vincentqu"></textarea>
+            <select name="lang" id="lang">
+                <option value="Java">Java</option>
+                <option value="C++">C++</option>
+                <option value="Python">Python</option>
+              </select>
+            <button onclick="updateContent()" type="submit">Submit</button>
+            <span style="float: right;">Problem author: Vincent</span>
+        </form>
+
+        <br/>
+        <br/>
+        <p>For C++ users, submit the compiled file</p>
+        <form id="compiled-form" th:action="@{/gwcc2p5}" method="post" enctype="multipart/form-data">
+            <input type="file" id="myFile" name="filename">    
+            <button onclick="updateContent()" type="submit">Submit</button>
+        </form>
+  </section>
+</div>
+</body>
+</html>
