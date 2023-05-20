@@ -5,6 +5,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 
+        <!-- KaTeX -->
+    <!-- FOR INLINE MATH: enclose LaTeX code like: \( some math \)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <!-- KaTeX end-->
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -282,20 +294,20 @@ mobileSection.addEventListener("click", function() {
             staff both find this very annoying, so the police has decided to implement a new speeding 
             policy.</p> 
             
-            <p>For N seconds, the police will measure the speed of the car and will look 
-            at Q queries. Each query two numbers A and B; if the average speed of the car from second A to B is greater than a given number M, then they are considered speeding.
+            <p>For \(N\) seconds, the police will measure the speed of the car and will look 
+            at \(Q\) queries. Each query two numbers \(A\) and \(B\); if the average speed of the car from second \(A\) to \(B\) is greater than a given number \(M\), then they are considered speeding.
             
-            <p>Their fine will be calculated as (average speed-M)*10. If multiple queries go over the speed limit the answer will use 
+            <p>Their fine will be calculated as (average speed-\(M\))\(\times 10\). If multiple queries go over the speed limit the answer will use 
             the highest fine.</p>
             <p>Note: average speed is calculated as all instantaneous speeds 
                 over the number of instantaneous speeds.</p>
         <br/>
         <strong>Input Specification:</strong>
-        <p>The first line of input will include N, Q, and M. A single car's speed is recorded for N seconds, where N is a positive integer {N > 1}. Q is a positive integer representing the number of queries. M is a positive integer representing the speed limit. </p>
-        <p>The next N lines will contain an integer representing the speed of the car at each second. The next Q lines will contain two integers, A and B. A is the start time and B is the end time { A &lt; B, and B &lt;= N, A >= 1 }.</p>
+        <p>The first line of input will include \(N\), \(Q\), and \(M\). A single car's speed is recorded for \(N\) seconds, where \(N\) is a positive integer \(\{N > 1\}\). \(Q\) is a positive integer representing the number of queries. \(M\) is a positive integer representing the speed limit. </p>
+        <p>The next \(N\) lines will contain an integer representing the speed of the car at each second. The next \(Q\) lines will contain two integers, \(A\) and \(B\). \(A\) is the start time and \(B\) is the end time \(\{ A < B \text{ and } B \leq N, A \geq 1 \}\).</p>
         <br/>
         <strong>Output Specification:</strong>
-        <p>The output will consist of a single integer, representing the fine the car driver must pay. This value will be rounded down to the nearest integer. If there are no instances of speeding found, output -1</p>
+        <p>The output will consist of a single integer, representing the fine the car driver must pay. This value will be rounded down to the nearest integer. If there are no instances of speeding found, output \(-1\)</p>
         <br/>
         <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/><br/>
         <div id="sample-io">
@@ -318,7 +330,7 @@ mobileSection.addEventListener("click", function() {
             </div>
             <span>Explanation for Sample Input 1:</span><br/>
             <div>
-                Calculate the average speed for each query. For the first query (between 1 and 3 seconds), the average speed is (15+9+15)/3 = 13. For the second query, the average speed is (9+15+26)/3 = 16.667. For the third query, the average speed is (15+9+15+26+57+56)/6 = 29.66667. The highest average speed is 29.66667, so that speed will be taken. It is 29.66667-20 = 9.66667 km over the speed limit, so the fine is 9.66667 * 10 = 96.6667 = 96.
+                Calculate the average speed for each query. For the first query (between \(1\) and \(3\) seconds), the average speed is \((15+9+15)/3 = 13\). For the second query, the average speed is \((9+15+26)/3 = 16.667\). For the third query, the average speed is \((15+9+15+26+57+56)/6 = 29.66667\). The highest average speed is \(29.66667\), so that speed will be taken. It is \(29.66667-20 = 9.66667\) km over the speed limit, so the fine is \(9.66667 \times 10 = 96.6667 = 96\).
             </div>
             <br/>
             <br/>
@@ -344,12 +356,12 @@ mobileSection.addEventListener("click", function() {
             <span>Explanation for Sample Input 2:</span><br/>
             <div>
                 <span>Calculate the average speed for each query. </span><br/>
-                <span>Query 1: (123+112)/2 = 117.5</span><br/>
-                <span>Query 2: (196+54+23)/3 = 91</span><br/>
-                <span>Query 3: (157+196+45+23)/4 = 107.5</span><br/>
-                <span>Query 4: (123+112+157+196+54)/5 = 128.4</span><br/>
-                <span>Query 5: (157+196)/2 = 176.5</span><br/>
-                <span>The maximum average speed happens on the fifth query. So the fine is (176.5 - 100) * 10 = 765</span>
+                <span>Query 1: \((123+112)/2 = 117.5\)</span><br/>
+                <span>Query 2: \((196+54+23)/3 = 91\)</span><br/>
+                <span>Query 3: \((157+196+45+23)/4 = 107.5\)</span><br/>
+                <span>Query 4: \((123+112+157+196+54)/5 = 128.4\)</span><br/>
+                <span>Query 5: \((157+196)/2 = 176.5\)</span><br/>
+                <span>The maximum average speed happens on the fifth query. So the fine is \((176.5 - 100) \times 10 = 765\)</span>
             </div>
             <br/>
         </div>

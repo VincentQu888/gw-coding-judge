@@ -5,6 +5,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 
+    <!-- KaTeX -->
+    <!-- FOR INLINE MATH: enclose LaTeX code like: \( some math \)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <!-- KaTeX end-->
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -293,8 +305,8 @@ mobileSection.addEventListener("click", function() {
                 a hall in any capacity will incur it's cost. Stairs in the corners of halls are connected to both halls, meaning you do not need to incur the cost of the other hall to use the stairs.</p>
         <br/>
         <strong>Input Specification:</strong>
-        <p>The first line will contains two integers, A, the starting hall, and B, the destination hall. </p>
-        <p>The next 12 lines will contain K, the average number of people in each hall, for each respective hall {1 &lt;= K &lt;= 10^9}. (i.e. line 2 is for hall 1, line 3 is for hall 2, etc.)</p>
+        <p>The first line will contains two integers, \(A\), the starting hall, and \(B\), the destination hall. </p>
+        <p>The next 12 lines will contain \(K\), the average number of people in each hall, for each respective hall \(\{1 \leq K \leq 10^9\}\). (i.e. line 2 is for hall 1, line 3 is for hall 2, etc.)</p>
         <br/>
         <strong>Output Specification:</strong>
         <p>Output the pathway Sam can take to minimize the traffic he must go through, each hallway should be seperated by a new line.</p>

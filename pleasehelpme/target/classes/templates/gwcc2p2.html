@@ -5,6 +5,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 
+    <!-- KaTeX -->
+    <!-- FOR INLINE MATH: enclose LaTeX code like: \( some math \)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <!-- KaTeX end-->
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -283,15 +295,15 @@ mobileSection.addEventListener("click", function() {
 <div id="flex-inline-wrapper">
     <section id="problem-statement">
         <p id="problem-title">G.W. Coding Contest 2 P2: PC Part Picking</p>
-        <p>Kevin is building an awesome new PC and he needs to purchase components. The components are located at N different shops on a grid, and each shop has a distinct coordinate pair such that no shops share the same x-coordinate.</p>
-        <p>Kevin starts at (0, 0), visits each shop, and ends at (100, 100). He needs to visit the shops in an increasing order of x-coordinates. Given N distinct coordinate pairs for each shop (a, b), {0 &lt; a, b &lt; 100}, determine the shortest possible distance that Kevin needs to travel to reach every shop rounded down to the nearest integer.</p>
+        <p>Kevin is building an awesome new PC and he needs to purchase components. The components are located at N different shops on a grid, and each shop has a distinct coordinate pair such that no shops share the same \(x\)-coordinate.</p>
+        <p>Kevin starts at \((0, 0)\), visits each shop, and ends at \((100, 100)\). He needs to visit the shops in an increasing order of \(x\)-coordinates. Given \(N\) distinct coordinate pairs for each shop \((a, b)\), \(\{0 < a, b < 100\}\), determine the shortest possible distance that Kevin needs to travel to reach every shop rounded down to the nearest integer.</p>
         <img src="images\gwcc2p2diagram.png" class="diagram"/>
         <br/>
         <br/>
         <br/>
         <strong>Input Specification:</strong>
-        <p>The first line of input will contain N, the number of shops Kevin needs to visit.</p>
-        <p>The next N lines will contain  two integers, a and b, seperated by a space, representing the x and y coordinates of each shop respectively.</p>
+        <p>The first line of input will contain \(N\), the number of shops Kevin needs to visit.</p>
+        <p>The next \(N\) lines will contain  two integers, \(a\) and \(b\), seperated by a space, representing the \(x\) and \(y\) coordinates of each shop respectively.</p>
         <br/>
         <strong>Output Specification:</strong>
         <p>The output will consist of a single integer, the total distance Kevin must travel if he takes the shortest path.</p>
@@ -313,8 +325,8 @@ mobileSection.addEventListener("click", function() {
             </div>
             <span>Explanation for Sample Input 1:</span><br/>
             <div>
-                Because Kevin needs to move from increasing x coordinate, we know the order of shops we must visit is (21, 64), (40, 66), (57, 3), (62, 22), (72, 92).
-                The shortest path from (0, 0) to (21, 64) is 67.357256476196. If we calculate the shortest path between each point in our order and sum them, it will result in our answer.
+                Because Kevin needs to move from increasing \(x\) coordinate, we know the order of shops we must visit is \((21, 64)\), \((40, 66)\), \((57, 3)\), \((62, 22)\), \((72, 92)\).
+                The shortest path from \((0, 0)\) to \((21, 64)\) is \(67.357256476196\). If we calculate the shortest path between each point in our order and sum them, it will result in our answer.
             </div>
             <br/>
         </div>

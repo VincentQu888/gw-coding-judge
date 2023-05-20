@@ -5,6 +5,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 
+    <!-- KaTeX -->
+    <!-- FOR INLINE MATH: enclose LaTeX code like: \( some math \)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <!-- KaTeX end-->
+
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -280,16 +293,16 @@ mobileSection.addEventListener("click", function() {
         <p id="problem-title">G.W. Coding Contest 2 P1: Nevin's Cookies</p>
         <p>Nevin is baking cookies for his friends. Each of his friends want a different sized cookie, 
             so he works hard to cater to their requests. He has some perfectly circular cookie cutters labelled 
-            with their radius (1cm, 2cm, ...), and each of his N friends can choose which cookie cutter size they 
+            with their radius (1 cm, 2 cm, ...), and each of his \(N\) friends can choose which cookie cutter size they 
             want for their cookie. How much cookie dough does Nevin need to buy in total, rounded down to 
-            the nearest integer, be? Note: use 3.14 for pi.</p>
+            the nearest integer, be? Note: use 3.14 for \(\pi\).</p>
         <br/>
         <strong>Input Specification:</strong>
-        <p>The first line of input will contain an integer, N.</p>
-        <p>The next N lines will contain an integer, representing the radius of a cookie cutter.</p>
+        <p>The first line of input will contain an integer, \(N\).</p>
+        <p>The next \(N\) lines will contain an integer, representing the radius of a cookie cutter.</p>
         <br/>
         <strong>Output Specification:</strong>
-        <p>The output will consist of a single integer, representing the amount of cookie dough in cm^2, that Nevin needs to buy.</p>
+        <p>The output will consist of a single integer, representing the amount of cookie dough in cm <sup>2</sup>, that Nevin needs to buy.</p>
         <br/>
         <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/><br/>
         <div id="sample-io">
@@ -306,7 +319,7 @@ mobileSection.addEventListener("click", function() {
             </div>
             <span>Explanation for Sample Input 1:</span><br/>
             <div>
-                There are 3 cookies of radius 1. The total dough needed is 3.14*1^2 + 3.14*1^2 + 3.14*1^2 = 9.42 = 9
+                There are 3 cookies of radius 1. The total dough needed is \(3.14*1^2 + 3.14*1^2 + 3.14*1^2 = 9.42 = 9 \)
             </div>
             <br/>
             <br/>
@@ -322,7 +335,7 @@ mobileSection.addEventListener("click", function() {
             </div>
             <span>Explanation for Sample Input 2:</span><br/>
             <div>
-                There are 2 cookies. The total dough needed is 3.14*2023^2 + 3.14*1967^2 = 24999480.52 = 24999480
+                There are 2 cookies. The total dough needed is \(3.14*2023^2 + 3.14*1967^2 = 24999480.52 = 24999480 \)
             </div>
             <br/>
         </div>
