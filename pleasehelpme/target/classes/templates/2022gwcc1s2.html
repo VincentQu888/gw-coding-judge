@@ -5,6 +5,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 
+    <!-- KaTeX -->
+    <!-- FOR INLINE MATH: enclose LaTeX code like: \( some math \)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <!-- KaTeX end-->
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -275,14 +287,14 @@
 
     <div id="flex-inline-wrapper">
         <section id="problem-statement">
-            <p id="problem-title">2022 G.W. Coding Contest 1 S2: Imposter Bartholomew:</p>
-            <p> You have many friends! Of course, you want to visit all your friends, but you have too many friends to keep track of them all. So, each of your <strong>N</strong> friends gives you a time in minutes, to get to their house from your house, forming a non-decreasing list of these times.</p>
-            <p>A while after you've formed your list, <strong>M</strong> other "friends" ask you to visit their house as well. Suspicious, you decide to write a program to determine if Bartholomew is your friend or not.</p>
-            <p>Output "yes" if Bartholomew is your friend, and "no" if he is not.</p>
+            <p id="problem-title">2022 G.W. Coding Contest 1 S2: Imposter Friends:</p>
+            <p> You have many friends! Of course, you want to visit all your friends, but you have too many friends to keep track of them all. So, each of your \(N\) friends gives you a time in minutes, to get to their house from your house, forming a non-decreasing list of these times.</p>
+            <p>A while after you've formed your list, \(M\) other "friends" ask you to visit their house as well. Suspicious, you decide to write a program to determine if they are your friend or not.</p>
+            <p>Output "yes" if friend \(i\) is your friend, and "no" if he is not.</p>
             <br/>
             <strong>Input Specification:</strong>
-            <li>The first line will be N and M seperated by a space</li>
-            <li>The next N lines will be the time to get to your friends’ houses</li>
+            <li>The first line will be \(N\) and \(M\) seperated by a space</li>
+            <li>The next \(N\) lines will be the time to get to your friends’ houses</li>
             <li>The last line will be the time to get to the other houses</li>
             <br/>
             <strong>TIME CONSTRAINT:</strong> <span>0.03s</span><br/>

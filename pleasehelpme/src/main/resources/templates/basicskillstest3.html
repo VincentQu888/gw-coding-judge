@@ -5,6 +5,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 
+    <!-- KaTeX -->
+    <!-- FOR INLINE MATH: enclose LaTeX code like: \( some math \)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <!-- KaTeX end-->
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -278,12 +290,12 @@ mobileSection.addEventListener("click", function() {
     <section id="problem-statement">
         <p id="problem-title">Skills Training 3</p>
         <p>For Vincent's birthday his parents bought him a city.</p>
-        <p>The city has N houses numbered 1 to N, with M roads, each having a length of K<sub>i</sub>. However Vincent hates inefficiency, so he decides to remove all extra roads while keeping the city entirely connected (he does not realize this makes the travel slower). </p>
-        <p>Determine the configuration of roads given N, M, and each of the M roads. </p>
+        <p>The city has \(N\) houses numbered 1 to \(N\), with \(M\) roads, each having a length of \(K\)<sub>i</sub>. However Vincent hates inefficiency, so he decides to remove all extra roads while keeping the city entirely connected (he does not realize this makes the travel slower). </p>
+        <p>Determine the configuration of roads given \(N\), \(M\), and each of the \(M\) roads. </p>
         <br/>
         <strong>Input Specification:</strong>
-        <p>The first line will contain N and M</p>
-        <p>The next M lines will contain the starting building number of the road, the ending building number, and K<sub>i</sub>.</p>
+        <p>The first line will contain \(N\) and \(M\)</p>
+        <p>The next \(M\) lines will contain the starting building number of the road, the ending building number, and \(K\)<sub>i</sub>.</p>
         <br/>
         <strong>Output Specification:</strong>
         <p>Output each of the roads in order from shortest to longest in the final city, and -1 if it is not possible, see sample output below.</p>

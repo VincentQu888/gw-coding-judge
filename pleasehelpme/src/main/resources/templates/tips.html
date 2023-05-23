@@ -932,22 +932,23 @@ mobileSection.addEventListener("click", function() {
     </section>
 
 	<section id="links-to-tips">
+		<strong class="links-to-tips-tip-anchors">C++ tips:</strong>
 		<a href="#a" class="links-to-tips-tip-anchors">C++ tips</a>
 		<br/>
-		<span class="links-to-tips-tip-anchors">Java tips:</span>
-		<a href="https://dmoj.ca/tips/#java-main" class="links-to-tips-tip-anchors">https://dmoj.ca/tips/#java-main</a>
 		<br/>
-		<span class="links-to-tips-tip-anchors">Python tips: </span>
+		<strong class="links-to-tips-tip-anchors">Java tips:</strong>
+		<a href="https://dmoj.ca/tips/#java-main" class="links-to-tips-tip-anchors">https://dmoj.ca/tips/#java-main</a>
+		<a href="#b">Java tips</a>
+		<br/>
+		<br/>
+		<strong class="links-to-tips-tip-anchors">Python tips: </strong>
 		<a href="https://www.geeksforgeeks.org/python-tricks-competitive-coding/" class="links-to-tips-tip-anchors">https://www.geeksforgeeks.org/python-tricks-competitive-coding/</a>
 		<a href="https://dmoj.ca/tips/#python-main" class="links-to-tips-tip-anchors">https://dmoj.ca/tips/#python-main</a>
 	</section>
 
-	<div id="a">
-	</div>
-
     <div id="flex-grid-wrapper">
         <div id="first-item">
-		<strong>Universal tips:</strong>
+		<strong>Universal tips:</strong><div id="b"></div>
 		<ul>
 			<li>A <span class="tle">TLE</span> may not always mean that your program is too slow; if your program keeps waiting on input that does not exist, it will also <span class="tle">TLE</span>.</li>
 			<li>The judge will grade any mismatching whitespace or prompting as <span class="wa">WA</span>, because the output should match exactly.</li>
@@ -955,9 +956,37 @@ mobileSection.addEventListener("click", function() {
 		<br/>
 		<br/>
 		<br/>
+		<section id="java-tips">
+			<strong>Java Tips:</strong>
+			<p>Other than the tips on DMOJ, there are a few other java tips.</p>
+			<p>For outputting large outputs, you may want to use Java.io's <a href="https://www.programiz.com/java-programming/printwriter">PrintWriter</a>.</p>
+			<pre>
+<code>                                                                     
+					import java.io.PrintWriter;                                 
+                                                                      
+					public class printwriterDemo {                              
+					                                                            
+						public static void main(String[] args) {                  
+							PrintWriter out = new PrintWriter(System.out);          
+					                                                            
+							out.println("Hello World!");                            
+							out.flush();                                            
+						}                                                         
+					                                                            
+					}                                                           
+				</code>                    
+			</pre>
+			<p>The implementation is similar to using the default <code>System.out</code>, but requires a flush at the end to output.</p>
+			<p>More tips to be added...</p>
+			<div id="a"></div>
+		</section>
+		<br/>
+		<br/>
+		<br/>
         <section id="description">
             <p id="desc-title">C++ Tips</p>
-	<h1 class="page-title">Tips for C++</h1></header><div class="page-body"><h1 id="e95e02c0-4cd9-40e0-85fd-734516c6e100" class="">Resources</h1><ul id="46fe03ee-158b-4914-8b1b-2f00f080527c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://cses.fi/book/index.php">https://cses.fi/book/index.php</a> → By Antti Laaksonen</li></ul><ul id="bc137c3b-5d7e-4a63-b0aa-1947b28c55d0" class="bulleted-list"><li style="list-style-type:disc"><a href="https://cdn.discordapp.com/attachments/773688766543560754/812510600164933649/Steven_Halim_-_Competitive_Programming_3__The_New_Lower_Bound_of_Programming_Contests_2013.pdf">https://cdn.discordapp.com/attachments/773688766543560754/812510600164933649/Steven_Halim_-_Competitive_Programming_3__The_New_Lower_Bound_of_Programming_Contests_2013.pdf</a> → Good book</li></ul><ul id="7c7f3233-0d59-46a5-a75a-3802d63d9a5b" class="bulleted-list"><li style="list-style-type:disc">C++ cheat sheet: </li></ul><figure id="eda629d6-2f44-4e7f-826b-8f79e92a8dc6"><div class="source">https://github.com/mortennobel/cpp-cheatsheet</div></figure><ul id="75db0f82-4ed5-4b88-87bb-4ba69bf4774f" class="bulleted-list" style="padding-bottom: 4rem;"><li style="list-style-type:disc"><a href="https://skerritt.blog/sets/">Set Theory for Programmers | Skerritt.blog</a> → Good summary of set theory</li></ul><h1 id="944b50e3-df96-410a-a2c6-5e62fe4b08a8" class="">Tips - C++</h1><ol type="1" id="79275810-5a4c-49da-86a9-77ef5938c159" class="numbered-list" start="1"><li>FASTER input and output </li></ol><pre id="c5fbab42-6144-4ea8-9a78-afbacb93acc9" class="code"><code>ios::sync_with_stdio(0);
+	<h1 class="page-title">Tips for C++</h1></header><div class="page-body"><h1 id="e95e02c0-4cd9-40e0-85fd-734516c6e100" class="">Resources</h1><ul id="46fe03ee-158b-4914-8b1b-2f00f080527c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://cses.fi/book/index.php">https://cses.fi/book/index.php</a> → By Antti Laaksonen</li></ul><ul id="bc137c3b-5d7e-4a63-b0aa-1947b28c55d0" class="bulleted-list">	<div id="a">
+			</div><li style="list-style-type:disc"><a href="https://cdn.discordapp.com/attachments/773688766543560754/812510600164933649/Steven_Halim_-_Competitive_Programming_3__The_New_Lower_Bound_of_Programming_Contests_2013.pdf">https://cdn.discordapp.com/attachments/773688766543560754/812510600164933649/Steven_Halim_-_Competitive_Programming_3__The_New_Lower_Bound_of_Programming_Contests_2013.pdf</a> → Good book</li></ul><ul id="7c7f3233-0d59-46a5-a75a-3802d63d9a5b" class="bulleted-list"><li style="list-style-type:disc">C++ cheat sheet: </li></ul><figure id="eda629d6-2f44-4e7f-826b-8f79e92a8dc6"><div class="source">https://github.com/mortennobel/cpp-cheatsheet</div></figure><ul id="75db0f82-4ed5-4b88-87bb-4ba69bf4774f" class="bulleted-list" style="padding-bottom: 4rem;"><li style="list-style-type:disc"><a href="https://skerritt.blog/sets/">Set Theory for Programmers | Skerritt.blog</a> → Good summary of set theory</li></ul><h1 id="944b50e3-df96-410a-a2c6-5e62fe4b08a8" class="">Tips - C++</h1><ol type="1" id="79275810-5a4c-49da-86a9-77ef5938c159" class="numbered-list" start="1"><li>FASTER input and output </li></ol><pre id="c5fbab42-6144-4ea8-9a78-afbacb93acc9" class="code"><code>ios::sync_with_stdio(0);
 cin.tie(0);</code></pre><ol type="1" id="b75d2053-135a-42bf-84a0-3c767e6f4819" class="numbered-list" start="2"><li>Don’t use <code>&lt;&lt; endl</code>  for line breaks, use <code>&quot;\n&quot;</code> ; it’s faster</li></ol><ol type="1" id="b502ae7f-88a1-400d-9acc-ff47724dc321" class="numbered-list" start="3"><li>Don’t do this:</li></ol><pre id="67d1343b-a502-4b42-bdee-e51f1d6fbd63" class="code"><code>int a = 123456789;
 long long b = a*a;
 cout &lt;&lt; b &lt;&lt; &quot;\n&quot;; // -1757895751 
@@ -1001,6 +1030,8 @@ int sum{}; int n = 100;
 sum = n*(n+1)/2</code></pre><h2 id="c3ccb2d2-033a-4a2b-bf75-c040ad6a06cb" class="">Geometric series</h2><p id="76ce2a7a-d3ce-4ebf-8e8c-c33c70ca04d5" class="">To get the next term, you multiply by the same number each time. A geometric series is when the ratio between two consecutive terms is the same.</p><p id="78641eb6-f35a-4c8b-b6f1-1ec92297cf9b" class="">
 </p><blockquote id="5c25a235-456c-4197-9117-8d1dc12fd4d4" class="">Sum of a geometric series: <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi>a</mi><mo stretchy="false">(</mo><msup><mi>r</mi><mi>n</mi></msup><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mrow><mi>r</mi><mo>−</mo><mn>1</mn></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{a(r^n-1)}{r-1} </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.19633em;vertical-align:-0.7693300000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span><span>﻿</span></span></blockquote><blockquote id="24fa5331-f4bf-4522-b758-a818d923d485" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mi>n</mi></msub><mo>=</mo><mi>a</mi><msup><mi>r</mi><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">t_n = ar^{(n-1)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8879999999999999em;vertical-align:0em;"></span><span class="mord mathnormal">a</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight">n</span><span class="mbin mtight">−</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span></blockquote><p id="ab4faf0b-73ae-4d64-bb7f-783fa6a28214" class="">
 </p><h2 id="7427c9ed-4db4-4b2e-86aa-224fd1a4ff09" class="">Set theory</h2><p id="050f2558-238d-49fc-b56e-9af59297459e" class="">A set is a collection of objects (objects can be numbers, strings, etc.). For example, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mo stretchy="false">{</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mn>5</mn><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">X=\{1,2,3,4,5\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">5</span><span class="mclose">}</span></span></span></span></span><span>﻿</span></span> is an example of a set. Note <strong>sets are unordered and each object is distinct.</strong>  </p>
+<br/>
+<br/>
 
         </section>
     </div>

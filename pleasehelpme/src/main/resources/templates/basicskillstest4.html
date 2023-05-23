@@ -5,6 +5,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 
+    <!-- KaTeX -->
+    <!-- FOR INLINE MATH: enclose LaTeX code like: \( some math \)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <!-- KaTeX end-->
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -277,10 +289,10 @@ mobileSection.addEventListener("click", function() {
 <div id="flex-inline-wrapper">
     <section id="problem-statement">
         <p id="problem-title">Skills Training 4</p>
-        <p>The G.W. Williams coding club execs have a 2d Christmas tree for sale, with N Christmas lights all around its surface. Each of these N lights are the same space apart and connected by multiple bidirectional wires. </p>
-        <p>The execs know that one of the N lights lies on the bottom of the tree, and one of the N lights lies on the top. However, they do not know the height of the tree. They also know the distance between each light is constant, and the light on the bottom of the tree and the light on the top of the tree have the most wire in between them compared to any other pair of lights in the whole tree. </p>
+        <p>The G.W. Williams coding club execs have a 2d Christmas tree for sale, with \(N\) Christmas lights all around its surface. Each of these\(N\) lights are the same space apart and connected by multiple bidirectional wires. </p>
+        <p>The execs know that one of the \(N\) lights lies on the bottom of the tree, and one of the \(N\) lights lies on the top. However, they do not know the height of the tree. They also know the distance between each light is constant, and the light on the bottom of the tree and the light on the top of the tree have the most wire in between them compared to any other pair of lights in the whole tree. </p>
         <p>So, the execs decide to approximate the height of the tree using this information. The method they use is to find the number of wire connections between the bottom light and the top light.</p>
-        <p>Given N number of lights on the first line, and M connections of the lights, can you help the execs approximate the height of the tree?</p>
+        <p>Given \(N\) number of lights on the first line, and \(M\) connections of the lights, can you help the execs approximate the height of the tree?</p>
         <br/>
         <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/><br/>
         <div id="sample-io">

@@ -5,6 +5,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 
+    <!-- KaTeX -->
+    <!-- FOR INLINE MATH: enclose LaTeX code like: \( some math \)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <!-- KaTeX end-->
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -279,11 +291,11 @@ mobileSection.addEventListener("click", function() {
         <p id="problem-title">Skills Training 1</p>
         <p>Daniel loves squares!</p>
         <p>Everything in Daniel’s life is a square, even the many houses he owns, and range of his wifi connection!</p>
-        <p>Given N houses, each with a location X<sub>i</sub>, Y<sub>i</sub> on a zero-indexed X by Y grid, with a wifi square range with a length of L (X<sub>i</sub>, Y<sub>i</sub> in the center, and always odd), and with a strength of S, find the house with Daniel can sit in with the greatest overlapping wifi connection. There will always only be one answer.</p>
+        <p>Given \(N\) houses, each with a location \(X\)<sub>i</sub>, \(Y\)<sub>i</sub> on a zero-indexed \(X\) by \(Y\) grid, with a wifi square range with a length of \(L\) (\(X\)<sub>i</sub>, \(Y\)<sub>i</sub> in the center, and always odd), and with a strength of \(S\), find the house with Daniel can sit in with the greatest overlapping wifi connection. There will always only be one answer.</p>
         <br/>
         <strong>Input Specification:</strong>
-        <p>The first line will contain N, X and Y</p>
-        <p>The next N lines will contain X<sub>i</sub>, Y<sub>i</sub>, L and S</p>
+        <p>The first line will contain \(N\), \(X\) and \(Y\)</p>
+        <p>The next \(N\) lines will contain \(X\)<sub>i</sub>, \(Y\)<sub>i</sub>, \(L\) and \(S\)</p>
         <br/>
         <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/>
         <br/>

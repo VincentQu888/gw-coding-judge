@@ -173,10 +173,6 @@ public class GWCJ {
         }
         inputStream.close();
         outputStream.close();
-        
-        File file = new File("a.out");
-        if(file.exists()) System.out.println("YAW");
-        else System.out.println("MAW");
 
         for(int i = 0; i < cases.length; i++) {
             int caseNum = i+1;
@@ -184,7 +180,7 @@ public class GWCJ {
             int counter = 0;
 
 
-            Process process = Runtime.getRuntime().exec("a.out");
+            Process process = Runtime.getRuntime().exec("./a.out");
             Timer timer = new Timer();
             timer.schedule(new TimerTask() {
                 public void run() {
