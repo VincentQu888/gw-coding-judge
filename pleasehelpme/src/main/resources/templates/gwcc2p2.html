@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills Training 3</title>
+    <title>gwcc2p2</title>
 
     <link rel="icon" type="image/x-icon" href="https://pbs.twimg.com/profile_images/1283581976637845506/tkqLru4e_400x400.png">
     <style>
@@ -142,17 +142,18 @@
 
 @media only screen and (max-width: 1100px) {
     #submission-instructions,
-            #problems,
-            #title,
-            #tips{ display: none !important; }
+   #problems,
+   #title,
+   #tips{ display: none !important; }
 
-            #hamburger{
-                    display: flex !important;
-                    margin: 1vh;
-                    margin-left: 1.25vh;
-                height: 5vh;
-                width: 5vh;
-            }
+   #hamburger{
+        display: flex !important;
+        margin: 1vh;
+        margin-left: 1.25vh;
+       height: 5vh;
+       width: 5vh;
+   }
+
 
    #mobile-section.active div{
         height: 100vh;
@@ -242,6 +243,11 @@ a{
     height: 45vh;
     width: 40vw;
 }
+
+.diagram{
+    height: 45vh;
+    width: auto;
+}
     </style>
 
 <script>
@@ -258,11 +264,11 @@ mobileSection.addEventListener("click", function() {
         var selectedOption = document.getElementById("lang").value;
 
         if (selectedOption == "Java") {
-            document.getElementById("input-form").action = "/basicskillstest3JAVA";
+            document.getElementById("input-form").action = "/gwcc2p2JAVA";
         } else if (selectedOption == "C++") {
-            document.getElementById("compiled-form").action = "/basicskillstest3CPP";
+            document.getElementById("compiled-form").action = "/gwcc2p2CPP";
         } else if (selectedOption == "Python") {
-            document.getElementById("input-form").action = "/basicskillstest3PYTHON";
+            document.getElementById("input-form").action = "/gwcc2p2PYTHON";
         }
     }
 </script>
@@ -288,39 +294,46 @@ mobileSection.addEventListener("click", function() {
 
 <div id="flex-inline-wrapper">
     <section id="problem-statement">
-        <p id="problem-title">Skills Training 3</p>
-        <p>For Vincent's birthday his parents bought him a city.</p>
-        <p>The city has \(N\) houses numbered 1 to \(N\), with \(M\) roads, each having a length of \(K\)<sub>i</sub>. However Vincent hates inefficiency, so he decides to remove all extra roads while keeping the city entirely connected (he does not realize this makes the travel slower). </p>
-        <p>Determine the configuration of roads given \(N\), \(M\), and each of the \(M\) roads. </p>
+        <p id="problem-title">G.W. Coding Contest 2 P2: PC Part Picking</p>
+        <p>Kevin is building an awesome new PC and he needs to purchase components. The components are located at N different shops on a grid, and each shop has a distinct coordinate pair such that no shops share the same \(x\)-coordinate.</p>
+        <p>Kevin starts at \((0, 0)\), visits each shop, and ends at \((100, 100)\). He needs to visit the shops in an increasing order of \(x\)-coordinates. Given \(N\) distinct coordinate pairs for each shop \((a, b)\), \(\{0 < a, b < 100\}\), determine the shortest possible distance that Kevin needs to travel to reach every shop rounded down to the nearest integer.</p>
+        <img src="images\gwcc2p2diagram.png" class="diagram"/>
+        <br/>
+        <br/>
         <br/>
         <strong>Input Specification:</strong>
-        <p>The first line will contain \(N\) and \(M\)</p>
-        <p>The next \(M\) lines will contain the starting building number of the road, the ending building number, and \(K\)<sub>i</sub>.</p>
+        <p>The first line of input will contain \(N\), the number of shops Kevin needs to visit.</p>
+        <p>The next \(N\) lines will contain  two integers, \(a\) and \(b\), seperated by a space, representing the \(x\) and \(y\) coordinates of each shop respectively.</p>
         <br/>
         <strong>Output Specification:</strong>
-        <p>Output each of the roads in order from shortest to longest in the final city, and -1 if it is not possible, see sample output below.</p>
+        <p>The output will consist of a single integer, the total distance Kevin must travel if he takes the shortest path.</p>
         <br/>
         <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/><br/>
         <div id="sample-io">
-            <p>Sample Input:</p>
+            <p>Sample Input 1:</p>
             <div class="sample">
-                <span>4 4</span><br/>
-                <span>1 2 5</span><br/>
-                <span>1 3 6</span><br/>
-                <span>2 3 7</span><br/>
-                <span>3 4 8</span><br/>
+                <span>5</span><br/>
+                <span>72 92</span><br/>
+                <span>57 3</span><br/>
+                <span>40 66</span><br/>
+                <span>21 64</span><br/>
+                <span>62 22</span><br/>
             </div>
-            <p>Sample Output:</p>
+            <p>Sample Output 1:</p>
             <div class="sample">
-                <span>1 2</span><br/>
-                <span>1 3</span><br/>
-                <span>3 4</span><br/>
+               271
             </div>
+            <span>Explanation for Sample Input 1:</span><br/>
+            <div>
+                Because Kevin needs to move from increasing \(x\) coordinate, we know the order of shops we must visit is \((21, 64)\), \((40, 66)\), \((57, 3)\), \((62, 22)\), \((72, 92)\).
+                The shortest path from \((0, 0)\) to \((21, 64)\) is \(67.357256476196\). If we calculate the shortest path between each point in our order and sum them, it will result in our answer.
+            </div>
+            <br/>
         </div>
     </section>
     <section id="submit">
         <p id="submit-title">Submit Solution</p>
-        <form id="input-form" th:action="@{/basicskillstest3}" method="post">
+        <form id="input-form" th:action="@{/gwcc2p2}" method="post">
             <textarea name="input-textarea" id="vincentqu"></textarea>
             <select name="lang" id="lang">
                 <option value="Java">Java</option>
@@ -328,16 +341,16 @@ mobileSection.addEventListener("click", function() {
                 <option value="Python">Python</option>
               </select>
             <button onclick="updateContent()" type="submit">Submit</button>
-            <span style="float: right;">Problem author: Vincent</span>
-          </form>
+            <span style="float: right;">Problem author: Pranav</span>
+        </form>
 
-          <br/>
-          <br/>
-          <p>For C++ users, submit the compiled file</p>
-          <form id="compiled-form" th:action="@{/2022gwcc1j1}" method="post" enctype="multipart/form-data">
-              <input type="file" id="myFile" name="filename">    
-              <button onclick="updateContent()" type="submit">Submit</button>
-          </form>
+        <br/>
+        <br/>
+        <p>For C++ users, submit the compiled file</p>
+        <form id="compiled-form" th:action="@{/gwcc2p2}" method="post" enctype="multipart/form-data">
+            <input type="file" id="myFile" name="filename">    
+            <button onclick="updateContent()" type="submit">Submit</button>
+        </form>
   </section>
 </div>
 </body>

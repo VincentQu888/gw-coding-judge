@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills Training 3</title>
+    <title>gwcc2p6</title>
 
     <link rel="icon" type="image/x-icon" href="https://pbs.twimg.com/profile_images/1283581976637845506/tkqLru4e_400x400.png">
     <style>
@@ -142,17 +142,18 @@
 
 @media only screen and (max-width: 1100px) {
     #submission-instructions,
-            #problems,
-            #title,
-            #tips{ display: none !important; }
+   #problems,
+   #title,
+   #tips{ display: none !important; }
 
-            #hamburger{
-                    display: flex !important;
-                    margin: 1vh;
-                    margin-left: 1.25vh;
-                height: 5vh;
-                width: 5vh;
-            }
+   #hamburger{
+        display: flex !important;
+        margin: 1vh;
+        margin-left: 1.25vh;
+       height: 5vh;
+       width: 5vh;
+   }
+
 
    #mobile-section.active div{
         height: 100vh;
@@ -242,6 +243,11 @@ a{
     height: 45vh;
     width: 40vw;
 }
+
+.diagram{
+    height: 30vh;
+    width: auto;
+}
     </style>
 
 <script>
@@ -258,11 +264,11 @@ mobileSection.addEventListener("click", function() {
         var selectedOption = document.getElementById("lang").value;
 
         if (selectedOption == "Java") {
-            document.getElementById("input-form").action = "/basicskillstest3JAVA";
+            document.getElementById("input-form").action = "/gwcc2p6JAVA";
         } else if (selectedOption == "C++") {
-            document.getElementById("compiled-form").action = "/basicskillstest3CPP";
+            document.getElementById("compiled-form").action = "/gwcc2p6CPP";
         } else if (selectedOption == "Python") {
-            document.getElementById("input-form").action = "/basicskillstest3PYTHON";
+            document.getElementById("input-form").action = "/gwcc2p6PYTHON";
         }
     }
 </script>
@@ -288,39 +294,73 @@ mobileSection.addEventListener("click", function() {
 
 <div id="flex-inline-wrapper">
     <section id="problem-statement">
-        <p id="problem-title">Skills Training 3</p>
-        <p>For Vincent's birthday his parents bought him a city.</p>
-        <p>The city has \(N\) houses numbered 1 to \(N\), with \(M\) roads, each having a length of \(K\)<sub>i</sub>. However Vincent hates inefficiency, so he decides to remove all extra roads while keeping the city entirely connected (he does not realize this makes the travel slower). </p>
-        <p>Determine the configuration of roads given \(N\), \(M\), and each of the \(M\) roads. </p>
+        <p id="problem-title">G.W. Coding Contest 2 P6: Hall Traffic</p>
+        <p>Samuel is getting tired of the hall traffic at Dr. G.W. Williams S.S when moving classes, so he 
+            decides to measure the average number of people in each hall after every period, on both floors. 
+            Each hall is labelled a number counting from 1, and some halls are connected to the other floors by 
+            stairs which go directly upwards (Stairs are considered as 0 average people). Starting from his class 
+            at hall \(A\), what is the least crowded pathing Samuel can use get to his class in hall \(B\)? 
+            </p>
+            <p>The hall and stair placements are formatted in the same manner as the diagram shown below, to pass through
+                a hall in any capacity will incur it's cost. Stairs in the corners of halls are connected to both halls, meaning you do not need to incur the cost of the other hall to use the stairs.</p>
         <br/>
         <strong>Input Specification:</strong>
-        <p>The first line will contain \(N\) and \(M\)</p>
-        <p>The next \(M\) lines will contain the starting building number of the road, the ending building number, and \(K\)<sub>i</sub>.</p>
+        <p>The first line will contains two integers, \(A\), the starting hall, and \(B\), the destination hall. </p>
+        <p>The next 12 lines will contain \(K\), the average number of people in each hall, for each respective hall \(\{1 \leq K \leq 10^9\}\). (i.e. line 2 is for hall 1, line 3 is for hall 2, etc.)</p>
         <br/>
         <strong>Output Specification:</strong>
-        <p>Output each of the roads in order from shortest to longest in the final city, and -1 if it is not possible, see sample output below.</p>
+        <p>Output the pathway Sam can take to minimize the traffic he must go through, each hallway should be seperated by a new line.</p>
         <br/>
         <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/><br/>
+        <p>Floor 1:</p>
+        <img src="images\floor1.png" class="diagram"/>
+
+        <br/>
+        <p>Floor 2:</p>
+        <img src="images\floor2.png" class="diagram"/>
+
+        <br/>
+        <p>Note: The connections to stairs work in a mannner such that if any part of the hall is touching the stair, then that hall is connected to that stair. For example, hall 1, 3 and 9 are all the connections to stair 1.</p>
+        <br/>
+        <br/>
         <div id="sample-io">
-            <p>Sample Input:</p>
+            <p>Sample Input 1:</p>
             <div class="sample">
-                <span>4 4</span><br/>
-                <span>1 2 5</span><br/>
-                <span>1 3 6</span><br/>
-                <span>2 3 7</span><br/>
-                <span>3 4 8</span><br/>
+                <span>2 12</span><br/>
+                <span>14</span><br/>
+                <span>2</span><br/>
+                <span>3</span><br/>
+                <span>15</span><br/>
+                <span>7</span><br/>
+                <span>8</span><br/>
+                <span>6</span><br/>
+                <span>11</span><br/>
+                <span>13</span><br/>
+                <span>3</span><br/>
+                <span>4</span><br/>
+                <span>9</span><br/>
             </div>
-            <p>Sample Output:</p>
+            <p>Sample Output 1:</p>
             <div class="sample">
-                <span>1 2</span><br/>
-                <span>1 3</span><br/>
-                <span>3 4</span><br/>
+                <span>2</span><br/>
+                <span>3</span><br/>
+                <span>10</span><br/>
+                <span>11</span><br/>
+                <span>12</span><br/>
             </div>
+            <span>Explanation for Sample Input 1:</span><br/>
+            <div>
+                <span>We start at hall 2, meaning it must be included. The same applies to hall 12.</span><br/>
+                <span>Next, we must move to hall 3, as it is the only connected hall.</span><br/>
+                <span>Then, we can choose between either going to hall 1, hall 4, or taking the stairs. If we take hall 1 or 4 the cost incurred will outweigh if we go up the stairs and travel to our destination in every case.</span><br/>
+                <span>Finally, we are at hall 10, and can either take the path 10 -> 9 -> 12 or 10 -> 11 -> 12. Because the cost to take hall 11 is less than the cost to take hall 9, we then take hall 11.</span><br/>
+            </div>
+            <br/>
         </div>
     </section>
     <section id="submit">
         <p id="submit-title">Submit Solution</p>
-        <form id="input-form" th:action="@{/basicskillstest3}" method="post">
+        <form id="input-form" th:action="@{/gwcc2p6}" method="post">
             <textarea name="input-textarea" id="vincentqu"></textarea>
             <select name="lang" id="lang">
                 <option value="Java">Java</option>
@@ -329,15 +369,15 @@ mobileSection.addEventListener("click", function() {
               </select>
             <button onclick="updateContent()" type="submit">Submit</button>
             <span style="float: right;">Problem author: Vincent</span>
-          </form>
+        </form>
 
-          <br/>
-          <br/>
-          <p>For C++ users, submit the compiled file</p>
-          <form id="compiled-form" th:action="@{/2022gwcc1j1}" method="post" enctype="multipart/form-data">
-              <input type="file" id="myFile" name="filename">    
-              <button onclick="updateContent()" type="submit">Submit</button>
-          </form>
+        <br/>
+        <br/>
+        <p>For C++ users, submit the compiled file</p>
+        <form id="compiled-form" th:action="@{/gwcc2p6}" method="post" enctype="multipart/form-data">
+            <input type="file" id="myFile" name="filename">    
+            <button onclick="updateContent()" type="submit">Submit</button>
+        </form>
   </section>
 </div>
 </body>

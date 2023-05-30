@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills Training 3</title>
+    <title>gwcc2p5</title>
 
     <link rel="icon" type="image/x-icon" href="https://pbs.twimg.com/profile_images/1283581976637845506/tkqLru4e_400x400.png">
     <style>
@@ -142,17 +142,18 @@
 
 @media only screen and (max-width: 1100px) {
     #submission-instructions,
-            #problems,
-            #title,
-            #tips{ display: none !important; }
+   #problems,
+   #title,
+   #tips{ display: none !important; }
 
-            #hamburger{
-                    display: flex !important;
-                    margin: 1vh;
-                    margin-left: 1.25vh;
-                height: 5vh;
-                width: 5vh;
-            }
+   #hamburger{
+        display: flex !important;
+        margin: 1vh;
+        margin-left: 1.25vh;
+       height: 5vh;
+       width: 5vh;
+   }
+
 
    #mobile-section.active div{
         height: 100vh;
@@ -258,11 +259,11 @@ mobileSection.addEventListener("click", function() {
         var selectedOption = document.getElementById("lang").value;
 
         if (selectedOption == "Java") {
-            document.getElementById("input-form").action = "/basicskillstest3JAVA";
+            document.getElementById("input-form").action = "/gwcc2p5JAVA";
         } else if (selectedOption == "C++") {
-            document.getElementById("compiled-form").action = "/basicskillstest3CPP";
+            document.getElementById("compiled-form").action = "/gwcc2p5CPP";
         } else if (selectedOption == "Python") {
-            document.getElementById("input-form").action = "/basicskillstest3PYTHON";
+            document.getElementById("input-form").action = "/gwcc2p5PYTHON";
         }
     }
 </script>
@@ -288,39 +289,49 @@ mobileSection.addEventListener("click", function() {
 
 <div id="flex-inline-wrapper">
     <section id="problem-statement">
-        <p id="problem-title">Skills Training 3</p>
-        <p>For Vincent's birthday his parents bought him a city.</p>
-        <p>The city has \(N\) houses numbered 1 to \(N\), with \(M\) roads, each having a length of \(K\)<sub>i</sub>. However Vincent hates inefficiency, so he decides to remove all extra roads while keeping the city entirely connected (he does not realize this makes the travel slower). </p>
-        <p>Determine the configuration of roads given \(N\), \(M\), and each of the \(M\) roads. </p>
+        <p id="problem-title">G.W. Coding Contest 2 P5: Andy's Lunch Dilemma</p>
+        <p>It's lunch time at Dr. G.W. Williams, but there's a small issue for Andy. Andy wants to sit around 
+            his \(N\) friends, but it seems like all the other tables in the cafeteria are taken except for one 
+            line of \(M\) tables numbered from 1 to \(M\). Andy sees his friends sitting at different tables and wants to sit in a spot to 
+            minimize the time he has to walk to each friend (to travel from one table to another takes 1 second). 
+            </p>
+            <p> Also, Andy has a rating for each of his \(N\) friends, the higher rated a friend is, Andy will walk that 
+                many more times faster to the friend. Can you help him find the optimal position? </p>
+                <p>Note: all 
+                    test cases are created such that there will only be one optimal answer.</p>
         <br/>
         <strong>Input Specification:</strong>
-        <p>The first line will contain \(N\) and \(M\)</p>
-        <p>The next \(M\) lines will contain the starting building number of the road, the ending building number, and \(K\)<sub>i</sub>.</p>
+        <p>The first line of input will contain two integers, \(N\) and \(M\) \( \{1 \leq N, M \leq 2\times10^6\} \), with \(N\) representing the number of friends Andy has, and \(M\) representing the number of tables Andy's friends can sit at.</p>
+        <p>The next \(N\) lines will contain two integers, \(X\) and \(R\), with \(X\) representing the table on the line of tables friend \(i\) sits at, and \(R\) representing the rating of that friend \(\{1 \leq R \leq 5\times 10^6\}\).</p>
+        <p>There will at least be 1 friend with rating 1.</p>
         <br/>
         <strong>Output Specification:</strong>
-        <p>Output each of the roads in order from shortest to longest in the final city, and -1 if it is not possible, see sample output below.</p>
+        <p>Output one integer, Andy's optimal position on the line of tables.</p>
         <br/>
         <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/><br/>
         <div id="sample-io">
-            <p>Sample Input:</p>
+            <p>Sample Input 1:</p>
             <div class="sample">
-                <span>4 4</span><br/>
-                <span>1 2 5</span><br/>
-                <span>1 3 6</span><br/>
-                <span>2 3 7</span><br/>
-                <span>3 4 8</span><br/>
+                <span>4 10</span><br/>
+                <span>1 1</span><br/>
+                <span>2 1</span><br/>
+                <span>4 1</span><br/>
+                <span>10 5</span><br/>
             </div>
-            <p>Sample Output:</p>
+            <p>Sample Output 1:</p>
             <div class="sample">
-                <span>1 2</span><br/>
-                <span>1 3</span><br/>
-                <span>3 4</span><br/>
+                2
             </div>
+            <span>Explanation for Sample Input 1:</span><br/>
+            <div>
+                Sitting at table 2 means it takes 1 second to get to friend 1, 0 seconds to get to friend 2, 2 seconds to get to friend 3, and 2 seconds to get to friend 4. Any other position will increase the overall time.
+            </div>
+            <br/>
         </div>
     </section>
     <section id="submit">
         <p id="submit-title">Submit Solution</p>
-        <form id="input-form" th:action="@{/basicskillstest3}" method="post">
+        <form id="input-form" th:action="@{/gwcc2p5}" method="post">
             <textarea name="input-textarea" id="vincentqu"></textarea>
             <select name="lang" id="lang">
                 <option value="Java">Java</option>
@@ -329,15 +340,15 @@ mobileSection.addEventListener("click", function() {
               </select>
             <button onclick="updateContent()" type="submit">Submit</button>
             <span style="float: right;">Problem author: Vincent</span>
-          </form>
+        </form>
 
-          <br/>
-          <br/>
-          <p>For C++ users, submit the compiled file</p>
-          <form id="compiled-form" th:action="@{/2022gwcc1j1}" method="post" enctype="multipart/form-data">
-              <input type="file" id="myFile" name="filename">    
-              <button onclick="updateContent()" type="submit">Submit</button>
-          </form>
+        <br/>
+        <br/>
+        <p>For C++ users, submit the compiled file</p>
+        <form id="compiled-form" th:action="@{/gwcc2p5}" method="post" enctype="multipart/form-data">
+            <input type="file" id="myFile" name="filename">    
+            <button onclick="updateContent()" type="submit">Submit</button>
+        </form>
   </section>
 </div>
 </body>

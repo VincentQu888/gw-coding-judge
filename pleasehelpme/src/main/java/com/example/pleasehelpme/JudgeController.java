@@ -51,7 +51,7 @@ public class JudgeController {
                 output.add(new ArrayList<>());
             }
 
-            ArrayList<String> formDataOutput = GWCJ.cppJudge(formData, cases, casesOut, output, 1000);
+            ArrayList<String> formDataOutput = GWCJ.cppJudge(formData, cases, casesOut, output, 500);
             model.addAttribute("formDataList", formDataOutput);
             return "formResult";
         }catch(ServletException e){
