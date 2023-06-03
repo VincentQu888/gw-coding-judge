@@ -299,12 +299,18 @@ mobileSection.addEventListener("click", function() {
             
             <p>Their fine will be calculated as (average speed-\(M\))\(\times 10\). If multiple queries go over the speed limit the answer will use 
             the highest fine.</p>
-            <p>Note: average speed is calculated as all instantaneous speeds 
-                over the number of instantaneous speeds.</p>
+
+            <br/>
+            <span>Note: average speed is calculated as all instantaneous speeds 
+                over the number of instantaneous speeds. </span>
+                <br/>
+                <span>The <strong>answer</strong> should be rounded down, intermediate calculations should always remain as decimals to maintain accuracy.</span>
+                <br/>
+                <br/>
         <br/>
         <strong>Input Specification:</strong>
         <p>The first line of input will include \(N\), \(Q\), and \(M\). A single car's speed is recorded for \(N\) seconds, where \(N\) is a positive integer \(\{N > 1\}\). \(Q\) is a positive integer representing the number of queries. \(M\) is a positive integer representing the speed limit. </p>
-        <p>The next \(N\) lines will contain an integer representing the speed of the car at each second. The next \(Q\) lines will contain two integers, \(A\) and \(B\). \(A\) is the start time and \(B\) is the end time \(\{ A < B \text{ and } B \leq N, A \geq 1 \}\).</p>
+        <p>The next \(N\) lines will contain an integer \(\{ < 10^9\}\) representing the speed of the car at each second. The next \(Q\) lines will contain two integers, \(A\) and \(B\). \(A\) is the start time and \(B\) is the end time \(\{ A < B \text{ and } B \leq N, A \geq 1 \}\).</p>
         <br/>
         <strong>Output Specification:</strong>
         <p>The output will consist of a single integer, representing the fine the car driver must pay. This value will be rounded down to the nearest integer. If there are no instances of speeding found, output \(-1\)</p>

@@ -58,11 +58,11 @@ public class GWCJ {
             int counter = 0;
             formDataOutput.add("CASE " + caseNum + ":");
 
-            Process process = Runtime.getRuntime().exec("java Main");
+            Process process = Runtime.getRuntime().exec("java -Xmx256m Main");
             Timer timer = new Timer();
             timer.schedule(new TimerTask() {
                 public void run() {
-                    process.destroyForcibly();
+                    if(process.isAlive()) process.destroyForcibly();
                 }
             }, (runTime*2+1000)); //arbitrary value but 1000 runs most fine and *2 to be safe
 
@@ -83,15 +83,36 @@ public class GWCJ {
             InputStreamReader stdoutReader = new InputStreamReader(stdout);
             BufferedReader stdoutBuffered = new BufferedReader(stdoutReader);
             int lineNum = 0;
-            while ((line = stdoutBuffered.readLine()) != null) {
-                output.get(i).add(line);
-                try {
-                    if(!line.equals(casesOut.get(i).get(counter))) AC = false;
-                } catch (IndexOutOfBoundsException ioobe) {
-                    AC = false;
+            try{
+                while ((line = stdoutBuffered.readLine()) != null) {
+                    output.get(i).add(line);
+                    try {
+                        if(!line.equals(casesOut.get(i).get(counter))) AC = false;
+                    } catch (IndexOutOfBoundsException ioobe) {
+                        AC = false;
+                    }
+                    counter++;
+                    lineNum++;
                 }
-                counter++;
-                lineNum++;
+            }catch(IOException e){
+                formDataOutput.add("TLE [>" + (double)runTime/1000 + "s]");
+                formDataOutput.add("YOUR OUTPUT:");
+                for(int j = 0; j < output.get(i).size(); j++) {
+                    if(j < 10){
+                        formDataOutput.add(output.get(i).get(j));
+                    }else{
+                        formDataOutput.add("Clipped");
+                        break;
+                    }
+                }
+                formDataOutput.add("--------------------------------------------");
+                for(int j = i+1; j < output.size(); j++){
+                    caseNum = j+1;
+                    formDataOutput.add("CASE " + caseNum + ":");
+                    formDataOutput.add("\" \" (Previous TLE)");
+                    formDataOutput.add("--------------------------------------------");
+                }
+                return formDataOutput;
             }
 
             if(lineNum != casesOut.get(i).size()) AC = false;
@@ -184,7 +205,7 @@ public class GWCJ {
             Timer timer = new Timer();
             timer.schedule(new TimerTask() {
                 public void run() {
-                    process.destroyForcibly();
+                    if(process.isAlive()) process.destroyForcibly();
                 }
             }, (runTime*2+1000)); 
 
@@ -206,15 +227,36 @@ public class GWCJ {
             BufferedReader stdoutBuffered = new BufferedReader(stdoutReader);
             int lineNum = 0;
             String line;
-            while ((line = stdoutBuffered.readLine()) != null) {
-                output.get(i).add(line);
-                try {
-                    if(!line.equals(casesOut.get(i).get(counter))) AC = false;
-                } catch (IndexOutOfBoundsException ioobe) {
-                    AC = false;
+            try{
+                while ((line = stdoutBuffered.readLine()) != null) {
+                    output.get(i).add(line);
+                    try {
+                        if(!line.equals(casesOut.get(i).get(counter))) AC = false;
+                    } catch (IndexOutOfBoundsException ioobe) {
+                        AC = false;
+                    }
+                    counter++;
+                    lineNum++;
                 }
-                counter++;
-                lineNum++;
+            }catch(IOException e){
+                formDataOutput.add("TLE [>" + (double)runTime/1000 + "s]");
+                formDataOutput.add("YOUR OUTPUT:");
+                for(int j = 0; j < output.get(i).size(); j++) {
+                    if(j < 10){
+                        formDataOutput.add(output.get(i).get(j));
+                    }else{
+                        formDataOutput.add("Clipped");
+                        break;
+                    }
+                }
+                formDataOutput.add("--------------------------------------------");
+                for(int j = i+1; j < output.size(); j++){
+                    caseNum = j+1;
+                    formDataOutput.add("CASE " + caseNum + ":");
+                    formDataOutput.add("\" \" (Previous TLE)");
+                    formDataOutput.add("--------------------------------------------");
+                }
+                return formDataOutput;
             }
 
             if(lineNum != casesOut.get(i).size()) AC = false;
@@ -309,7 +351,7 @@ public class GWCJ {
             Timer timer = new Timer();
             timer.schedule(new TimerTask() {
                 public void run() {
-                    process.destroyForcibly();
+                    if(process.isAlive()) process.destroyForcibly();
                 }
             }, (runTime*2+1000)); 
             int counter = 0;
@@ -330,15 +372,36 @@ public class GWCJ {
             InputStreamReader stdoutReader = new InputStreamReader(stdout);
             BufferedReader stdoutBuffered = new BufferedReader(stdoutReader);
             int lineNum = 0;
-            while ((line = stdoutBuffered.readLine()) != null) {
-                output.get(i).add(line);
-                try {
-                    if(!line.equals(casesOut.get(i).get(counter))) AC = false;
-                } catch (IndexOutOfBoundsException ioobe) {
-                    AC = false;
+            try{
+                while ((line = stdoutBuffered.readLine()) != null) {
+                    output.get(i).add(line);
+                    try {
+                        if(!line.equals(casesOut.get(i).get(counter))) AC = false;
+                    } catch (IndexOutOfBoundsException ioobe) {
+                        AC = false;
+                    }
+                    counter++;
+                    lineNum++;
                 }
-                counter++;
-                lineNum++;
+            }catch(IOException e){
+                formDataOutput.add("TLE [>" + (double)runTime/1000 + "s]");
+                formDataOutput.add("YOUR OUTPUT:");
+                for(int j = 0; j < output.get(i).size(); j++) {
+                    if(j < 10){
+                        formDataOutput.add(output.get(i).get(j));
+                    }else{
+                        formDataOutput.add("Clipped");
+                        break;
+                    }
+                }
+                formDataOutput.add("--------------------------------------------");
+                for(int j = i+1; j < output.size(); j++){
+                    caseNum = j+1;
+                    formDataOutput.add("CASE " + caseNum + ":");
+                    formDataOutput.add("\" \" (Previous TLE)");
+                    formDataOutput.add("--------------------------------------------");
+                }
+                return formDataOutput;
             }
 
             if(lineNum != casesOut.get(i).size()) AC = false;

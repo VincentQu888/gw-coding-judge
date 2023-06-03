@@ -293,12 +293,12 @@ mobileSection.addEventListener("click", function() {
         <p>It's lunch time at Dr. G.W. Williams, but there's a small issue for Andy. Andy wants to sit around 
             his \(N\) friends, but it seems like all the other tables in the cafeteria are taken except for one 
             line of \(M\) tables numbered from 1 to \(M\). Andy sees his friends sitting at different tables and wants to sit in a spot to 
-            minimize the time he has to walk to each friend (to travel from one table to another takes 1 second). 
+            minimize the time he has to walk to each friend combined (to travel from one table to another takes 1 second). 
             </p>
             <p> Also, Andy has a rating for each of his \(N\) friends, the higher rated a friend is, Andy will walk that 
                 many more times faster to the friend. Can you help him find the optimal position? </p>
                 <p>Note: all 
-                    test cases are created such that there will only be one optimal answer.</p>
+                    test cases are created such that there will only be one optimal answer. Also all times to get to any friend should be a whole number, if the time it takes due to a rating is a decimal then it will take AT LEAST that long to reach that friend.</p>
         <br/>
         <strong>Input Specification:</strong>
         <p>The first line of input will contain two integers, \(N\) and \(M\) \( \{1 \leq N, M \leq 2\times10^6\} \), with \(N\) representing the number of friends Andy has, and \(M\) representing the number of tables Andy's friends can sit at.</p>
