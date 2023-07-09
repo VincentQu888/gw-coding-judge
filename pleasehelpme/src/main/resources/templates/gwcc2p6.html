@@ -261,15 +261,7 @@ mobileSection.addEventListener("click", function() {
 
 <script>
     function updateContent() {
-        var selectedOption = document.getElementById("lang").value;
-
-        if (selectedOption == "Java") {
-            document.getElementById("input-form").action = "/gwcc2p6JAVA";
-        } else if (selectedOption == "C++") {
-            document.getElementById("compiled-form").action = "/gwcc2p6CPP";
-        } else if (selectedOption == "Python") {
-            document.getElementById("input-form").action = "/gwcc2p6PYTHON";
-        }
+        document.getElementById("input-form").action = "/basicskillstest1";
     }
 </script>
 </head>
@@ -306,7 +298,7 @@ mobileSection.addEventListener("click", function() {
         <br/>
         <strong>Input Specification:</strong>
         <p>The first line will contains two integers, \(A\), the starting hall, and \(B\), the destination hall. </p>
-        <p>The next 12 lines will contain \(K\), the average number of people in each hall, for each respective hall \(\{1 \leq K \leq 10^9\}\). (i.e. line 2 is for hall 1, line 3 is for hall 2, etc.)</p>
+        <p>The next 12 lines will contain \(K\), the average number of people in each hall, for each respective hall \(\{1 \leq K \leq 2^{63}\). (i.e. line 2 is for hall 1, line 3 is for hall 2, etc.)</p>
         <br/>
         <strong>Output Specification:</strong>
         <p>Output the pathway Sam can take to minimize the traffic he must go through, each hallway should be seperated by a new line.</p>
@@ -356,6 +348,28 @@ mobileSection.addEventListener("click", function() {
                 <span>Finally, we are at hall 10, and can either take the path 10 -> 9 -> 12 or 10 -> 11 -> 12. Because the cost to take hall 11 is less than the cost to take hall 9, we then take hall 11.</span><br/>
             </div>
             <br/>
+            <br/>
+            <p>Sample Input 2:</p>
+            <div class="sample">
+                <span>1 9</span><br/>
+                <span>62</span><br/>
+                <span>11</span><br/>
+                <span>83</span><br/>
+                <span>39</span><br/>
+                <span>75</span><br/>
+                <span>64</span><br/>
+                <span>35</span><br/>
+                <span>60</span><br/>
+                <span>22</span><br/>
+                <span>35</span><br/>
+                <span>5</span><br/>
+                <span>67</span><br/>
+            </div>
+            <p>Sample Output 2:</p>
+            <div class="sample">
+                <span>1</span><br/>
+                <span>9</span><br/>
+            </div>
         </div>
     </section>
     <section id="submit">
@@ -364,7 +378,6 @@ mobileSection.addEventListener("click", function() {
             <textarea name="input-textarea" id="vincentqu"></textarea>
             <select name="lang" id="lang">
                 <option value="Java">Java</option>
-                <option value="C++">C++</option>
                 <option value="Python">Python</option>
               </select>
             <button onclick="updateContent()" type="submit">Submit</button>
@@ -373,11 +386,6 @@ mobileSection.addEventListener("click", function() {
 
         <br/>
         <br/>
-        <p>For C++ users, submit the compiled file</p>
-        <form id="compiled-form" th:action="@{/gwcc2p6}" method="post" enctype="multipart/form-data">
-            <input type="file" id="myFile" name="filename">    
-            <button onclick="updateContent()" type="submit">Submit</button>
-        </form>
   </section>
 </div>
 </body>

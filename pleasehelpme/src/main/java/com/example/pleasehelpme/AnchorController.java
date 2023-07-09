@@ -121,6 +121,11 @@ public class AnchorController {
         return "gwcc2contestpage";
     }
 
+    @GetMapping("/gwcc3contestpage")
+    String gwcc3contestpage(Model model){
+        return "gwcc3contestpage";
+    }
+
     @GetMapping("/tips")
     String tipsPage(Model model){
         return "tips";

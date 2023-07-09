@@ -261,15 +261,7 @@ mobileSection.addEventListener("click", function() {
 
 <script>
     function updateContent() {
-        var selectedOption = document.getElementById("lang").value;
-
-        if (selectedOption == "Java") {
-            document.getElementById("input-form").action = "/gwcc2p6JAVA";
-        } else if (selectedOption == "C++") {
-            document.getElementById("compiled-form").action = "/gwcc2p6CPP";
-        } else if (selectedOption == "Python") {
-            document.getElementById("input-form").action = "/gwcc2p6PYTHON";
-        }
+        document.getElementById("input-form").action = "/basicskillstest1";
     }
 </script>
 </head>
@@ -297,16 +289,16 @@ mobileSection.addEventListener("click", function() {
         <p id="problem-title">G.W. Coding Contest 2 P6: Hall Traffic</p>
         <p>Samuel is getting tired of the hall traffic at Dr. G.W. Williams S.S when moving classes, so he 
             decides to measure the average number of people in each hall after every period, on both floors. 
-            Each hall is labelled a number counting from 1, and some halls are connected to the other floors by 
+            Each hall is labelled with a number increasing from 1, and some halls are connected to the other floors by 
             stairs which go directly upwards (Stairs are considered as 0 average people). Starting from his class 
-            at hall A, what is the least crowded pathing Samuel can use get to his class in hall B? 
+            at hall \(A\), what is the least crowded pathing Samuel can use get to his class in hall \(B\)? 
             </p>
             <p>The hall and stair placements are formatted in the same manner as the diagram shown below, to pass through
                 a hall in any capacity will incur it's cost. Stairs in the corners of halls are connected to both halls, meaning you do not need to incur the cost of the other hall to use the stairs.</p>
         <br/>
         <strong>Input Specification:</strong>
         <p>The first line will contains two integers, \(A\), the starting hall, and \(B\), the destination hall. </p>
-        <p>The next 12 lines will contain \(K\), the average number of people in each hall, for each respective hall \(\{1 \leq K \leq 10^9\}\). (i.e. line 2 is for hall 1, line 3 is for hall 2, etc.)</p>
+        <p>The next 12 lines will contain \(K\), the average number of people in each hall, for each respective hall \(\{1 \leq K \leq 2^{63}\). (i.e. line 2 is for hall 1, line 3 is for hall 2, etc.)</p>
         <br/>
         <strong>Output Specification:</strong>
         <p>Output the pathway Sam can take to minimize the traffic he must go through, each hallway should be seperated by a new line.</p>
@@ -356,6 +348,28 @@ mobileSection.addEventListener("click", function() {
                 <span>Finally, we are at hall 10, and can either take the path 10 -> 9 -> 12 or 10 -> 11 -> 12. Because the cost to take hall 11 is less than the cost to take hall 9, we then take hall 11.</span><br/>
             </div>
             <br/>
+            <br/>
+            <p>Sample Input 2:</p>
+            <div class="sample">
+                <span>1 9</span><br/>
+                <span>62</span><br/>
+                <span>11</span><br/>
+                <span>83</span><br/>
+                <span>39</span><br/>
+                <span>75</span><br/>
+                <span>64</span><br/>
+                <span>35</span><br/>
+                <span>60</span><br/>
+                <span>22</span><br/>
+                <span>35</span><br/>
+                <span>5</span><br/>
+                <span>67</span><br/>
+            </div>
+            <p>Sample Output 2:</p>
+            <div class="sample">
+                <span>1</span><br/>
+                <span>9</span><br/>
+            </div>
         </div>
     </section>
     <section id="submit">
@@ -364,7 +378,6 @@ mobileSection.addEventListener("click", function() {
             <textarea name="input-textarea" id="vincentqu"></textarea>
             <select name="lang" id="lang">
                 <option value="Java">Java</option>
-                <option value="C++">C++</option>
                 <option value="Python">Python</option>
               </select>
             <button onclick="updateContent()" type="submit">Submit</button>
@@ -373,11 +386,6 @@ mobileSection.addEventListener("click", function() {
 
         <br/>
         <br/>
-        <p>For C++ users, submit the compiled file</p>
-        <form id="compiled-form" th:action="@{/gwcc2p6}" method="post" enctype="multipart/form-data">
-            <input type="file" id="myFile" name="filename">    
-            <button onclick="updateContent()" type="submit">Submit</button>
-        </form>
   </section>
 </div>
 </body>

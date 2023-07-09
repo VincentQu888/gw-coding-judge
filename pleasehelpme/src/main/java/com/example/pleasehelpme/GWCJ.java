@@ -9,8 +9,21 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 import java.io.*;
 
 public class GWCJ {
-     //java judge
-     public static ArrayList<String> javaJudge(String formData, String[] cases, ArrayList<ArrayList<String>> casesOut, ArrayList<ArrayList<String>> output, int runTime)throws IOException, InterruptedException{
+    public static ArrayList<String> judge(String formData, String lang, String[] cases, ArrayList<ArrayList<String>> casesOut, ArrayList<ArrayList<String>> output, int runTime)throws IOException, InterruptedException{
+        switch(lang){
+            case "Java":
+                return javaJudge(formData, cases, casesOut, output, runTime);
+            case "Python":
+                return pythonJudge(formData, cases, casesOut, output, runTime);
+            default:
+                ArrayList<String> temp = new ArrayList<>();
+                temp.add("Language not found.");
+                return temp;
+        }
+    }
+
+    //java judge
+    public static ArrayList<String> javaJudge(String formData, String[] cases, ArrayList<ArrayList<String>> casesOut, ArrayList<ArrayList<String>> output, int runTime)throws IOException, InterruptedException{
         ArrayList<String> formDataList = new ArrayList<>();
         ArrayList<String> formDataOutput = new ArrayList<>();
         String[] lines = formData.split("\n");
@@ -125,148 +138,6 @@ public class GWCJ {
                     formDataOutput.add(line);
                     AC = false;
                 }
-            }
-            
-            if(elapsedTime > runTime){
-                formDataOutput.add("TLE [>" + (double)runTime/1000 + "s]");
-                formDataOutput.add("YOUR OUTPUT:");
-                for(int j = 0; j < output.get(i).size(); j++) {
-                    if(j < 10){
-                        formDataOutput.add(output.get(i).get(j));
-                    }else{
-                        formDataOutput.add("Clipped");
-                        break;
-                    }
-                }
-                formDataOutput.add("--------------------------------------------");
-                for(int j = i+1; j < output.size(); j++){
-                    caseNum = j+1;
-                    formDataOutput.add("CASE " + caseNum + ":");
-                    formDataOutput.add("\" \" (Previous TLE)");
-                    formDataOutput.add("--------------------------------------------");
-                }
-                return formDataOutput;
-            }
-            if(AC) formDataOutput.add("AC (" + (double)elapsedTime/1000 + "s)");
-            else{
-                formDataOutput.add("WA (" + (double)elapsedTime/1000 + "s)");
-                formDataOutput.add("YOUR OUTPUT:");
-                for(int j = 0; j < output.get(i).size(); j++) {
-                    if(j < 10){
-                        formDataOutput.add(output.get(i).get(j));
-                    }else{
-                        formDataOutput.add("Clipped");
-                        break;
-                    }
-                }
-                formDataOutput.add("--------------------------------------------");
-                for(int j = i+1; j < output.size(); j++){
-                    caseNum = j+1;
-                    formDataOutput.add("CASE " + caseNum + ":");
-                    formDataOutput.add("\" \" (Previous WA)");
-                    formDataOutput.add("--------------------------------------------");
-                }
-                return formDataOutput;
-            }
-            formDataOutput.add("--------------------------------------------");
-        }
-
-        return formDataOutput;
-    }
-
-
-
-
-    // cpp judge 
-    public static ArrayList<String> cppJudge(Part formData, String[] cases, ArrayList<ArrayList<String>> casesOut, ArrayList<ArrayList<String>> output, int runTime)throws IOException, InterruptedException{
-        ArrayList<String> formDataList = new ArrayList<>();
-        ArrayList<String> formDataOutput = new ArrayList<>();
-        
-        boolean AC = true;
-
-        String filePath = "a.out"; //compilation
-        InputStream inputStream = formData.getInputStream();
-        OutputStream outputStream = new FileOutputStream(filePath, false); // Use false for overwrite mode
-        byte[] buffer = new byte[8192];
-        int bytesRead;
-        while ((bytesRead = inputStream.read(buffer)) != -1) {
-            outputStream.write(buffer, 0, bytesRead);
-        }
-        inputStream.close();
-        outputStream.close();
-
-        for(int i = 0; i < cases.length; i++) {
-            int caseNum = i+1;
-            formDataOutput.add("CASE " + caseNum + ":");
-            int counter = 0;
-
-
-            Process process = Runtime.getRuntime().exec("./a.out");
-            Timer timer = new Timer();
-            timer.schedule(new TimerTask() {
-                public void run() {
-                    if(process.isAlive()) process.destroyForcibly();
-                }
-            }, (runTime*2+1000)); 
-
-
-            OutputStream stdin = process.getOutputStream();
-            PrintWriter out = new PrintWriter(stdin);
-
-            out.println(cases[i]);
-            out.flush();
-
-            long startTime = System.nanoTime(); 
-            process.waitFor();
-            long endTime = System.nanoTime();
-            long elapsedTime = (endTime - startTime)/1000000;
-            if(i == 0) elapsedTime = 0;
-            
-            InputStream stdout = process.getInputStream();
-            InputStreamReader stdoutReader = new InputStreamReader(stdout);
-            BufferedReader stdoutBuffered = new BufferedReader(stdoutReader);
-            int lineNum = 0;
-            String line;
-            try{
-                while ((line = stdoutBuffered.readLine()) != null) {
-                    output.get(i).add(line);
-                    try {
-                        if(!line.equals(casesOut.get(i).get(counter))) AC = false;
-                    } catch (IndexOutOfBoundsException ioobe) {
-                        AC = false;
-                    }
-                    counter++;
-                    lineNum++;
-                }
-            }catch(IOException e){
-                formDataOutput.add("TLE [>" + (double)runTime/1000 + "s]");
-                formDataOutput.add("YOUR OUTPUT:");
-                for(int j = 0; j < output.get(i).size(); j++) {
-                    if(j < 10){
-                        formDataOutput.add(output.get(i).get(j));
-                    }else{
-                        formDataOutput.add("Clipped");
-                        break;
-                    }
-                }
-                formDataOutput.add("--------------------------------------------");
-                for(int j = i+1; j < output.size(); j++){
-                    caseNum = j+1;
-                    formDataOutput.add("CASE " + caseNum + ":");
-                    formDataOutput.add("\" \" (Previous TLE)");
-                    formDataOutput.add("--------------------------------------------");
-                }
-                return formDataOutput;
-            }
-
-            if(lineNum != casesOut.get(i).size()) AC = false;
-    
-            InputStream stderr = process.getErrorStream();
-            InputStreamReader stderrReader = new InputStreamReader(stderr);
-            BufferedReader stderrBuffered = new BufferedReader(stderrReader);
-            while ((line = stderrBuffered.readLine()) != null) {
-                formDataOutput.add(line);
-                AC = false;
             }
             
             if(elapsedTime > runTime){
@@ -460,4 +331,147 @@ public class GWCJ {
 
         return formDataOutput;
     }
+
+
+
+
+
+    // cpp judge 
+    /*public static ArrayList<String> cppJudge(Part formData, String[] cases, ArrayList<ArrayList<String>> casesOut, ArrayList<ArrayList<String>> output, int runTime)throws IOException, InterruptedException{
+        ArrayList<String> formDataList = new ArrayList<>();
+        ArrayList<String> formDataOutput = new ArrayList<>();
+        
+        boolean AC = true;
+
+        String filePath = "a.out"; //compilation
+        InputStream inputStream = formData.getInputStream();
+        OutputStream outputStream = new FileOutputStream(filePath, false); // Use false for overwrite mode
+        byte[] buffer = new byte[8192];
+        int bytesRead;
+        while ((bytesRead = inputStream.read(buffer)) != -1) {
+            outputStream.write(buffer, 0, bytesRead);
+        }
+        inputStream.close();
+        outputStream.close();
+
+        for(int i = 0; i < cases.length; i++) {
+            int caseNum = i+1;
+            formDataOutput.add("CASE " + caseNum + ":");
+            int counter = 0;
+
+
+            Process process = Runtime.getRuntime().exec("./a.out");
+            Timer timer = new Timer();
+            timer.schedule(new TimerTask() {
+                public void run() {
+                    if(process.isAlive()) process.destroyForcibly();
+                }
+            }, (runTime*2+1000)); 
+
+
+            OutputStream stdin = process.getOutputStream();
+            PrintWriter out = new PrintWriter(stdin);
+
+            out.println(cases[i]);
+            out.flush();
+
+            long startTime = System.nanoTime(); 
+            process.waitFor();
+            long endTime = System.nanoTime();
+            long elapsedTime = (endTime - startTime)/1000000;
+            if(i == 0) elapsedTime = 0;
+            
+            InputStream stdout = process.getInputStream();
+            InputStreamReader stdoutReader = new InputStreamReader(stdout);
+            BufferedReader stdoutBuffered = new BufferedReader(stdoutReader);
+            int lineNum = 0;
+            String line;
+            try{
+                while ((line = stdoutBuffered.readLine()) != null) {
+                    output.get(i).add(line);
+                    try {
+                        if(!line.equals(casesOut.get(i).get(counter))) AC = false;
+                    } catch (IndexOutOfBoundsException ioobe) {
+                        AC = false;
+                    }
+                    counter++;
+                    lineNum++;
+                }
+            }catch(IOException e){
+                formDataOutput.add("TLE [>" + (double)runTime/1000 + "s]");
+                formDataOutput.add("YOUR OUTPUT:");
+                for(int j = 0; j < output.get(i).size(); j++) {
+                    if(j < 10){
+                        formDataOutput.add(output.get(i).get(j));
+                    }else{
+                        formDataOutput.add("Clipped");
+                        break;
+                    }
+                }
+                formDataOutput.add("--------------------------------------------");
+                for(int j = i+1; j < output.size(); j++){
+                    caseNum = j+1;
+                    formDataOutput.add("CASE " + caseNum + ":");
+                    formDataOutput.add("\" \" (Previous TLE)");
+                    formDataOutput.add("--------------------------------------------");
+                }
+                return formDataOutput;
+            }
+
+            if(lineNum != casesOut.get(i).size()) AC = false;
+    
+            InputStream stderr = process.getErrorStream();
+            InputStreamReader stderrReader = new InputStreamReader(stderr);
+            BufferedReader stderrBuffered = new BufferedReader(stderrReader);
+            while ((line = stderrBuffered.readLine()) != null) {
+                formDataOutput.add(line);
+                AC = false;
+            }
+            
+            if(elapsedTime > runTime){
+                formDataOutput.add("TLE [>" + (double)runTime/1000 + "s]");
+                formDataOutput.add("YOUR OUTPUT:");
+                for(int j = 0; j < output.get(i).size(); j++) {
+                    if(j < 10){
+                        formDataOutput.add(output.get(i).get(j));
+                    }else{
+                        formDataOutput.add("Clipped");
+                        break;
+                    }
+                }
+                formDataOutput.add("--------------------------------------------");
+                for(int j = i+1; j < output.size(); j++){
+                    caseNum = j+1;
+                    formDataOutput.add("CASE " + caseNum + ":");
+                    formDataOutput.add("\" \" (Previous TLE)");
+                    formDataOutput.add("--------------------------------------------");
+                }
+                return formDataOutput;
+            }
+            if(AC) formDataOutput.add("AC (" + (double)elapsedTime/1000 + "s)");
+            else{
+                formDataOutput.add("WA (" + (double)elapsedTime/1000 + "s)");
+                formDataOutput.add("YOUR OUTPUT:");
+                for(int j = 0; j < output.get(i).size(); j++) {
+                    if(j < 10){
+                        formDataOutput.add(output.get(i).get(j));
+                    }else{
+                        formDataOutput.add("Clipped");
+                        break;
+                    }
+                }
+                formDataOutput.add("--------------------------------------------");
+                for(int j = i+1; j < output.size(); j++){
+                    caseNum = j+1;
+                    formDataOutput.add("CASE " + caseNum + ":");
+                    formDataOutput.add("\" \" (Previous WA)");
+                    formDataOutput.add("--------------------------------------------");
+                }
+                return formDataOutput;
+            }
+            formDataOutput.add("--------------------------------------------");
+        }
+
+        return formDataOutput;
+    }*/
 }

@@ -117,6 +117,24 @@ a{
     color: gray;
 }
 
+.comment {
+	color: gray;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
 @media only screen and (max-width: 1100px) {
     #submission-instructions,
             #problems,
@@ -188,8 +206,21 @@ a{
     <div id="flex-grid-wrapper">
         <div id="first-item">
         <section id="description">
-            <p><strong>NOTE FOR JAVA PROGRAMMERS: </strong>Make sure your code's public class is named Main, e.g. "public class Main {" or  "public class Main{", spaces matter.</p>
-            <p><strong>NOTE FOR C++ PROGRAMMERS: </strong>Make sure you select the C++ option from the dropdown while submitting.</p>
+            <p><strong>NOTE FOR JAVA PROGRAMMERS: </strong>Make sure your code is generally formatted like the example below:</p>
+            <pre>
+<code>                                                                                                 
+import java.io.util;  <span class="comment">//imports   </span>                                                                
+                                                                                                  
+public class Main {  <span class="comment">//make sure your class is public and is named "Main"   </span>                      
+                                                                                                  
+    public static void main(String[] args) {  <span class="comment">//main here should be lower case   </span>                 
+        System.out.println("Hello, World!");                                                      
+        <span class="comment">//rest of code</span>                                                                            
+    }                                                                                             
+                                                                                                  
+}                                                                                                 
+                                                                                                 </code>                       
+                            </pre>
             <br/>
             <strong id="desc-title">Submitting a solution to the grader:</strong>
             <ol>

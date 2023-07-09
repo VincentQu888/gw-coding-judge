@@ -257,15 +257,7 @@ mobileSection.addEventListener("click", function() {
 
 <script>
     function updateContent() {
-        var selectedOption = document.getElementById("lang").value;
-
-        if (selectedOption == "Java") {
-            document.getElementById("input-form").action = "/gwcc2p1JAVA";
-        } else if (selectedOption == "C++") {
-            document.getElementById("compiled-form").action = "/gwcc2p1CPP";
-        } else if (selectedOption == "Python") {
-            document.getElementById("input-form").action = "/gwcc2p1PYTHON";
-        }
+        document.getElementById("input-form").action = "/basicskillstest1";
     }
 </script>
 </head>
@@ -295,7 +287,8 @@ mobileSection.addEventListener("click", function() {
             so he works hard to cater to their requests. He has some perfectly circular cookie cutters labelled 
             with their radius (1 cm, 2 cm, ...), and each of his \(N\) friends can choose which cookie cutter size they 
             want for their cookie. How much cookie dough does Nevin need to buy in total, rounded down to 
-            the nearest integer, be? Note: use 3.14 for \(\pi\).</p>
+            the nearest integer? Use 3.14 for \(\pi\).</p>
+            <p>Note: The <strong>answer</strong> should be rounded down, intermediate calculations should always remain as decimals to maintain accuracy.</p>
         <br/>
         <strong>Input Specification:</strong>
         <p>The first line of input will contain an integer, \(N\).</p>
@@ -306,7 +299,7 @@ mobileSection.addEventListener("click", function() {
         <br/>
         <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/><br/>
         <div id="sample-io">
-            <p>Sample Input 1:</p>
+            <p>Sample Input 1:</p> 
             <div class="sample">
                 <span>3</span><br/>
                 <span>1</span><br/>
@@ -346,7 +339,6 @@ mobileSection.addEventListener("click", function() {
             <textarea name="input-textarea" id="vincentqu"></textarea>
             <select name="lang" id="lang">
                 <option value="Java">Java</option>
-                <option value="C++">C++</option>
                 <option value="Python">Python</option>
               </select>
             <button onclick="updateContent()" type="submit">Submit</button>
@@ -355,11 +347,6 @@ mobileSection.addEventListener("click", function() {
 
         <br/>
         <br/>
-        <p>For C++ users, submit the compiled file</p>
-        <form id="compiled-form" th:action="@{/gwcc2p1}" method="post" enctype="multipart/form-data">
-            <input type="file" id="myFile" name="filename">    
-            <button onclick="updateContent()" type="submit">Submit</button>
-        </form>
   </section>
 </div>
 </body>

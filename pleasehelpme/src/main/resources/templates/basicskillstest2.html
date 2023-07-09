@@ -255,15 +255,7 @@ mobileSection.addEventListener("click", function() {
 
 <script>
     function updateContent() {
-        var selectedOption = document.getElementById("lang").value;
-
-        if (selectedOption == "Java") {
-            document.getElementById("input-form").action = "/basicskillstest2JAVA";
-        } else if (selectedOption == "C++") {
-            document.getElementById("compiled-form").action = "/basicskillstest2CPP";
-        } else if (selectedOption == "Python") {
-            document.getElementById("input-form").action = "/basicskillstest2PYTHON";
-        }
+        document.getElementById("input-form").action = "/basicskillstest1";
     }
 </script>
 </head>
@@ -318,7 +310,6 @@ mobileSection.addEventListener("click", function() {
             <textarea name="input-textarea" id="vincentqu"></textarea>
             <select name="lang" id="lang">
                 <option value="Java">Java</option>
-                <option value="C++">C++</option>
                 <option value="Python">Python</option>
               </select>
             <button onclick="updateContent()" type="submit">Submit</button>
@@ -327,11 +318,6 @@ mobileSection.addEventListener("click", function() {
 
           <br/>
           <br/>
-          <p>For C++ users, submit the compiled file</p>
-          <form id="compiled-form" th:action="@{/2022gwcc1j1}" method="post" enctype="multipart/form-data">
-              <input type="file" id="myFile" name="filename">    
-              <button onclick="updateContent()" type="submit">Submit</button>
-          </form>
   </section>
 </div>
 </body>

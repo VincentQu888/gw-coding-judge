@@ -1,1 +1,1 @@
-#include<iostream>using namespace std;int main (){cout << "testing" << endl;return 0;}
+print("hello worldasa")
