@@ -15,6 +15,8 @@ public class GWCJ {
                 return javaJudge(formData, cases, casesOut, output, runTime);
             case "Python":
                 return pythonJudge(formData, cases, casesOut, output, runTime);
+            case "C":
+                return cJudge(formData, cases, casesOut, output, runTime);
             default:
                 ArrayList<String> temp = new ArrayList<>();
                 temp.add("Language not found.");
@@ -79,14 +81,14 @@ public class GWCJ {
                 }
             }, (runTime*2+1000)); //arbitrary value but 1000 runs most fine and *2 to be safe
 
-    
+            
+            long startTime = System.nanoTime();
             OutputStream stdin = process.getOutputStream();
             PrintWriter out = new PrintWriter(stdin);
 
             out.println(cases[i]);
             out.flush();
 
-            long startTime = System.nanoTime(); 
             process.waitFor();
             long endTime = System.nanoTime();
             long elapsedTime = (endTime - startTime)/1000000;
@@ -227,13 +229,13 @@ public class GWCJ {
             }, (runTime*2+1000)); 
             int counter = 0;
     
+            long startTime = System.nanoTime(); 
             OutputStream stdin = process.getOutputStream();
             PrintWriter out = new PrintWriter(stdin);
 
             out.println(cases[i]);
             out.flush();
 
-            long startTime = System.nanoTime(); 
             process.waitFor();
             long endTime = System.nanoTime();
             long elapsedTime = (endTime - startTime)/1000000;
@@ -336,46 +338,65 @@ public class GWCJ {
 
 
 
-    // cpp judge 
-    /*public static ArrayList<String> cppJudge(Part formData, String[] cases, ArrayList<ArrayList<String>> casesOut, ArrayList<ArrayList<String>> output, int runTime)throws IOException, InterruptedException{
+    //c judge 
+    public static ArrayList<String> cJudge(String formData, String[] cases, ArrayList<ArrayList<String>> casesOut, ArrayList<ArrayList<String>> output, int runTime)throws IOException, InterruptedException{
         ArrayList<String> formDataList = new ArrayList<>();
         ArrayList<String> formDataOutput = new ArrayList<>();
+        String[] lines = formData.split("\n");
+        formDataList.addAll(Arrays.asList(lines));
+    
+        
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Main.c"));
+        
+        String line = formDataList.get(0);
+        for(int i = 1; i < formDataList.size(); i++) {
+            writer.write(line);
+            line = formDataList.get(i);
+        }
+        writer.write(line);
+        writer.close();
+        
+        Process compile = Runtime.getRuntime().exec("gcc Main.c -o output_program");
+        compile.waitFor();
+        
+        int exitValue = compile.exitValue();
+        if (exitValue != 0) {
+            formDataOutput.add("Compilation Error");
+
+            InputStream stderr = compile.getErrorStream();
+            InputStreamReader stderrReader = new InputStreamReader(stderr);
+            BufferedReader stderrBuffered = new BufferedReader(stderrReader);
+            while ((line = stderrBuffered.readLine()) != null) {
+                if(!line.contains("Picked")){
+                    formDataOutput.add(line);
+                }
+            }
+
+            return formDataOutput;
+        } 
         
         boolean AC = true;
-
-        String filePath = "a.out"; //compilation
-        InputStream inputStream = formData.getInputStream();
-        OutputStream outputStream = new FileOutputStream(filePath, false); // Use false for overwrite mode
-        byte[] buffer = new byte[8192];
-        int bytesRead;
-        while ((bytesRead = inputStream.read(buffer)) != -1) {
-            outputStream.write(buffer, 0, bytesRead);
-        }
-        inputStream.close();
-        outputStream.close();
-
         for(int i = 0; i < cases.length; i++) {
             int caseNum = i+1;
-            formDataOutput.add("CASE " + caseNum + ":");
             int counter = 0;
+            formDataOutput.add("CASE " + caseNum + ":");
 
-
-            Process process = Runtime.getRuntime().exec("./a.out");
+            Process process = Runtime.getRuntime().exec("./output_program");
             Timer timer = new Timer();
             timer.schedule(new TimerTask() {
                 public void run() {
                     if(process.isAlive()) process.destroyForcibly();
                 }
-            }, (runTime*2+1000)); 
+            }, (runTime*2+1000)); //arbitrary value but 1000 runs most fine and *2 to be safe
 
-
+            
+            long startTime = System.nanoTime();
             OutputStream stdin = process.getOutputStream();
             PrintWriter out = new PrintWriter(stdin);
 
             out.println(cases[i]);
             out.flush();
 
-            long startTime = System.nanoTime(); 
             process.waitFor();
             long endTime = System.nanoTime();
             long elapsedTime = (endTime - startTime)/1000000;
@@ -385,7 +406,6 @@ public class GWCJ {
             InputStreamReader stdoutReader = new InputStreamReader(stdout);
             BufferedReader stdoutBuffered = new BufferedReader(stdoutReader);
             int lineNum = 0;
-            String line;
             try{
                 while ((line = stdoutBuffered.readLine()) != null) {
                     output.get(i).add(line);
@@ -424,8 +444,10 @@ public class GWCJ {
             InputStreamReader stderrReader = new InputStreamReader(stderr);
             BufferedReader stderrBuffered = new BufferedReader(stderrReader);
             while ((line = stderrBuffered.readLine()) != null) {
-                formDataOutput.add(line);
-                AC = false;
+                if(!line.contains("Picked")){
+                    formDataOutput.add(line);
+                    AC = false;
+                }
             }
             
             if(elapsedTime > runTime){
@@ -473,5 +495,5 @@ public class GWCJ {
         }
 
         return formDataOutput;
-    }*/
+    }
 }
