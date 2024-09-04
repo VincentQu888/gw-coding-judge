@@ -226,8 +226,8 @@ public class JudgeController {
         String formData = request.getParameter("input-textarea");
         String lang = request.getParameter("lang");
 		
-		String[] cases = TestData.gwcc2p1CASES();
-		ArrayList<ArrayList<String>> casesOut = TestData.gwcc2p1OUT();
+		String[] cases = TestData.gwcc2p2CASES();
+		ArrayList<ArrayList<String>> casesOut = TestData.gwcc2p2OUT();
 		ArrayList<ArrayList<String>> output = new ArrayList<>();
 		for(int i = 0; i < casesOut.size(); i++){
             output.add(new ArrayList<>());
@@ -309,4 +309,175 @@ public class JudgeController {
         model.addAttribute("formDataList", formDataOutput);
         return "formResult";
     }   
+
+
+    @PostMapping("/gwcc3p1")
+    public String gwcc3p1(HttpServletRequest request, Model model) throws IOException, InterruptedException {
+        String formData = request.getParameter("input-textarea");
+        String lang = request.getParameter("lang");
+
+        String[] cases = TestData.gwcc3p1CASES();
+        ArrayList<ArrayList<String>> casesOut = TestData.gwcc3p1OUT();
+        ArrayList<ArrayList<String>> output = new ArrayList<>();
+        for (int i = 0; i < casesOut.size(); i++) {
+            output.add(new ArrayList<>());
+        }
+
+        ArrayList<String> formDataOutput = GWCJ.judge(formData, lang, cases, casesOut, output, 1000);
+        model.addAttribute("formDataList", formDataOutput);
+        return "formResult";
+    }
+
+    @PostMapping("/gwcc3p2")
+    public String gwcc3p2(HttpServletRequest request, Model model) throws IOException, InterruptedException {
+        String formData = request.getParameter("input-textarea");
+        String lang = request.getParameter("lang");
+
+        String[] cases = TestData.gwcc3p2CASES();
+        ArrayList<ArrayList<String>> casesOut = TestData.gwcc3p2OUT();
+        ArrayList<ArrayList<String>> output = new ArrayList<>();
+        for (int i = 0; i < casesOut.size(); i++) {
+            output.add(new ArrayList<>());
+        }
+
+        ArrayList<String> formDataOutput = GWCJ.judge(formData, lang, cases, casesOut, output, 1000);
+        model.addAttribute("formDataList", formDataOutput);
+        return "formResult";
+    }
+
+    @PostMapping("/gwcc3p3")
+    public String gwcc3p3(HttpServletRequest request, Model model) throws IOException, InterruptedException {
+        String formData = request.getParameter("input-textarea");
+        String lang = request.getParameter("lang");
+
+        String[] cases = TestData.gwcc3p3CASES();
+        ArrayList<ArrayList<String>> casesOut = TestData.gwcc3p3OUT();
+        ArrayList<ArrayList<String>> output = new ArrayList<>();
+        for (int i = 0; i < casesOut.size(); i++) {
+            output.add(new ArrayList<>());
+        }
+
+        ArrayList<String> formDataOutput = GWCJ.judge(formData, lang, cases, casesOut, output, 1000);
+        model.addAttribute("formDataList", formDataOutput);
+        return "formResult";
+    }
+
+    @PostMapping("/gwcc3p4")
+    public String gwcc3p4(HttpServletRequest request, Model model) throws IOException, InterruptedException {
+        String formData = request.getParameter("input-textarea");
+        String lang = request.getParameter("lang");
+
+        String[] cases = TestData.gwcc3p4CASES();
+        ArrayList<ArrayList<String>> casesOut = TestData.gwcc3p4OUT();
+        ArrayList<ArrayList<String>> output = new ArrayList<>();
+        for (int i = 0; i < casesOut.size(); i++) {
+            output.add(new ArrayList<>());
+        }
+
+        ArrayList<String> formDataOutput = GWCJ.judge(formData, lang, cases, casesOut, output, 1000);
+        model.addAttribute("formDataList", formDataOutput);
+        return "formResult";
+    }
+
+    @PostMapping("/gwcc3p5")
+    public String gwcc3p5(HttpServletRequest request, Model model) throws IOException, InterruptedException {
+        String formData = request.getParameter("input-textarea");
+        String lang = request.getParameter("lang");
+
+        String[] cases = TestData.gwcc3p5CASES();
+        ArrayList<ArrayList<String>> casesOut = TestData.gwcc3p5OUT();
+        ArrayList<ArrayList<String>> output = new ArrayList<>();
+        for (int i = 0; i < casesOut.size(); i++) {
+            output.add(new ArrayList<>());
+        }
+
+        ArrayList<String> formDataOutput = GWCJ.judge(formData, lang, cases, casesOut, output, 3000);
+        model.addAttribute("formDataList", formDataOutput);
+        return "formResult";
+    }
+
+    @PostMapping("/gwcc3p6")
+    public String gwcc3p6(HttpServletRequest request, Model model) throws IOException, InterruptedException {
+        String formData = request.getParameter("input-textarea");
+        String lang = request.getParameter("lang");
+
+        String[] cases = TestData.gwcc3p6CASES();
+        ArrayList<ArrayList<String>> casesOut = TestData.gwcc3p6OUT();
+        ArrayList<ArrayList<String>> output = new ArrayList<>();
+        for (int i = 0; i < casesOut.size(); i++) {
+            output.add(new ArrayList<>());
+        }
+
+        ArrayList<String> formDataOutput = GWCJ.judge(formData, lang, cases, casesOut, output, 400);
+        model.addAttribute("formDataList", formDataOutput);
+        return "formResult";
+    }
+
+    @PostMapping("/gwcc3tiebreaker")
+    public String gwcc3tiebreaker(HttpServletRequest request, Model model) throws IOException, InterruptedException {
+        String formData = request.getParameter("input-textarea");
+        String lang = request.getParameter("lang");
+
+        String[] cases = TestData.gwcc3tiebreakerCASES();
+        ArrayList<ArrayList<String>> casesOut = TestData.gwcc3tiebreakerOUT();
+        ArrayList<ArrayList<String>> output = new ArrayList<>();
+        for (int i = 0; i < casesOut.size(); i++) {
+            output.add(new ArrayList<>());
+        }
+
+        ArrayList<String> formDataOutput = GWCJ.judge(formData, lang, cases, casesOut, output, 1000);
+        model.addAttribute("formDataList", formDataOutput);
+        return "formResult";
+    }
+
+    @PostMapping("/ccc2024prep1")
+    public String ccc2024prep1(HttpServletRequest request, Model model) throws IOException, InterruptedException {
+        String formData = request.getParameter("input-textarea");
+        String lang = request.getParameter("lang");
+
+        String[] cases = TestData.ccc2024prep1CASES();
+        ArrayList<ArrayList<String>> casesOut = TestData.ccc2024prep1OUT();
+        ArrayList<ArrayList<String>> output = new ArrayList<>();
+        for (int i = 0; i < casesOut.size(); i++) {
+            output.add(new ArrayList<>());
+        }
+
+        ArrayList<String> formDataOutput = GWCJ.judge(formData, lang, cases, casesOut, output, 1000);
+        model.addAttribute("formDataList", formDataOutput);
+        return "formResult";
+    }
+
+    @PostMapping("/ccc2024prep2")
+    public String ccc2024prep2(HttpServletRequest request, Model model) throws IOException, InterruptedException {
+        String formData = request.getParameter("input-textarea");
+        String lang = request.getParameter("lang");
+
+        String[] cases = TestData.ccc2024prep2CASES();
+        ArrayList<ArrayList<String>> casesOut = TestData.ccc2024prep2OUT();
+        ArrayList<ArrayList<String>> output = new ArrayList<>();
+        for (int i = 0; i < casesOut.size(); i++) {
+            output.add(new ArrayList<>());
+        }
+
+        ArrayList<String> formDataOutput = GWCJ.judge(formData, lang, cases, casesOut, output, 1000);
+        model.addAttribute("formDataList", formDataOutput);
+        return "formResult";
+    }
+
+    @PostMapping("/ccc2024prep3")
+    public String ccc2024prep3(HttpServletRequest request, Model model) throws IOException, InterruptedException {
+        String formData = request.getParameter("input-textarea");
+        String lang = request.getParameter("lang");
+
+        String[] cases = TestData.ccc2024prep3CASES();
+        ArrayList<ArrayList<String>> casesOut = TestData.ccc2024prep3OUT();
+        ArrayList<ArrayList<String>> output = new ArrayList<>();
+        for (int i = 0; i < casesOut.size(); i++) {
+            output.add(new ArrayList<>());
+        }
+
+        ArrayList<String> formDataOutput = GWCJ.judge(formData, lang, cases, casesOut, output, 1000);
+        model.addAttribute("formDataList", formDataOutput);
+        return "formResult";
+    }
 }

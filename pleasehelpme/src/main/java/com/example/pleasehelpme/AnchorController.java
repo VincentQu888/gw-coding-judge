@@ -110,6 +110,56 @@ public class AnchorController {
     String gwcc2p6(Model model){
         return "gwcc2p6";
     }
+    
+    @GetMapping("/gwcc3p1")
+    String gwcc3p1(Model model){
+        return "gwcc3p1";
+    }
+
+    @GetMapping("/gwcc3p2")
+    String gwcc3p2(Model model){
+        return "gwcc3p2";
+    }
+
+    @GetMapping("/gwcc3p3")
+    String gwcc3p3(Model model){
+        return "gwcc3p3";
+    }
+
+    @GetMapping("/gwcc3p4")
+    String gwcc3p4(Model model){
+        return "gwcc3p4";
+    }
+
+    @GetMapping("/gwcc3p5")
+    String gwcc3p5(Model model){
+        return "gwcc3p5";
+    }
+
+    @GetMapping("/gwcc3p6")
+    String gwcc3p6(Model model){
+        return "gwcc3p6";
+    }
+
+    @GetMapping("/gwcc3tiebreaker")
+    String gwcc3tiebreaker(Model model){
+        return "gwcc3tiebreaker";
+    }
+
+    @GetMapping("/ccc2024prep1")
+    String ccc2024prep1(Model model){
+        return "ccc2024prep1";
+    }
+
+    @GetMapping("/ccc2024prep2")
+    String ccc2024prep2(Model model){
+        return "ccc2024prep2";
+    }
+
+    @GetMapping("/ccc2024prep3")
+    String ccc2024prep3(Model model){
+        return "ccc2024prep3";
+    }
 
     @GetMapping("/2022gwcc1contestpage")
     String gwcc1contestpage(Model model){
