@@ -46,6 +46,6 @@ On the tips tab, you'll find some helpful tips for competitive programming for s
 <br/>
 <br/>
 <br/>
-My first ever real coding project!
+My first ever real coding project! (i.e. lots of spaghetti code and terrible practices)
 
 sorry for the file name
