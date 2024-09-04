@@ -1,4 +1,4 @@
-# GW Coding Judge (WIP) https://gwjudge.herokuapp.com/
+# GW Coding Judge https://gwjudge.herokuapp.com/
 An online coding judge built to host problems and contests for the coding club at the Dr. G.W. Williams Secondary School. Inspired by https://dmoj.ca/
 
 <br/>
