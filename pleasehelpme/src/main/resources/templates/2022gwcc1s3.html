@@ -282,13 +282,13 @@
             <p id="problem-title">2022 G.W. Coding Contest 1 S3: Cipher:</p>
             <p>You and your friend have some secret messages you want to keep secret, so you both came up with a secret language by changing individual characters of the English language. </p>
             <p>However, to ensure things are secret, you both decide to change the language every day.</p>
-            <p>Given \(D\) days and \(N\) number of changes (number of changes does not change) each day on the same line, a list of the changes, and a message, translate each message to the secret language.            </p>
+            <p>Given \(D\) days and \(N\) number of changes (number of changes does not change) each day on the same line, a list of each day's changes (changes do not carry over), and a message for each day, translate each message to the secret language.            </p>
             <br/>
             <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/><br/>
             <div id="sample-io">
                 <p>Sample Input:</p>
                 <div class="sample">
-                    <span>1 6</span><br/>
+                    <span>2 6</span><br/>
                     <span>a b</span><br/>
                     <span>b c</span><br/>
                     <span>o n</span><br/>
@@ -296,11 +296,19 @@
                     <span>e f</span><br/>
                     <span>i $</span><br/>
                     <span>hi, you are cool!</span><br/>
+                    <span>a b</span><br/>
+                    <span>b c</span><br/>
+                    <span>o n</span><br/>
+                    <span>y t</span><br/>
+                    <span>e f</span><br/>
+                    <span>i $</span><br/>
+                    <span>hi, you are cool!</span><br/>
                 </div>
                 <br/>
                 <p>Sample Output:</p>
                 <div class="sample">
-                    h$4 ynu brf dnnl!
+                    <span>h$4 ynu brf cnnl!</span><br/>
+                    <span>h$, tnu brf cnnl!</span><br/>
                 </div>
             </div>
         </section>

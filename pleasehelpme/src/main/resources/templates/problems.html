@@ -147,7 +147,7 @@
 
 .hard{
     color: red;
-    width: 2.2rem;
+    width: 2.3rem;
 }
 
 #contest-title{
@@ -158,6 +158,15 @@
     margin-left: 2.5%;
     font-size: 1rem;
     width: 100%;
+    display: flex;
+}
+
+#search-bar{
+    margin-left: 10rem;
+}
+
+#search-input{
+    width: 15rem;
 }
 
 body{
@@ -206,51 +215,66 @@ mobileSection.addEventListener("click", function() {
     </section>
     
     <section id="contest-section">
-        <p id="contest-title">All Problems </p>
-        <a href="gwcc3p1">G.W. Coding Contest 3 Problem 1</a> <div class="difficulty easy">Easy</div>
-        <br/>
-        <a href="gwcc3p2">G.W. Coding Contest 3 Problem 2</a> <div class="difficulty easy">Easy</div>
-        <br/>
-        <a href="gwcc3p3">G.W. Coding Contest 3 Problem 3</a> <div class="difficulty easy">Easy</div>
-        <br/>
-        <a href="gwcc3p4">G.W. Coding Contest 3 Problem 4</a> <div class="difficulty easy">Easy</div>
-        <br/>
-        <a href="gwcc3p5">G.W. Coding Contest 3 Problem 5</a> <div class="difficulty medium">Medium</div>
-        <br/>
-        <a href="gwcc3p6">G.W. Coding Contest 3 Problem 6</a> <div class="difficulty hard">Hard</div>
-        <br/>
-        <a href="/gwcc2p1">G.W. Coding Contest 2 Problem 1</a> <div class="difficulty easy">Easy</div>
-        <br/>
-        <a href="/gwcc2p2">G.W. Coding Contest 2 Problem 2</a> <div class="difficulty easy">Easy</div>
-        <br/>
-        <a href="/gwcc2p3">G.W. Coding Contest 2 Problem 3</a> <div class="difficulty easy">Easy</div>
-        <br/>
-        <a href="/gwcc2p4">G.W. Coding Contest 2 Problem 4</a> <div class="difficulty medium">Medium</div>
-        <br/>
-        <a href="/gwcc2p5">G.W. Coding Contest 2 Problem 5</a> <div class="difficulty hard">Hard</div>
-        <br/>
-        <a href="/gwcc2p6">G.W. Coding Contest 2 Problem 6</a> <div class="difficulty hard">Hard</div>
-        <br/>
-        <a href="/basicskillstest1">Skills Training 1</a> <div class="difficulty medium">Medium</div>
-        <br/>
-        <a href="/basicskillstest2">Skills Training 2</a> <div class="difficulty medium">Medium</div>
-        <br/>
-        <a href="/basicskillstest3">Skills Training 3</a> <div class="difficulty hard">Hard</div>
-        <br/>
-        <a href="/basicskillstest4">Skills Training 4</a> <div class="difficulty medium">Medium</div>
-        <br/>
-        <a href="/2022gwcc1j1">2022 G.W. Coding Contest 1 Junior 1</a> <div class="difficulty easy">Easy</div>
-        <br/>
-        <a href="/2022gwcc1j2">2022 G.W. Coding Contest 1 Junior 2</a> <div class="difficulty easy">Easy</div>
-        <br/>
-        <a href="/2022gwcc1j3">2022 G.W. Coding Contest 1 Junior 3</a> <div class="difficulty medium">Medium</div>
-        <br/>
-        <a href="/2022gwcc1s1">2022 G.W. Coding Contest 1 Senior 1</a> <div class="difficulty easy">Easy</div>
-        <br/>
-        <a href="/2022gwcc1s2">2022 G.W. Coding Contest 1 Senior 2</a> <div class="difficulty easy">Easy</div>
-        <br/>
-        <a href="/2022gwcc1s3">2022 G.W. Coding Contest 1 Senior 3</a> <div class="difficulty easy">Easy</div>
-        <br/> <br/>
+        <div>
+            <p id="contest-title">All Problems </p>
+            <a href="ccc2024prep1">G.W. CCC 2024 Prep Problem 1</a> <div class="difficulty easy">Easy</div>
+            <br/>
+            <a href="ccc2024prep2">G.W. CCC 2024 Prep Problem 2</a> <div class="difficulty easy">Easy</div>
+            <br/>
+            <a href="ccc2024prep3">G.W. CCC 2024 Prep Problem 3</a> <div class="difficulty easy">Easy</div>
+            <br/>
+            <a href="gwcc3tiebreaker">G.W. Coding Contest 3 Tiebreaker</a> <div class="difficulty medium">Medium</div>
+            <br/>
+            <a href="gwcc3p1">G.W. Coding Contest 3 Problem 1</a> <div class="difficulty easy">Easy</div>
+            <br/>
+            <a href="gwcc3p2">G.W. Coding Contest 3 Problem 2</a> <div class="difficulty easy">Easy</div>
+            <br/>
+            <a href="gwcc3p3">G.W. Coding Contest 3 Problem 3</a> <div class="difficulty easy">Easy</div>
+            <br/>
+            <a href="gwcc3p4">G.W. Coding Contest 3 Problem 4</a> <div class="difficulty easy">Easy</div>
+            <br/>
+            <a href="gwcc3p5">G.W. Coding Contest 3 Problem 5</a> <div class="difficulty easy">Easy</div>
+            <br/>
+            <a href="gwcc3p6">G.W. Coding Contest 3 Problem 6</a> <div class="difficulty hard">Hard</div>
+            <br/>
+            <a href="/gwcc2p1">G.W. Coding Contest 2 Problem 1</a> <div class="difficulty easy">Easy</div>
+            <br/>
+            <a href="/gwcc2p2">G.W. Coding Contest 2 Problem 2</a> <div class="difficulty easy">Easy</div>
+            <br/>
+            <a href="/gwcc2p3">G.W. Coding Contest 2 Problem 3</a> <div class="difficulty easy">Easy</div>
+            <br/>
+            <a href="/gwcc2p4">G.W. Coding Contest 2 Problem 4</a> <div class="difficulty medium">Medium</div>
+            <br/>
+            <a href="/gwcc2p5">G.W. Coding Contest 2 Problem 5</a> <div class="difficulty medium">Medium</div>
+            <br/>
+            <a href="/gwcc2p6">G.W. Coding Contest 2 Problem 6</a> <div class="difficulty medium">Medium</div>
+            <br/>
+            <a href="/basicskillstest1">Skills Training 1</a> <div class="difficulty medium">Medium</div>
+            <br/>
+            <a href="/basicskillstest2">Skills Training 2</a> <div class="difficulty medium">Medium</div>
+            <br/>
+            <a href="/basicskillstest3">Skills Training 3</a> <div class="difficulty medium">Medium</div>
+            <br/>
+            <a href="/basicskillstest4">Skills Training 4</a> <div class="difficulty medium">Medium</div>
+            <br/>
+            <a href="/2022gwcc1j1">2022 G.W. Coding Contest 1 Junior 1</a> <div class="difficulty easy">Easy</div>
+            <br/>
+            <a href="/2022gwcc1j2">2022 G.W. Coding Contest 1 Junior 2</a> <div class="difficulty easy">Easy</div>
+            <br/>
+            <a href="/2022gwcc1j3">2022 G.W. Coding Contest 1 Junior 3</a> <div class="difficulty easy">Easy</div>
+            <br/>
+            <a href="/2022gwcc1s1">2022 G.W. Coding Contest 1 Senior 1</a> <div class="difficulty easy">Easy</div>
+            <br/>
+            <a href="/2022gwcc1s2">2022 G.W. Coding Contest 1 Senior 2</a> <div class="difficulty easy">Easy</div>
+            <br/>
+            <a href="/2022gwcc1s3">2022 G.W. Coding Contest 1 Senior 3</a> <div class="difficulty easy">Easy</div>
+            <br/><br/>
+        </div>
+        <form id="search-bar" method="get" th:action="@{/search}">
+            <p id="contest-title">Problem Search</p>
+            <input id="search-input" name="search-input" placeholder="Search Problems"/>
+            <button type="submit">Search</button>
+        </form>
     </section>
 </body>
 </html>

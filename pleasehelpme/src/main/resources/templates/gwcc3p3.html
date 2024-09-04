@@ -17,10 +17,11 @@
         onload="renderMathInElement(document.body);"></script>
     <!-- KaTeX end-->
 
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills Training 4</title>
+    <title>gwcc3p3</title>
 
     <link rel="icon" type="image/x-icon" href="https://pbs.twimg.com/profile_images/1283581976637845506/tkqLru4e_400x400.png">
     <style>
@@ -142,17 +143,18 @@
 
 @media only screen and (max-width: 1100px) {
     #submission-instructions,
-            #problems,
-            #title,
-            #tips{ display: none !important; }
+   #problems,
+   #title,
+   #tips{ display: none !important; }
 
-            #hamburger{
-                    display: flex !important;
-                    margin: 1vh;
-                    margin-left: 1.25vh;
-                height: 5vh;
-                width: 5vh;
-            }
+   #hamburger{
+        display: flex !important;
+        margin: 1vh;
+        margin-left: 1.25vh;
+       height: 5vh;
+       width: 5vh;
+   }
+
 
    #mobile-section.active div{
         height: 100vh;
@@ -255,7 +257,7 @@ mobileSection.addEventListener("click", function() {
 
 <script>
     function updateContent() {
-        document.getElementById("input-form").action = "/basicskillstest4";
+        document.getElementById("input-form").action = "/gwcc3p3";
     }
 </script>
 </head>
@@ -280,31 +282,38 @@ mobileSection.addEventListener("click", function() {
 
 <div id="flex-inline-wrapper">
     <section id="problem-statement">
-        <p id="problem-title">Skills Training 4</p>
-        <p>The G.W. Williams coding club execs have a 2d Christmas tree for sale, with \(N\) Christmas lights all around its surface. Each of these \(N\) lights are the same space apart and connected by multiple bidirectional wires. </p>
-        <p>The execs know that one of the \(N\) lights lies on the bottom of the tree, and one of the \(N\) lights lies on the top. However, they do not know the height of the tree. They also know the distance between each light is constant, and the light on the bottom of the tree and the light on the top of the tree have the most wire in between them compared to any other pair of lights in the whole tree. </p>
-        <p>So, the execs decide to approximate the height of the tree using this information. The method they use is to find the number of wire connections between the bottom light and the top light.</p>
-        <p>Given \(N\) number of lights on the first line, and \(M\) connections of the lights, can you help the execs approximate the height of the tree?</p>
+        <p id="problem-title">G.W. Coding Contest 3 P3: Cid's Playlist</p>
+        <p>Cid loves listening to classical music. He has \(N\) playlists for each of his favourite composers, each lasting \(H\) hours, \(M\) minutes, and \(S\) seconds. </p>
+        <p>One of Cid's friends, Alexia, asks how long each of his playlists are in seconds. Can you help Cid find these times?</p>
+        <br/>
+        <strong>Input Specification:</strong>
+        <p>The first line of input will contain an integer \(N\), representing the number of playlists Cid has.</p>
+        <p>The next \(N\) lines will contain three integers, \(H\),\(M\) and \(S\).</p>
+        <br/>
+        <strong>Output Specification:</strong>
+        <p>The output will consist of \(N\) integers, representing the length of Cid's \(i\)<sub>th</sub> playlist in seconds.</p>
         <br/>
         <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/><br/>
         <div id="sample-io">
-            <p>Sample Input:</p>
+            <p>Sample Input 1:</p> 
             <div class="sample">
-                <span>5 4</span><br/>
-                <span>1 2</span><br/>
-                <span>2 4</span><br/>
-                <span>5 4</span><br/>
-                <span>2 3</span><br/>                                
+                <span>3</span><br/>
+                <span>1 2 3</span><br/>
+                <span>15 59 23</span><br/>
+                <span>0 0 0</span>
             </div>
-            <p>Sample Output:</p>
+            <p>Sample Output 1:</p>
             <div class="sample">
-                3
+                <span>3723</span><br/>
+                <span>57563</span><br/>
+                <span>0</span>
             </div>
+            <br/>
         </div>
     </section>
     <section id="submit">
         <p id="submit-title">Submit Solution</p>
-        <form id="input-form" th:action="@{/basicskillstest4}" method="post">
+        <form id="input-form" th:action="@{/gwcc2p1}" method="post">
             <textarea name="input-textarea" id="vincentqu"></textarea>
             <select name="lang" id="lang">
                 <option value="Java">Java</option>
@@ -312,11 +321,11 @@ mobileSection.addEventListener("click", function() {
                 <option value="C">C</option>
               </select>
             <button onclick="updateContent()" type="submit">Submit</button>
-            <span style="float: right;">Problem author: Vincent</span>
-          </form>
+            <span style="float: right;">Problem author: Enric</span>
+        </form>
 
-          <br/>
-          <br/>
+        <br/>
+        <br/>
   </section>
 </div>
 </body>

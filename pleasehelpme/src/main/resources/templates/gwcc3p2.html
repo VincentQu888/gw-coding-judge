@@ -17,10 +17,11 @@
         onload="renderMathInElement(document.body);"></script>
     <!-- KaTeX end-->
 
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills Training 4</title>
+    <title>gwcc3p2</title>
 
     <link rel="icon" type="image/x-icon" href="https://pbs.twimg.com/profile_images/1283581976637845506/tkqLru4e_400x400.png">
     <style>
@@ -142,17 +143,18 @@
 
 @media only screen and (max-width: 1100px) {
     #submission-instructions,
-            #problems,
-            #title,
-            #tips{ display: none !important; }
+   #problems,
+   #title,
+   #tips{ display: none !important; }
 
-            #hamburger{
-                    display: flex !important;
-                    margin: 1vh;
-                    margin-left: 1.25vh;
-                height: 5vh;
-                width: 5vh;
-            }
+   #hamburger{
+        display: flex !important;
+        margin: 1vh;
+        margin-left: 1.25vh;
+       height: 5vh;
+       width: 5vh;
+   }
+
 
    #mobile-section.active div{
         height: 100vh;
@@ -255,7 +257,7 @@ mobileSection.addEventListener("click", function() {
 
 <script>
     function updateContent() {
-        document.getElementById("input-form").action = "/basicskillstest4";
+        document.getElementById("input-form").action = "/gwcc3p2";
     }
 </script>
 </head>
@@ -280,31 +282,44 @@ mobileSection.addEventListener("click", function() {
 
 <div id="flex-inline-wrapper">
     <section id="problem-statement">
-        <p id="problem-title">Skills Training 4</p>
-        <p>The G.W. Williams coding club execs have a 2d Christmas tree for sale, with \(N\) Christmas lights all around its surface. Each of these \(N\) lights are the same space apart and connected by multiple bidirectional wires. </p>
-        <p>The execs know that one of the \(N\) lights lies on the bottom of the tree, and one of the \(N\) lights lies on the top. However, they do not know the height of the tree. They also know the distance between each light is constant, and the light on the bottom of the tree and the light on the top of the tree have the most wire in between them compared to any other pair of lights in the whole tree. </p>
-        <p>So, the execs decide to approximate the height of the tree using this information. The method they use is to find the number of wire connections between the bottom light and the top light.</p>
-        <p>Given \(N\) number of lights on the first line, and \(M\) connections of the lights, can you help the execs approximate the height of the tree?</p>
+        <p id="problem-title">G.W. Coding Contest 3 P2: A times B</p>
+        <p>Vincent has been struggling on a problem recently, where he writes a program to take two numbers as input and multiply them together. Given two numbers, A and B, can you output their product? </p>
+        <p>{\(-2^{31}\) \(\leq\) \(A\), \(B\) \(\leq\) \(2^{31}\)}</p>
         <br/>
         <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/><br/>
         <div id="sample-io">
-            <p>Sample Input:</p>
+            <p>Sample Input 1:</p> 
             <div class="sample">
-                <span>5 4</span><br/>
-                <span>1 2</span><br/>
-                <span>2 4</span><br/>
-                <span>5 4</span><br/>
-                <span>2 3</span><br/>                                
+                <span>3 7</span>
             </div>
-            <p>Sample Output:</p>
+            <p>Sample Output 1:</p>
             <div class="sample">
-                3
+                21
             </div>
+            <span>Explanation for Sample Input 1:</span><br/>
+            <div>
+                3 times 7 = 21.
+            </div>
+            <br/>
+            <br/>
+            <p>Sample Input 2:</p>
+            <div class="sample">
+                <span>2147483648 2147483648</span>
+            </div>
+            <p>Sample Output 2:</p>
+            <div class="sample">
+                4611686018427387904
+            </div>
+            <span>Explanation for Sample Input 2:</span><br/>
+            <div>
+                2147483648 times 2147483648 = 4611686018427387904.
+            </div>
+            <br/>
         </div>
     </section>
     <section id="submit">
         <p id="submit-title">Submit Solution</p>
-        <form id="input-form" th:action="@{/basicskillstest4}" method="post">
+        <form id="input-form" th:action="@{/gwcc2p1}" method="post">
             <textarea name="input-textarea" id="vincentqu"></textarea>
             <select name="lang" id="lang">
                 <option value="Java">Java</option>
@@ -313,10 +328,10 @@ mobileSection.addEventListener("click", function() {
               </select>
             <button onclick="updateContent()" type="submit">Submit</button>
             <span style="float: right;">Problem author: Vincent</span>
-          </form>
+        </form>
 
-          <br/>
-          <br/>
+        <br/>
+        <br/>
   </section>
 </div>
 </body>

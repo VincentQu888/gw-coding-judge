@@ -17,10 +17,11 @@
         onload="renderMathInElement(document.body);"></script>
     <!-- KaTeX end-->
 
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills Training 4</title>
+    <title>ccc2024prep1</title>
 
     <link rel="icon" type="image/x-icon" href="https://pbs.twimg.com/profile_images/1283581976637845506/tkqLru4e_400x400.png">
     <style>
@@ -142,17 +143,18 @@
 
 @media only screen and (max-width: 1100px) {
     #submission-instructions,
-            #problems,
-            #title,
-            #tips{ display: none !important; }
+   #problems,
+   #title,
+   #tips{ display: none !important; }
 
-            #hamburger{
-                    display: flex !important;
-                    margin: 1vh;
-                    margin-left: 1.25vh;
-                height: 5vh;
-                width: 5vh;
-            }
+   #hamburger{
+        display: flex !important;
+        margin: 1vh;
+        margin-left: 1.25vh;
+       height: 5vh;
+       width: 5vh;
+   }
+
 
    #mobile-section.active div{
         height: 100vh;
@@ -255,7 +257,7 @@ mobileSection.addEventListener("click", function() {
 
 <script>
     function updateContent() {
-        document.getElementById("input-form").action = "/basicskillstest4";
+        document.getElementById("input-form").action = "/ccc2024prep1";
     }
 </script>
 </head>
@@ -280,31 +282,51 @@ mobileSection.addEventListener("click", function() {
 
 <div id="flex-inline-wrapper">
     <section id="problem-statement">
-        <p id="problem-title">Skills Training 4</p>
-        <p>The G.W. Williams coding club execs have a 2d Christmas tree for sale, with \(N\) Christmas lights all around its surface. Each of these \(N\) lights are the same space apart and connected by multiple bidirectional wires. </p>
-        <p>The execs know that one of the \(N\) lights lies on the bottom of the tree, and one of the \(N\) lights lies on the top. However, they do not know the height of the tree. They also know the distance between each light is constant, and the light on the bottom of the tree and the light on the top of the tree have the most wire in between them compared to any other pair of lights in the whole tree. </p>
-        <p>So, the execs decide to approximate the height of the tree using this information. The method they use is to find the number of wire connections between the bottom light and the top light.</p>
-        <p>Given \(N\) number of lights on the first line, and \(M\) connections of the lights, can you help the execs approximate the height of the tree?</p>
+        <p id="problem-title">G.W. CCC 2024 Prep Problem 1: Stacy's Mom and OF</p>
+        <p>You’ve been told that Stacy’s mom has got it going on. You hate lies, so you want to figure out if that statement is true or not. A person can be considered to “have it going on” if their \(OF\) (on-factor) is strictly greater than 25. The equation to calculate one’s on-factor is:</p>
+        <p>\(OF = k{\frac q r}\)</p>
+        <p>Where \(k\) is the on-factor constant, \(q\) is magnitude of on-ness, and \(r\), is how much is going on. \(k\) has the value of 2. Given Stacy’s mom’s \(q\) and \(r\), can you determine whether she has got it going on?</p>
+        <br/>
+        <strong>Input Specification:</strong>
+        <p>The input consists of two lines. The first line contains integer \(q\), the magnitude of on-ness. \(\{\text{1 } \leq q \leq 10^{9} \}\)</p>
+        <p>The second line contains integer \(r\), how much is going on. \(\{\text{1 } \leq r \leq 10^{9} \}\)</p>
+        <br/>
+        <strong>Output Specification:</strong>
+        <p>Output “True” if Stacy’s mom has got it going on, and “False” if she does not.</p>
         <br/>
         <strong>TIME CONSTRAINT:</strong> <span>1s</span><br/><br/>
         <div id="sample-io">
-            <p>Sample Input:</p>
+            <p>Sample Input 1:</p> 
             <div class="sample">
-                <span>5 4</span><br/>
-                <span>1 2</span><br/>
-                <span>2 4</span><br/>
-                <span>5 4</span><br/>
-                <span>2 3</span><br/>                                
+                <span>40</span><br/>
+                <span>2</span><br/>
             </div>
-            <p>Sample Output:</p>
+            <p>Sample Output 1:</p>
             <div class="sample">
-                3
+                True
             </div>
+            <span>Explanation for Sample Input 1:</span><br/>
+            <div>
+                \(2 \text{ x } {\frac {40} 2} = 40\), which is greater than \(25\)
+            </div>
+            <br/>
+            <br/>
+            <p>Sample Input 2:</p> 
+            <div class="sample">
+                <span>25</span><br/>
+                <span>2</span><br/>
+            </div>
+            <p>Sample Output 2:</p>
+            <div class="sample">
+                False
+            </div>
+            <br/>
+            <br/>
         </div>
     </section>
     <section id="submit">
         <p id="submit-title">Submit Solution</p>
-        <form id="input-form" th:action="@{/basicskillstest4}" method="post">
+        <form id="input-form" th:action="@{/ccc2024prep1}" method="post">
             <textarea name="input-textarea" id="vincentqu"></textarea>
             <select name="lang" id="lang">
                 <option value="Java">Java</option>
@@ -312,11 +334,11 @@ mobileSection.addEventListener("click", function() {
                 <option value="C">C</option>
               </select>
             <button onclick="updateContent()" type="submit">Submit</button>
-            <span style="float: right;">Problem author: Vincent</span>
-          </form>
+            <span style="float: right;">Problem author: Emma</span>
+        </form>
 
-          <br/>
-          <br/>
+        <br/>
+        <br/>
   </section>
 </div>
 </body>

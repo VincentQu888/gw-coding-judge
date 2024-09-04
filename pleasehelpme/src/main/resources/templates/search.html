@@ -8,31 +8,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verdict</title>
+    <title>Problems</title>
 
     <link rel="icon" type="image/x-icon" href="https://pbs.twimg.com/profile_images/1283581976637845506/tkqLru4e_400x400.png">
     <style>
-
-        body{
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: whitesmoke;
-    font-weight: 500;
-    overflow-x: hidden;
-}
-
-a{
-    text-decoration: none;
-}
-
-#verdict{
-    padding: 1.5%
-}
-
-
-/* navbar */
-#nav-section{           
+#nav-section{
     height: 8.5vh;
 }
 
@@ -145,25 +125,79 @@ a{
    #problems-display{ scale: 0; }
 }
 
-.wa{
+
+/*css*/
+.difficulty{
+    font-size: 1rem;
+    background-color: lightgray;
+    border-radius: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.easy{
+    color: rgb(0, 200, 0);
+    width: 2.2rem;
+}
+
+.medium{
+    color: orange;
+    width: 4rem;
+}
+
+.hard{
     color: red;
+    width: 2.3rem;
 }
-.ac{
-    color: green;
+
+#contest-title{
+    font-size: 2rem;
 }
-.tle{
-    color: gray;
+
+#contest-section{
+    margin-left: 2.5%;
+    font-size: 1rem;
+    width: 100%;
+    display: flex;
 }
+
+#search-bar{
+    margin-left: 10rem;
+}
+
+#search-input{
+    width: 15rem;
+}
+
+.hide{
+    display:none;
+}
+
+body{
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: whitesmoke;
+            font-weight: 500;
+            height: 101vh;
+            overflow-x: hidden;
+        }
+        
+        a{
+            text-decoration: none;
+        }
+
     </style>
 
-    <script>
-        window.onload = function() {
-    var mobileSection = document.getElementById("mobile-section");
-    mobileSection.addEventListener("click", function() {
-        mobileSection.classList.toggle("active");
-    });
+<script>
+    window.onload = function() {
+var mobileSection = document.getElementById("mobile-section");
+mobileSection.addEventListener("click", function() {
+    mobileSection.classList.toggle("active");
+});
 }
-    </script>
+</script>
+
 </head>
 <body>
     <section id="nav-section">
@@ -183,9 +217,25 @@ a{
             <a id="problems" href="/problems">Problems</a>
         </nav>
     </section>
-
-    <section id="verdict">
-        <p th:each="line : ${formDataList}" th:text="${line}" th:classappend="${line.contains('AC ') ? 'ac' : (line.contains('WA ') ? 'wa' : (line.contains('TLE ') ? 'tle' : ''))}"></p>
+    
+    <section id="contest-section">
+        <div>
+            <p id="contest-title">Problems</p>
+            <div th:each="problem : ${matches}">
+                <a th:href="${problem.code}" th:text="${problem.title}"></a> 
+                <div 
+                    th:class="'difficulty ' + (${problem.difficulty} == 'Easy' ? 'easy' : (${problem.difficulty} == 'Medium' ? 'medium' : (${problem.difficulty} == 'Hard' ? 'hard' : 'hide')))" 
+                    th:text="${problem.difficulty}">
+                </div>
+                <br/>
+            </div>
+            <br/><br/>
+        </div>
+        <form id="search-bar" method="get" th:action="@{/search}">
+            <p id="contest-title">Problem Search</p>
+            <input id="search-input" name="search-input" placeholder="Search Problems"/>
+            <button type="submit">Search</button>
+        </form>
     </section>
 </body>
 </html>
