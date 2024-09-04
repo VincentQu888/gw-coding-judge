@@ -110,6 +110,18 @@
         padding-top: 2.5rem;
         display: block !important;
    }
+
+    #contest-section{
+        display: block !important;
+    }
+
+    #search-bar{
+        display: none;
+    }
+    
+    #mobile-search-bar{
+        display: block !important;
+    }
 }
 
 @media only screen and (max-width: 455px) {
@@ -169,6 +181,11 @@
     width: 15rem;
 }
 
+#mobile-search-bar{
+    display: none;
+    margin-bottom: 5rem;
+}
+
 body{
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -199,7 +216,7 @@ mobileSection.addEventListener("click", function() {
     <section id="nav-section">
         <nav id="navbar">
             <div id="mobile-section">
-                <img id="hamburger" src="https://cdn.discordapp.com/attachments/792921343845859368/1064662621028093952/1024px-Hamburger_icon_white.png" alt="">
+                <img id="hamburger" src="images\hamburg.png" alt="">
                 <div id="side-navbar">
                     <a id="title-side" href="/">Home</a>
                     <a id="submission-instructions-side" href="/submission-instructions">Submission Instructions</a>
@@ -215,6 +232,11 @@ mobileSection.addEventListener("click", function() {
     </section>
     
     <section id="contest-section">
+        <form id="mobile-search-bar" method="get" th:action="@{/search}">
+            <p id="contest-title">Problem Search</p>
+            <input id="search-input" name="search-input" placeholder="Search Problems"/>
+            <button type="submit">Search</button>
+        </form>
         <div>
             <p id="contest-title">All Problems </p>
             <a href="ccc2024prep1">G.W. CCC 2024 Prep Problem 1</a> <div class="difficulty easy">Easy</div>
