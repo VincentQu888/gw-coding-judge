@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="individual-problem.css">
+    <link rel="stylesheet" href="navbar-css.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="nav-section">
+        <nav id="navbar">
+            <a id="title" href="index.html">G.W Williams Coding Judge</a>
+            <a id="submission-instructions" href="submission-instructions.html">Submission Instructions</a>
+            <a id="problems" href="problems.html">Problems</a>
+        </nav>
+    </section>
+
+    <div id="flex-inline-wrapper">
+        <section id="problem-statement">
+            <p id="problem-title">2022 G.W. Coding Contest 1 J1: Message coder</p>
+            <p>You work for a top-secret government agency and must send coded messages to your colleagues. Write a program that writes a coded message.</p>
+            <p>Here's how the message coder should work. </p>
+            <li>Every 5-letter or longer word should have its letters reversed. i.e. "pokemon" corresponds to "nomekop"</li>
+            <li>Every 4 letter or fewer words should keep only their first and last letters.</li>
+            <li>1 letter words remain the same</li>
+            <br/>
+
+            <div id="sample-io">
+                <p>Sample Input:</p>
+                <div class="sample">
+                    pokemon are cool
+                </div>
+                <p>Sample Output:</p>
+                <div class="sample">
+                    nomekop ae cl
+                </div>
+            </div>
+        </section>
+        <section id="submit">
+            <p id="submit-title">Submit Solution</p>
+            <form method="post">
+                <textarea name="textInput" id="submitform" cols="100" rows="30"></textarea>
+                <button @onclick="" type="submit">Submit</button>
+            </form>
+        </section>
+    </div>
+  
+</body>
+</html>
